@@ -7,17 +7,20 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(PlayerSetup))]
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerCast))]
+[RequireComponent(typeof(AbilityManager))]
 
 public class PlayerController : NetworkBehaviour
 {
     [Header("Player's Specific")]
     public int m_score;
-
+    public bool Cop;
+    public bool Robber;
 
     PlayerSetup m_pSetup;
     PlayerMovement m_pBody;
     PlayerCast m_pCast;
     PlayerHealth m_pHealth;
+    AbilityManager m_pAbility;
 
     private void Start()
     {
@@ -25,6 +28,8 @@ public class PlayerController : NetworkBehaviour
         m_pBody = GetComponent<PlayerMovement>();
         m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
+        m_pAbility = GetComponent<AbilityManager>();
+
     }
 
 
@@ -47,6 +52,14 @@ public class PlayerController : NetworkBehaviour
 
         Vector3 inputDir = GetInput();
         m_pBody.MovePlayer(inputDir);
+        if(Cop)
+        {
+            m_pAbility.CopAbilities();
+        }
+        else
+        {
+            m_pAbility.RobberAbilities();
+        }
 
     }
 
@@ -57,4 +70,5 @@ public class PlayerController : NetworkBehaviour
         return new Vector3(h, 0, v);
 
     }
+
 }
