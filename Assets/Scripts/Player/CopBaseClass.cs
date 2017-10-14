@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class AbilityManager : MonoBehaviour {
+public class CopBaseClass : NetworkBehaviour
+{
 
     bool Ability1Active = true;
     float Ability1ReloadTime;
@@ -20,26 +22,11 @@ public class AbilityManager : MonoBehaviour {
     void Start () {
 		
 	}
-    public void RobberAbilities()
+    private void Update()
     {
-        if(Input.GetButtonDown("Ability1"))
-        {
-            Debug.Log("Robber Ability1 Pressed");
-        }
-        if (Input.GetButtonDown("Ability2"))
-        {
-            Debug.Log("Robber Ability2 Pressed");
-        }
-        if (Input.GetButtonDown("Ability3"))
-        {
-            Debug.Log("Robber Ability3 Pressed");
-        }
-        if (Input.GetButtonDown("Ability4"))
-        {
-            Debug.Log("Robber Ability4 Pressed");
-        }
+        AbilitiesInput();
     }
-    public void CopAbilities()
+    public void AbilitiesInput()
     {
         if (Input.GetButtonDown("Ability1"))
         {
