@@ -7,7 +7,7 @@ public class Cop_1_Abilities : MonoBehaviour {
     [Header("Taser Variables")]
     [Space]
     public bool quickCast;
-    public Sprite indicator;
+    public GameObject indicator;
     [Range(0, 10)]
     [SerializeField]
     public float cooldown;
