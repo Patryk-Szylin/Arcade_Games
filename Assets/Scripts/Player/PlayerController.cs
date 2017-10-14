@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(PlayerSetup))]
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerCast))]
+[RequireComponent(typeof(PlayerHealth))]
 
 public class PlayerController : NetworkBehaviour
 {
@@ -15,14 +16,14 @@ public class PlayerController : NetworkBehaviour
 
 
     PlayerSetup m_pSetup;
-    PlayerMovement m_pBody;
+    PlayerMovement m_pMovement;
     PlayerCast m_pCast;
     PlayerHealth m_pHealth;
 
     private void Start()
     {
         m_pSetup = GetComponent<PlayerSetup>();
-        m_pBody = GetComponent<PlayerMovement>();
+        m_pMovement = GetComponent<PlayerMovement>();
         m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
     }
@@ -46,7 +47,7 @@ public class PlayerController : NetworkBehaviour
             return;
 
         Vector3 inputDir = GetInput();
-        m_pBody.MovePlayer(inputDir);
+        m_pMovement.MovePlayer(inputDir);
 
     }
 
