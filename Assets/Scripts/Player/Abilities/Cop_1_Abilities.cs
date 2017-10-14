@@ -7,11 +7,11 @@ public class Cop_1_Abilities : MonoBehaviour {
     [Header("Taser Variables")]
     [Space]
     public bool quickCast;
-    public GameObject indicator;
+    public GameObject[] indicator;
     [Range(0, 10)]
     [SerializeField]
     public float cooldown;
-    private float cooldownTime;
+    public float cooldownTime;
     [Range(0, 10)]
     public float range;
     [Range(0, 10)]
@@ -63,8 +63,7 @@ public class Cop_1_Abilities : MonoBehaviour {
         public float Speed_A2555;
         public int Cooldown5;
     }
-
-    public bulletData equippedItem;
+    public bulletData ability_022;
 
     void Update()
     {
@@ -102,7 +101,7 @@ public class Cop_1_Abilities : MonoBehaviour {
 
             if (Physics.Raycast(transform.position, direction, out hit, range))
             {
-                if (hit.transform.tag == "Target")
+                if (hit.transform.tag == "Enemy")
                 {
                     Debug.Log("hit!");
                     //hit.collider.gameObject.GetComponent<Movement>().stun(stunDuration);
