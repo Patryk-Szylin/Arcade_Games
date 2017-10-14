@@ -105,7 +105,7 @@ public class Cop_1_Abilities : MonoBehaviour {
                 if (hit.transform.tag == "Target")
                 {
                     Debug.Log("hit!");
-                    hit.collider.gameObject.GetComponent<Movement>().stun(stunDuration);
+                    //hit.collider.gameObject.GetComponent<Movement>().stun(stunDuration);
                 }
             }
         }
