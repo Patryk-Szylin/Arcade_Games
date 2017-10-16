@@ -13,6 +13,7 @@ public class PlayerController : NetworkBehaviour
 {
     [Header("Player's Specific")]
     public int m_score;
+    public bool m_isHiding = false;
 
 
     PlayerSetup m_pSetup;
@@ -56,6 +57,27 @@ public class PlayerController : NetworkBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         return new Vector3(h, 0, v);
+    }
+
+
+    // This function is getting caller
+    [ClientRpc]
+    public void RpcHidePlayer(bool state)
+    {
+        // If I am the local player, then don't hide me.
+        if (isLocalPlayer)
+            return;
+
+        // Otherwise, hide All other players that are in the bush
+        var uis = GetComponentsInChildren<Canvas>();
+
+        foreach(Canvas ui in uis)
+        {
+            ui.enabled = state;
+        }
+
+        MeshRenderer r = this.GetComponent<MeshRenderer>();
+        r.enabled = state;
 
     }
 }
