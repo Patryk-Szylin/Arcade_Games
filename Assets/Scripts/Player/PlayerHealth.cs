@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 /// <summary>
 /// 
-/// This class if purely to control player's health and Die conditions
+/// This class is purely to control player's health and Die conditions
 /// 
 /// Die() - Players will have multiple lives, so Destroy cannot be used because all the information that they store will be lost.
 ///         Instead of destroying the object, set deactivate all of its components and reactive when they respawn.
@@ -28,20 +28,6 @@ public class PlayerHealth : NetworkBehaviour
     [SyncVar(hook ="UpdateHealthBar")]
     private float m_currentHealth;
 
-
-    // This currently doesnt work, when uncommented. The player dies as soon as it spawns, but why?
-    //public float Health {
-    //    private get
-    //    {
-    //        return m_currentHealth;
-    //    }
-    //    set
-    //    {
-    //        m_currentHealth -= value;
-
-    //        if (m_currentHealth <= 0 && !m_isDead)
-    //            Die();
-    //    }}
 
 
     private void Start()
