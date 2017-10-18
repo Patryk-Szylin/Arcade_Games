@@ -104,12 +104,13 @@ public class GameManager : NetworkBehaviour
 
         // Also add player to the bush
         var bushes = FindObjectsOfType<Bush>();
-         
+
         foreach (Bush b in bushes)
         {
             var playerController = pSetup.GetComponent<PlayerController>();
             b.m_playerControllers.Add(playerController);
         }
+
     }
 
 

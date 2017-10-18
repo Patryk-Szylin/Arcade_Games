@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Gold : MonoBehaviour
+public class Gold : NetworkBehaviour
 {
 
     public int m_rewardAmount = 10;
