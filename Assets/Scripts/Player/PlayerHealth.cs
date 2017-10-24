@@ -26,7 +26,7 @@ public class PlayerHealth : NetworkBehaviour
 
 
     [SyncVar(hook ="UpdateHealthBar")]
-    private float m_currentHealth;
+    public float m_currentHealth;
 
 
 
