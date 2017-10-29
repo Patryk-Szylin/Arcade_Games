@@ -65,7 +65,7 @@ public class PlayerHealth : NetworkBehaviour
         m_isDead = true;
         print("Die Executed");
         SetActiveState(false);
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     void SetActiveState(bool state)
