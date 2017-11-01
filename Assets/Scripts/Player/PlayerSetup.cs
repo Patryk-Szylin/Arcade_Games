@@ -15,7 +15,18 @@ public class PlayerSetup : NetworkBehaviour
     public int m_id = 1;
     public Text m_playerNameText;
 
+    public Camera cam;
 
+
+
+    private void Update()
+    {
+        if(!isLocalPlayer)
+        { 
+            cam.enabled = false;
+            return;
+        }
+    }
 
     // Start runs after "OnStartLocalPlayer"
     private void Start()

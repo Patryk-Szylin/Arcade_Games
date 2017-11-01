@@ -15,7 +15,6 @@ public class PlayerController : NetworkBehaviour
     public int m_score;
     public bool m_isHiding = false;
 
-
     PlayerSetup m_pSetup;
     PlayerMovement m_pMovement;
     PlayerCast m_pCast;
@@ -27,6 +26,7 @@ public class PlayerController : NetworkBehaviour
         m_pMovement = GetComponent<PlayerMovement>();
         m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
+
     }
 
 
@@ -35,10 +35,29 @@ public class PlayerController : NetworkBehaviour
         if (!isLocalPlayer || m_pHealth.m_isDead)
             return;
 
+
         if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
         {
             m_pCast.Cast();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            m_pSetup.m_playerNameText.text = gameObject.name;
+            m_pCast.CastSpell_01();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            m_pCast.CastSpell_02();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            m_pCast.CastSpell_03();
+        }
+
+
     }
 
 
@@ -49,7 +68,6 @@ public class PlayerController : NetworkBehaviour
 
         Vector3 inputDir = GetInput();
         m_pMovement.MovePlayer(inputDir);
-
     }
 
     Vector3 GetInput()
@@ -71,7 +89,7 @@ public class PlayerController : NetworkBehaviour
         // Otherwise, hide All other players that are in the bush
         var uis = GetComponentsInChildren<Canvas>();
 
-        foreach(Canvas ui in uis)
+        foreach (Canvas ui in uis)
         {
             ui.enabled = state;
         }

@@ -41,6 +41,16 @@ public class PlayerHealth : NetworkBehaviour
     {
         if (m_healthBar != null)
             m_healthBar.sizeDelta = new Vector2(val / m_maxHealth * 150f, m_healthBar.sizeDelta.y);
+
+        //foreach (Transform child in this.transform)
+        //{
+        //    if(child.gameObject.tag == "HealEffect")
+        //    {
+        //        var effect = child.GetComponent<ParticleSystem>();
+        //        effect.Play();
+        //    }
+        //}
+
     }
 
 

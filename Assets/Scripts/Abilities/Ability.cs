@@ -28,6 +28,8 @@ public abstract class Ability : NetworkBehaviour
         AbilityPoint = GetAbilityPointInWorldSpace(m_range);
     }
 
+    //public virtual void OnAbilityCast()
+
     public Vector3 GetAbilityDirection(float range)
     {
         Vector3 mouseLoc;
@@ -55,6 +57,23 @@ public abstract class Ability : NetworkBehaviour
         }
 
         return Vector3.zero;     
+    }
+
+    public PlayerController GetPlayerOnHit(float range)
+    {
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, range))
+        {
+            if (hit.collider.GetComponent<PlayerController>())
+            {
+                var pc = hit.collider.GetComponent<PlayerController>();
+                return pc;               
+            }
+        }
+
+        return null;
     }
 
 }

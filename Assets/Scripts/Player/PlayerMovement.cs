@@ -5,7 +5,8 @@ using UnityEngine.Networking;
 
 public class PlayerMovement : NetworkBehaviour
 {
-    public float m_moveSpeed = 100f;
+    public float m_moveSpeed;
+    public bool m_isBoosted;
 
     Rigidbody m_rigidbody;
 

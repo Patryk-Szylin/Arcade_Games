@@ -1,70 +1,100 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class Ability_Heal : Ability
 {
     public float m_healAmount;
     public float m_scaleFactor = 1f;    //Currently as 1, needs to be adjusted when we 
 
-    // Ability
+    //// Ability
 
-    public override void OnAbilityCast()
+    private void Start()
     {
-        base.OnAbilityCast();
-    }
-
-    public override void OnAbilityHit()
-    {
-        base.OnAbilityHit();
-
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        // Cast a raycast again, then find if it has hit a player
-        if (Physics.Raycast(ray, out hit, m_range))
+        foreach(Transform child in this.transform)
         {
-            // If so, instantiate particle system at that player's position
-            if (hit.transform.GetComponent<PlayerController>())
+            if(child.gameObject.tag == "HealEffect")
             {
-                var player = hit.transform.GetComponent<PlayerController>();
-                var playerHealth = hit.transform.GetComponent<PlayerHealth>();
-                var effect = player.GetComponentInChildren<ParticleSystem>();
-                //var effect = Instantiate(m_castEffect, hit.point, Quaternion.identity);
-
-                // Add the particle system object as their parent
-                //effect.transform.parent = hit.transform;
-                StartCoroutine(PlayEffect(effect));
-
-                if (playerHealth.m_currentHealth < playerHealth.m_maxHealth)
-                    playerHealth.Damage(-m_healAmount);
-
-
+                m_castEffect = child.gameObject.GetComponent<ParticleSystem>();
             }
         }
     }
 
-    IEnumerator PlayEffect(ParticleSystem effect)
+
+    [Command]
+    public void CmdShootAbility()
     {
-        Debug.Log("STARTING THE EFFECT");
+        // "GetPlayerOnHit" is a function that belongs to base class "Ability"
+        PlayerController pc = GetPlayerOnHit(m_range);
+
+        var effect = pc.GetComponentInChildren<ParticleSystem>();
+        var playerHealth = pc.GetComponent<PlayerHealth>();
         effect.Play();
-        yield return new WaitForSeconds(effect.duration);
-        effect.Stop();
-        Debug.Log("GONNA DESTROY NOW");
-        yield return new WaitForSeconds(3f);
 
+
+        //CmdPlayEffect();
+
+        //StartCoroutine(PlayEffect(effect));
+
+        if (playerHealth.m_currentHealth < playerHealth.m_maxHealth)
+            playerHealth.Damage(-m_healAmount);
     }
 
-
-    private void Update()
+    public override void OnAbilityCast()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            //OnAbilityCast();
-            OnAbilityHit();
-        }
+        base.OnAbilityCast();
+
+        // "GetPlayerOnHit" is a function that belongs to base class "Ability"
+        PlayerController pc = GetPlayerOnHit(m_range);
+
+        var effect = pc.GetComponentInChildren<ParticleSystem>();
+        var playerHealth = pc.GetComponent<PlayerHealth>();
+        effect.Play();
+
+
+        //CmdPlayEffect();
+
+        //StartCoroutine(PlayEffect(effect));
+
+        if (playerHealth.m_currentHealth < playerHealth.m_maxHealth)
+            playerHealth.Damage(-m_healAmount);
     }
 
 
 
+
+    [ClientRpc]
+    void RpcEffect()
+    {
+        if (isLocalPlayer)
+            return;
+        m_castEffect.Play();
+    }
+
+    void PlayEffect()
+    {
+        if (isLocalPlayer)
+            CmdEffects();
+
+        m_castEffect.Play();
+
+    }
+
+    [Command]
+    void CmdEffects()
+    {
+        RpcEffect();
+    }
+
+
+    //[Command]
+    //void CmdPlayEffect()
+    //{
+    //    PlayerController pc = GetPlayerOnHit(m_range);
+    //    m_castEffect.Play();
+    //    //var effect = pc.GetComponentInChildren<ParticleSystem>();
+
+    //    //effect.Play();
+    //}
 }
