@@ -11,9 +11,21 @@ public class PlayerSetup : NetworkBehaviour
     [SyncVar(hook = "UpdateName")] public string m_playerName;
 
     public Text m_playerNameText;
+    public Camera cam;
 
     // this function is invoked when client has connected to the server
 
+
+    private void Update()
+    {
+        if (!isLocalPlayer)
+        {
+            cam.enabled = false;
+            return;
+        }
+            
+            
+    }
 
     public override void OnStartClient()
     {

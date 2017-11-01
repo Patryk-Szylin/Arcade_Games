@@ -39,6 +39,7 @@ public class Player : NetworkBehaviour
 
     private void Update()
     {
+
         if (m_isHiding)
             RpcHidePlayer(true);
 
@@ -57,13 +58,8 @@ public class Player : NetworkBehaviour
         if (!isLocalPlayer || m_pHealth.m_isDead)
             return;
 
-
-
-
         Vector3 inputDir = GetInput();
         m_pMovement.MovePlayer(inputDir);
-
-
 
         if (m_hidingInBush.Count != 0)
         {
