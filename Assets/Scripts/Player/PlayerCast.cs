@@ -11,8 +11,6 @@ public class PlayerCast : NetworkBehaviour
     [Header("Shooting Specific")]
     public float m_reloadTime = 1f;
     public bool m_isReloading = false;
-
-
     
 
     public void Cast()

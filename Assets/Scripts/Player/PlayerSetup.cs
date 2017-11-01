@@ -7,49 +7,38 @@ using System.Linq;
 
 public class PlayerSetup : NetworkBehaviour
 {
-    [SyncVar(hook ="UpdateColour")]
-    public Color m_playerColor;
-    public string m_playerName = "Player ";
+    [SyncVar(hook = "UpdateColour")] public Color m_playerColor;
+    [SyncVar(hook = "UpdateName")] public string m_playerName;
 
-    [SyncVar(hook = "UpdateName")]
-    public int m_id = 1;
     public Text m_playerNameText;
 
+    // this function is invoked when client has connected to the server
 
 
-    // Start runs after "OnStartLocalPlayer"
-    private void Start()
-    {
-        if(!isLocalPlayer)
-        {
-            UpdateColour(m_playerColor);
-            UpdateName(m_id);
-        }
-    }
-
-    // Runs before OnStartLocalPlayer
     public override void OnStartClient()
     {
         base.OnStartClient();
 
-        if (m_playerNameText != null)
-            m_playerNameText.enabled = false;
+        if (!isServer)
+        {
+            Player p = GetComponent<Player>();
+
+            if (p != null)
+            {
+                GameManager.m_allPlayers.Add(p);
+            }
+        }
+
+        UpdateColour(m_playerColor);
+        UpdateName(m_playerName);
     }
 
-
-    public override void OnStartLocalPlayer()
-    {
-        base.OnStartLocalPlayer();
-        CmdSetupPlayer();
-        
-    }
-
-    private void UpdateName(int playerNum)
+    private void UpdateName(string playerName)
     {
         if (m_playerNameText != null)
         {
             m_playerNameText.enabled = true;
-            m_playerNameText.text = m_playerName + playerNum.ToString();
+            m_playerNameText.text = playerName;
         }
     }
 
@@ -62,13 +51,4 @@ public class PlayerSetup : NetworkBehaviour
             r.material.color = playerColor;
         }
     }
-
-
-    [Command]
-    void CmdSetupPlayer()
-    {
-        GameManager.Instance.AddPlayer(this);
-        GameManager.Instance.m_playerCount++;
-    }
-
 }
