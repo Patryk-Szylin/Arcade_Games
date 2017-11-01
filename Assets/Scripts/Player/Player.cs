@@ -9,17 +9,24 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(PlayerCast))]
 [RequireComponent(typeof(PlayerHealth))]
 
-public class PlayerController : NetworkBehaviour
+public class Player : NetworkBehaviour
 {
     [Header("Player's Specific")]
-    public int m_score;
+    [SyncVar] public int m_score;
     public bool m_isHiding = false;
+    public Dictionary<int, bool> m_hidingInBush = new Dictionary<int, bool>();
 
 
-    PlayerSetup m_pSetup;
+    public PlayerSetup m_pSetup;
     PlayerMovement m_pMovement;
     PlayerCast m_pCast;
     PlayerHealth m_pHealth;
+
+
+    private void OnDestroy()
+    {
+        GameManager.m_allPlayers.Remove(this);
+    }
 
     private void Start()
     {
@@ -32,6 +39,9 @@ public class PlayerController : NetworkBehaviour
 
     private void Update()
     {
+        if (m_isHiding)
+            RpcHidePlayer(true);
+
         if (!isLocalPlayer || m_pHealth.m_isDead)
             return;
 
@@ -47,9 +57,19 @@ public class PlayerController : NetworkBehaviour
         if (!isLocalPlayer || m_pHealth.m_isDead)
             return;
 
+
+
+
         Vector3 inputDir = GetInput();
         m_pMovement.MovePlayer(inputDir);
 
+
+
+        if (m_hidingInBush.Count != 0)
+        {
+            // If the players have the same bush ID, turn on their meshes just for them.
+
+        }
     }
 
     Vector3 GetInput()
@@ -60,7 +80,7 @@ public class PlayerController : NetworkBehaviour
     }
 
 
-    // This function is getting caller
+    // This function is getting called inside Bush.cs
     [ClientRpc]
     public void RpcHidePlayer(bool state)
     {
@@ -78,7 +98,9 @@ public class PlayerController : NetworkBehaviour
 
         MeshRenderer r = this.GetComponent<MeshRenderer>();
         r.enabled = state;
+    } 
 
-    }
+
+
 }
 

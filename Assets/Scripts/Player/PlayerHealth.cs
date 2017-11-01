@@ -26,7 +26,7 @@ public class PlayerHealth : NetworkBehaviour
 
 
     [SyncVar(hook ="UpdateHealthBar")]
-    private float m_currentHealth;
+    public float m_currentHealth;
 
 
 
@@ -67,6 +67,14 @@ public class PlayerHealth : NetworkBehaviour
         SetActiveState(false);
         //Destroy(gameObject);
     }
+
+    public void Reset()
+    {
+        m_currentHealth = m_maxHealth;
+        SetActiveState(true);
+        m_isDead = false;
+    }
+
 
     void SetActiveState(bool state)
     {

@@ -12,7 +12,7 @@ public class Gold : MonoBehaviour
     {
         if(collision.collider.tag == "Player")
         {
-            PlayerController playerController = collision.collider.GetComponent<PlayerController>();
+            Player playerController = collision.collider.GetComponent<Player>();
 
             playerController.m_score += m_rewardAmount;
             Destroy(gameObject);
