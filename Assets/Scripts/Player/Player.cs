@@ -50,6 +50,17 @@ public class Player : NetworkBehaviour
         {
             m_pCast.Cast();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            m_pCast.Cmd_Cast_01();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            m_pCast.Cmd_Cast_02();
+        }
+
     }
 
 
