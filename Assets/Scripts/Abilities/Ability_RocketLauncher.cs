@@ -7,7 +7,9 @@ using UnityEngine;
 public class Ability_RocketLauncher : Ability
 {
     [HideInInspector] public Vector3 m_destination;
-    public float m_damage;
+
+    [Header("Rocket Specific")]
+    public float m_radius;
 
 
     public override void TriggerAbility()
@@ -26,6 +28,9 @@ public class Ability_RocketLauncher : Ability
         m_launcher.m_velocity = velocity;
         m_launcher.m_prefab = m_bulletPrefab;
         m_launcher.m_spawnPos = playerGunPos;
+        m_launcher.m_radius = m_radius;
+        m_launcher.m_explosionFX = m_explosionFX;
+        m_launcher.m_trailFX = m_trailFX;
     }
 
 
