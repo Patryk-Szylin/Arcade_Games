@@ -12,7 +12,6 @@ public class Projectile_Rocket : Projectile
         if (rbody != null)
         {
             rbody.velocity = m_velocity;
-            print(m_velocity);
 
             NetworkServer.Spawn(rbody.gameObject);
         }

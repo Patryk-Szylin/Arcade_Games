@@ -2,15 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ability_Generic : MonoBehaviour {
+[CreateAssetMenu(menuName = "Abilities/Generic")]
+public class Ability_Generic : Ability
+{
+    public override void Initilise(Rigidbody projectileObj, Transform playerGunPos)
+    {
+        var dest = GetAbilityPointInWorldSpace();
+        var dir = (dest - playerGunPos.position).normalized;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        m_launcher = projectileObj.GetComponent<Projectile>();
+        m_launcher.m_damage = 0;
+        m_launcher.m_velocity = dir * m_force;
+        m_launcher.m_prefab = m_bulletPrefab;
+        m_launcher.m_spawnPos = playerGunPos;
+        m_launcher.m_explosionFX = m_explosionFX;
+    }
+
+    public override void TriggerAbility()
+    {
+        m_launcher.Launch();
+    }
 }
