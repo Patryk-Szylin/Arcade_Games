@@ -6,6 +6,15 @@ public abstract class Ability : ScriptableObject
 {
     [HideInInspector] public Projectile m_launcher;
     public Rigidbody m_bulletPrefab;
+    public float m_damage;
+
+
+    // Effects
+    public GameObject m_explosionFX;
+    public GameObject m_trailFX;
+    //public AudioSource m_effectSound;
+    //public AudioSource m_ExplosionSound;
+
 
     public abstract void TriggerAbility();
     public abstract void Initilise(Rigidbody projectileObj, Transform playerGunPos);
