@@ -30,7 +30,6 @@ public class Ability_RocketLauncher : Ability
         m_launcher.m_spawnPos = playerGunPos;
         m_launcher.m_radius = m_radius;
         m_launcher.m_explosionFX = m_explosionFX;
-        m_launcher.m_trailFX = m_trailFX;
     }
 
 

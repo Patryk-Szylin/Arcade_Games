@@ -12,10 +12,11 @@ public abstract class Projectile : NetworkBehaviour {
     [HideInInspector] public Transform m_spawnPos;  // This value is hidden and will be set during initilisation process of Ability_ scripts
     [HideInInspector] public float m_radius;
     [HideInInspector] public GameObject m_explosionFX;
-    [HideInInspector] public GameObject m_trailFX;
+    [HideInInspector] public Vector3 m_direction;
 
     private Collider m_collider;
     private Rigidbody m_rigidBody;
+
 
 
 	// Use this for initialization
