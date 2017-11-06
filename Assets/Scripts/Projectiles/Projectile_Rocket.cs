@@ -6,6 +6,9 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile_Rocket : Projectile
 {
+    [HideInInspector] public float m_damage;
+    [HideInInspector] public float m_radius;
+
     public override void Launch()
     {        
         Rigidbody rbody = Instantiate(m_prefab, m_spawnPos.position, m_spawnPos.rotation) as Rigidbody;
@@ -19,7 +22,7 @@ public class Projectile_Rocket : Projectile
 
     public override void OnCollisionHit(Collision collision)
     {
-        var explosion = Instantiate(m_explosionFX, transform.position, transform.rotation);
+        var explosion = Instantiate(m_impactFX, transform.position, transform.rotation);
         NetworkServer.Spawn(explosion);
 
 
