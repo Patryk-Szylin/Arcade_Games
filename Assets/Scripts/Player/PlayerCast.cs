@@ -23,8 +23,13 @@ public class PlayerCast : NetworkBehaviour
     [Command]
     public void Cmd_Cast_01()
     {
-        m_abilities[0].Initilise(m_abilities[0].m_bulletPrefab, m_projectileSpawn);
-        m_abilities[0].TriggerAbility();
+        //m_abilities[0].Initilise(m_abilities[0].m_bulletPrefab, m_projectileSpawn);
+        //m_abilities[0].TriggerAbility();
+
+
+
+        //m_rocketAbility.Initilise(m_rocketAbility.m_bulletPrefab, m_projectileSpawn);
+        //m_rocketAbility.TriggerAbility();
     }
 
     [Command]
