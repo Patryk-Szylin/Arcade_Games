@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Abilities/Rocket Launcher", fileName = "Rocket Launcher")]
-public class Ability_RocketLauncher : Ability<Projectile_Rocket>
+public class Ability_RocketLauncher : Ability
 {
     [HideInInspector] public Vector3 m_destination;
+    [HideInInspector] public Projectile_Rocket m_launcher;
 
     [Header("Rocket Specific")]
     public float m_radius;

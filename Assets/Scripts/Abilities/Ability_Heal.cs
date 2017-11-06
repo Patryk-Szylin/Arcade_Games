@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ability_Heal : Ability<Projectile_Heal>
-{
-    [HideInInspector] public float m_healAmount;
+[CreateAssetMenu(menuName ="Abilities/Heal Bullet", fileName = "Heal Bullet")]
+public class Ability_Heal : Ability
+{    
+    [HideInInspector] public Projectile_Heal m_launcher;
+
+
+    [Header("Heal Specific")]
+    public float m_healAmount;
 
     public override void Initilise(Rigidbody projectileObj, Transform PlayerGunPos)
     {

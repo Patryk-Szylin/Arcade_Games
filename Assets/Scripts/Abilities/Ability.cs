@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public abstract class Ability<TProjectile> : ScriptableObject
+public abstract class Ability: ScriptableObject
 {
     [Header("Ability Settings")]
-    [HideInInspector] public TProjectile m_launcher;
     [HideInInspector] public Vector3 m_direction;
     public Rigidbody m_bulletPrefab;
     public float m_force;

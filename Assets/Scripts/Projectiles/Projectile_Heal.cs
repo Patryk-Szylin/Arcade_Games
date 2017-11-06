@@ -18,14 +18,44 @@ public class Projectile_Heal : Projectile
         }
     }
 
-    public override void OnCollisionHit(Collision collision)
+    public override void OnCollisionHit(Collider other)
     {
-        print("HEALING");
+        // Play healing effect
+
+        var player = other.gameObject.GetComponent<PlayerHealth>();
+
+        if(player != null)
+        {
+            print(player.name);
+
+            // Making sure that player's current health can never exceed their max health capacity
+            if(player.m_currentHealth < player.m_maxHealth)
+            {
+                // Calculate how much health is missing
+                var diff = player.m_maxHealth - player.m_currentHealth;
+                print(diff);
+
+                // Check if difference is less than m_healAmount
+                if (diff < m_healAmount)
+                {
+                    // If so, just add the difference to current hp
+                    player.m_currentHealth += diff;
+                    return;
+                }                   
+
+                // Otherwise, keep adding health
+                player.m_currentHealth += m_healAmount;                   
+            }                
+
+            // Destoy projectile
+            Destroy(this.gameObject);
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        OnCollisionHit(collision);
+        OnCollisionHit(other);
     }
+
 
 }

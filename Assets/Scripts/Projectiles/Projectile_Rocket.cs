@@ -20,7 +20,7 @@ public class Projectile_Rocket : Projectile
         }
     }
 
-    public override void OnCollisionHit(Collision collision)
+    public override void OnCollisionHit(Collider other)
     {
         var explosion = Instantiate(m_impactFX, transform.position, transform.rotation);
         NetworkServer.Spawn(explosion);
@@ -45,8 +45,8 @@ public class Projectile_Rocket : Projectile
         Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        OnCollisionHit(collision);
+        OnCollisionHit(other);
     }
 }
