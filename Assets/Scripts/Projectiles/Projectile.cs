@@ -22,5 +22,5 @@ public abstract class Projectile : NetworkBehaviour {
 	}
 
     public abstract void Launch();
-    public abstract void OnCollisionHit(Collision collision);
+    public abstract void OnCollisionHit(Collider other);
 }
