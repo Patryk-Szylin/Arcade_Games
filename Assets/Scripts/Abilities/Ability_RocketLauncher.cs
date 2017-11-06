@@ -2,20 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [CreateAssetMenu(menuName = "Abilities/Rocket Launcher", fileName = "Rocket Launcher")]
-public class Ability_RocketLauncher : Ability
+public class Ability_RocketLauncher : Ability<Projectile_Rocket>
 {
     [HideInInspector] public Vector3 m_destination;
 
     [Header("Rocket Specific")]
     public float m_radius;
-
-
-    public override void TriggerAbility()
-    {
-        m_launcher.Launch();    
-    }
+    public float m_damage;
 
     public override void Initilise(Rigidbody projectileObj, Transform playerGunPos)
     {
@@ -23,15 +17,19 @@ public class Ability_RocketLauncher : Ability
         SetRocketDestination(dest);
         var velocity = BallisticVelocity(m_destination, 45f, playerGunPos.position);
 
-        m_launcher = projectileObj.GetComponent<Projectile>();
+        m_launcher = projectileObj.GetComponent<Projectile_Rocket>();
         m_launcher.m_damage = m_damage;
         m_launcher.m_velocity = velocity;
         m_launcher.m_prefab = m_bulletPrefab;
         m_launcher.m_spawnPos = playerGunPos;
         m_launcher.m_radius = m_radius;
-        m_launcher.m_explosionFX = m_explosionFX;
+        m_launcher.m_impactFX = m_impactFX;
     }
 
+    public override void TriggerAbility()
+    {
+        m_launcher.Launch();
+    }
 
     public void SetRocketDestination(Vector3 point)
     {

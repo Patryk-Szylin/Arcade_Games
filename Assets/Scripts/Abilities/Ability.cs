@@ -2,26 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Ability : ScriptableObject
+public abstract class Ability<TProjectile> : ScriptableObject
 {
-    [HideInInspector] public Projectile m_launcher;
+    [Header("Ability Settings")]
+    [HideInInspector] public TProjectile m_launcher;
     [HideInInspector] public Vector3 m_direction;
     public Rigidbody m_bulletPrefab;
-    public float m_damage;
     public float m_force;
 
+    [Header("Ability Effects")]
+    public GameObject m_abilityFX;      // For shooting/firing effect
+    public GameObject m_impactFX;       // e.g. Explosion
+    public GameObject m_trailFX = null; // Used if there's a trail 
 
-    // Effects
-    public GameObject m_abilityFX;  // needs to be put in Ability_Buff sub-base class
-    public GameObject m_explosionFX;
-    public GameObject m_trailFX;
-    //public AudioSource m_effectSound;
-    //public AudioSource m_ExplosionSound;
-
-
+    // @ Abstract functions
     public abstract void TriggerAbility();
-    public abstract void Initilise(Rigidbody projectileObj, Transform playerGunPos);
-
+    public abstract void Initilise(Rigidbody projectileObj, Transform PlayerGunPos);
 
 
     // This should be in utility class
@@ -37,4 +33,5 @@ public abstract class Ability : ScriptableObject
 
         return Vector3.zero;
     }
+
 }

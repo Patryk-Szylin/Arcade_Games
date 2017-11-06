@@ -7,12 +7,11 @@ public class PlayerCast : NetworkBehaviour
 {    
     public Rigidbody m_projectilePrefab;
     public Transform m_projectileSpawn;
-    public List<Ability> m_abilities = new List<Ability>();
+    public List<Ability<Projectile>> m_abilities = new List<Ability<Projectile>>();
 
     [Header("Shooting Specific")]
     public float m_reloadTime = 1f;         // needs to be moved to an ability
     public bool m_isReloading = false;
-    
 
     public void Cast()
     {
