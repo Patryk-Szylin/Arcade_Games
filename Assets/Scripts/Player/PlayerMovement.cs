@@ -5,7 +5,10 @@ using UnityEngine.Networking;
 
 public class PlayerMovement : NetworkBehaviour
 {
-    public float m_moveSpeed = 100f;
+    public float m_baseMoveSpeed = 500f;
+
+    public float m_currentMoveSpeed = 500f;
+    public bool m_isBoosted = false;
 
     Rigidbody m_rigidbody;
 
@@ -17,8 +20,17 @@ public class PlayerMovement : NetworkBehaviour
 
     public void MovePlayer(Vector3 dir)
     {
-        Vector3 moveDirection = dir * m_moveSpeed * Time.deltaTime;
+        Vector3 moveDirection = dir * m_currentMoveSpeed * Time.deltaTime;
         m_rigidbody.velocity = moveDirection;
-
     }
+
+
+
+    public IEnumerator ApplyBoost(float multiplier, float duration)
+    {
+        m_currentMoveSpeed = 1000f;
+        yield return new WaitForSeconds(duration);
+        m_currentMoveSpeed = m_baseMoveSpeed;
+    }
+
 }
