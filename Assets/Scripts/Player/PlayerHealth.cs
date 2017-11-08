@@ -20,21 +20,28 @@ public class PlayerHealth : NetworkBehaviour
 
     [Header("Player's UI elements")]
     public RectTransform m_healthBar;
+    public GameObject m_healthBar_Front;
+    public GameObject m_healthBar_Background;
 
     [Header("Player Debug Options")]
     public bool m_isDead = false;
 
-
     [SyncVar(hook ="UpdateHealthBar")]
     public float m_currentHealth;
 
+    [Header("Health Bar Colours")]
+    public Color teamColor;
+    public Color teamColor_background;
+    [Space]
+    public Color enemyColor;
+    public Color enemyColor_background;
 
+    //false = enemy team
+    private bool teamSide;
 
     private void Start()
     {
-        //m_currentHealth = m_maxHealth;
         m_currentHealth = m_maxHealth;
-
     }
 
     void UpdateHealthBar(float val)
@@ -94,5 +101,22 @@ public class PlayerHealth : NetworkBehaviour
         }
     }
 
+    public void setTeam(bool team)
+    {
+        teamSide = team;
+
+        if (teamSide)
+        {
+            // Team HealthBar
+            m_healthBar_Front.GetComponent<Image>().color = teamColor;
+            m_healthBar_Background.GetComponent<Image>().color = teamColor_background;
+        }
+        else
+        {
+            // Enemy HealthBar
+            m_healthBar_Front.GetComponent<Image>().color = enemyColor;
+            m_healthBar_Background.GetComponent<Image>().color = enemyColor_background;
+        }
+    }
 
 }

@@ -21,10 +21,9 @@ public class PlayerSetup : NetworkBehaviour
         if (!isLocalPlayer)
         {
             cam.enabled = false;
+            gameObject.tag = "Enemy";
             return;
-        }
-            
-            
+        }   
     }
 
     public override void OnStartClient()
