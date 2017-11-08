@@ -15,6 +15,9 @@ using UnityEngine;
 ///
 /// Remaining params are self-explanatory.
 /// 
+/// Ideas:                      Using this class, an user can create two assets. One for damaging over time, and one to heal over time by setting
+///                             <para m_damagePerTick> to be e.g. -10. This in in turn will add health to the player instead of taking it.
+/// 
 /// </summary>
 
 
