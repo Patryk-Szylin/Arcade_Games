@@ -39,30 +39,4 @@ public class UIManager : NetworkBehaviour
 
     public List<Text> m_cooldownDisplayTexts;
     public List<Image> m_darkMasks;
-
-
-    private void Start()
-    {
-
-    }
-
-    private void Update()
-    {
-
-        // If cooldown complete
-            // Ready ability
-
-            // Check if ability was pressed
-        // else
-            // Execute Cooldown
-
-    }
-
-    void Cooldown()
-    {
-
-    }
-
-
-
 }
