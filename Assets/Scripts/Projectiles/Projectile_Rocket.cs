@@ -34,7 +34,7 @@ public class Projectile_Rocket : Projectile
             // If so, damage them
 
             // Check if any of the colliders are players
-            // If so, take damage
+            // If so, deal damage
             var player = nearbyObj.GetComponent<PlayerHealth>();
             if(player != null)
             {
