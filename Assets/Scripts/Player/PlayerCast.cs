@@ -61,7 +61,6 @@ public class PlayerCast : NetworkBehaviour
         CastAbility(2);
     }
 
-
     // Special Ability
     [Command]
     public void Cmd_Cast_04()
@@ -74,6 +73,7 @@ public class PlayerCast : NetworkBehaviour
         UpdateCooldownUI(0);
         UpdateCooldownUI(1);
         UpdateCooldownUI(2);
+        //UpdateCooldownUI(3);
     }
 
 
@@ -85,6 +85,9 @@ public class PlayerCast : NetworkBehaviour
             m_cooldownLeft[index] = m_abilities[index].m_cooldown;
             m_abilities[index].Initilise(m_abilities[index].m_projectilePrefab, m_projectileSpawn);
             m_abilities[index].TriggerAbility();
+
+            // Re-enable ui
+            AbilityReady(index, true);
         }
     }
 
@@ -92,9 +95,11 @@ public class PlayerCast : NetworkBehaviour
     {
         bool cooldownComplete = (Time.time > m_nextAbilityReadyTime[index]);
 
-
         if (cooldownComplete)
+        {
+            AbilityReady(index, false);
             m_abilitiesReady[index] = true;
+        }            
         else
         {
             m_abilitiesReady[index] = false;
@@ -108,6 +113,12 @@ public class PlayerCast : NetworkBehaviour
         float roundedCD = Mathf.Round(m_cooldownLeft[index]);
         UIManager.Instance.m_cooldownDisplayTexts[index].text = roundedCD.ToString();
         UIManager.Instance.m_darkMasks[index].fillAmount = (m_cooldownLeft[index] / cooldown);
+    }
+
+    void AbilityReady(int index, bool ui_enabled)
+    {
+        UIManager.Instance.m_cooldownDisplayTexts[index].enabled = ui_enabled;
+        UIManager.Instance.m_darkMasks[index].enabled = ui_enabled;
     }
 
 }
