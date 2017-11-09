@@ -50,8 +50,34 @@ public class Player : NetworkBehaviour
         {
             m_pCast.Cast();
         }
+
+        ExecuteAbilities();
+
     }
 
+
+    public void ExecuteAbilities()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            m_pCast.Cmd_Cast_01();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            m_pCast.Cmd_Cast_02();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            m_pCast.Cmd_Cast_03();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            m_pCast.Cmd_Cast_04();
+        }
+    }
 
     private void FixedUpdate()
     {
