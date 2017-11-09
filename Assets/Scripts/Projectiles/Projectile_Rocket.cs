@@ -6,7 +6,6 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile_Rocket : Projectile
 {
-    [HideInInspector] public float m_damage;
     [HideInInspector] public float m_radius;
 
     public override void Launch()
