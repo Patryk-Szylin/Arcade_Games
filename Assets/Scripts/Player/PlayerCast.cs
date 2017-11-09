@@ -50,6 +50,20 @@ public class PlayerCast : NetworkBehaviour
     }
 
 
+    // Special Ability
+    [Command]
+    public void Cmd_Cast_04()
+    {
+        if(m_abilities[3] != null)
+        {
+            m_abilities[3].Initilise(m_abilities[3].m_projectilePrefab, m_projectileSpawn);
+            m_abilities[3].TriggerAbility();
+        }
+    }
+
+
+
+
     IEnumerator Reload()
     {
         m_isReloading = true;

@@ -72,6 +72,11 @@ public class Player : NetworkBehaviour
         {
             m_pCast.Cmd_Cast_03();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            m_pCast.Cmd_Cast_04();
+        }
     }
 
     private void FixedUpdate()
