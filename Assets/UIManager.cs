@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManager : NetworkBehaviour
 {
 
 
@@ -34,6 +36,32 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
+
+    public List<Text> m_cooldownDisplayTexts;
+    public List<Image> m_darkMasks;
+
+
+    private void Start()
+    {
+
+    }
+
+    private void Update()
+    {
+
+        // If cooldown complete
+            // Ready ability
+
+            // Check if ability was pressed
+        // else
+            // Execute Cooldown
+
+    }
+
+    void Cooldown()
+    {
+
+    }
 
 
 
