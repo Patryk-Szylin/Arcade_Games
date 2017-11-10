@@ -23,9 +23,10 @@ public class PlayerCast : NetworkBehaviour
     public List<float> m_nextAbilityReadyTime = new List<float>();
     public List<float> m_cooldownLeft = new List<float>();
 
+
     private void Start()
     {
-        for (int i = 0; i < m_abilities.Count; i++)
+        for (int i = 0; i < 4; i++)
         {
             if (m_abilities[i] != null)
             {
@@ -33,6 +34,8 @@ public class PlayerCast : NetworkBehaviour
                 m_nextAbilityReadyTime.Add(0);
                 m_cooldownLeft.Add(m_abilities[i].m_cooldown);
             }
+            else
+                m_cooldownLeft.Add(0);
         }
     }
 
@@ -45,7 +48,7 @@ public class PlayerCast : NetworkBehaviour
 
     [Command]
     public void Cmd_Cast_01()
-    {
+    {        
         CastAbility(0);
     }
 
@@ -79,6 +82,7 @@ public class PlayerCast : NetworkBehaviour
 
     void CastAbility(int index)
     {
+
         if (m_abilitiesReady[index])
         {
             m_nextAbilityReadyTime[index] = m_abilities[index].m_cooldown + Time.time;
@@ -93,6 +97,7 @@ public class PlayerCast : NetworkBehaviour
 
     void UpdateCooldownUI(int index)
     {
+
         bool cooldownComplete = (Time.time > m_nextAbilityReadyTime[index]);
 
         if (cooldownComplete)
@@ -111,14 +116,23 @@ public class PlayerCast : NetworkBehaviour
     {
         m_cooldownLeft[index] -= Time.deltaTime;
         float roundedCD = Mathf.Round(m_cooldownLeft[index]);
-        UIManager.Instance.m_cooldownDisplayTexts[index].text = roundedCD.ToString();
-        UIManager.Instance.m_darkMasks[index].fillAmount = (m_cooldownLeft[index] / cooldown);
+        if (isLocalPlayer)
+        {
+            UIManager.Instance.m_cooldownDisplayTexts[index].text = roundedCD.ToString();
+            UIManager.Instance.m_darkMasks[index].fillAmount = (m_cooldownLeft[index] / cooldown);
+        }
+
+
     }
 
     void AbilityReady(int index, bool ui_enabled)
     {
-        UIManager.Instance.m_cooldownDisplayTexts[index].enabled = ui_enabled;
-        UIManager.Instance.m_darkMasks[index].enabled = ui_enabled;
+        if (isLocalPlayer)
+        {
+            UIManager.Instance.m_cooldownDisplayTexts[index].enabled = ui_enabled;
+            UIManager.Instance.m_darkMasks[index].enabled = ui_enabled;
+        }
+
     }
 
 }
