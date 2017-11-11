@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Thief_1_Abilities : Abilities
+public class Thief_1_Abilities : Abilities1
 {
     private AudioSource source;
 

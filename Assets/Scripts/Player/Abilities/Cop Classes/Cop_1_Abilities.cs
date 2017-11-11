@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Cop_1_Abilities : Abilities
+public class Cop_1_Abilities : Abilities1
 {
     private AudioSource source;
 

@@ -9,6 +9,8 @@ Direct3D:
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
@@ -17,41 +19,48 @@ Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Man
 Loading C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.150 seconds
+- Completed reload, in  0.082 seconds
 Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 4480x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.190466 ms
+The referenced script on this Behaviour (Game Object 'Player') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Projectile') is missing!
+ 
+(Filename:  Line: 1754)
+
+UnloadTime: 1.042579 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 37e4 -> priority: 1 
-  Thread -> id: 72c0 -> priority: 1 
+  Thread -> id: 11c7c -> priority: 1 
+  Thread -> id: aad8 -> priority: 1 
 DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
  
 (Filename:  Line: 447)
 
-DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+The referenced script on this Behaviour (Game Object 'Player') is missing!
  
-(Filename:  Line: 447)
+(Filename:  Line: 1754)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.255237 ms
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3519.
-Total: 1.943677 ms (FindLiveObjects: 0.164525 ms CreateObjectMapping: 0.064176 ms MarkObjects: 1.191644 ms  DeleteObjects: 0.515747 ms)
-
-Cop Sniper Ability 2 Fired
+UnloadTime: 1.360545 ms
+The referenced script on this Behaviour (Game Object '<null>') is missing!
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: 1754)
 
-Cop Sniper Ability 2 Hit!
+The referenced script on this Behaviour (Game Object 'Player') is missing!
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: 1754)
 
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:54869}
-ServerDisconnected due to error: Timeout
+The referenced script on this Behaviour (Game Object 'Player') is missing!
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: 1754)
+
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3452.
+Total: 2.154294 ms (FindLiveObjects: 0.211199 ms CreateObjectMapping: 0.062426 ms MarkObjects: 1.355002 ms  DeleteObjects: 0.519831 ms)
 

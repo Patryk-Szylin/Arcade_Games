@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class Abilities : NetworkBehaviour
+public class Abilities1 : NetworkBehaviour
 {
     [Space]
     public Button[] ability_Buttons;

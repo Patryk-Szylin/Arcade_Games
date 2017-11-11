@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 [RequireComponent(typeof(PlayerSetup))]
 [RequireComponent(typeof(PlayerMovement))]
-[RequireComponent(typeof(PlayerCast))]
+//[RequireComponent(typeof(PlayerCast))]
 [RequireComponent(typeof(PlayerHealth))]
 
 public class Player : NetworkBehaviour
@@ -19,7 +19,7 @@ public class Player : NetworkBehaviour
 
     public PlayerSetup m_pSetup;
     PlayerMovement m_pMovement;
-    PlayerCast m_pCast;
+    //PlayerCast m_pCast;
     PlayerHealth m_pHealth;
 
 
@@ -32,7 +32,7 @@ public class Player : NetworkBehaviour
     {
         m_pSetup = GetComponent<PlayerSetup>();
         m_pMovement = GetComponent<PlayerMovement>();
-        m_pCast = GetComponent<PlayerCast>();
+        //m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
     }
 
@@ -46,10 +46,10 @@ public class Player : NetworkBehaviour
         if (!isLocalPlayer || m_pHealth.m_isDead)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
-        {
-            m_pCast.Cast();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
+        //{
+        //    m_pCast.Cast();
+        //}
     }
 
 

@@ -18,8 +18,11 @@ public class ButtonScript : MonoBehaviour {
     public Color startColor;
     public Color endColor;
 
+    private Text[] text;
+
     void Awake() {
         animator = GetComponent<Animator>();
+        text = gameObject.GetComponentsInChildren<Text>();
     }
 
     // Use this for initialization
@@ -29,6 +32,8 @@ public class ButtonScript : MonoBehaviour {
 
         cooldownButtonBehaviour = animator.GetBehaviour<CooldownButtonBehaviour>();
         cooldownButtonBehaviour.buttonScript = this;
+
+        //text[0].text = Input.GetButton();
     }
 	
 	// Update is called once per frame
@@ -46,11 +51,22 @@ public class ButtonScript : MonoBehaviour {
     {
         rechargeSlider.value = (rechargeEnd - Time.time) / rechargeTime;
         sliderFill.color = Color.Lerp(startColor, endColor, 1 - rechargeSlider.value);
+        float textValue = Mathf.Round(rechargeEnd - Time.time);
+        if(textValue < 1)
+        {
+            textValue = (rechargeEnd - Time.time);
+            text[1].text = textValue.ToString("0.0");
+        }
+        else
+        {
+            text[1].text = textValue.ToString();
+        }
     }
 
     public void EndRecharge()
     {
         rechargeSlider.value = 0.0f;
+        text[1].text = "";
     }
 
     public void KeyPressed()

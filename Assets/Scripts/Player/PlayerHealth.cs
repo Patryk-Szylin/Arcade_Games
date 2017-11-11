@@ -16,7 +16,7 @@ using UnityEngine.UI;
 public class PlayerHealth : NetworkBehaviour
 {
     [Header("Player Options")]
-    public float m_maxHealth = 10f;
+    public float m_maxHealth = 1000f;
 
     [Header("Player's UI elements")]
     public RectTransform m_healthBar;
@@ -39,6 +39,10 @@ public class PlayerHealth : NetworkBehaviour
     //false = enemy team
     private bool teamSide;
 
+    [Header("PopUpText")]
+    public FloatingText floatingText;
+    public Canvas floatingTextCanvas;
+
     private void Start()
     {
         m_currentHealth = m_maxHealth;
@@ -53,16 +57,25 @@ public class PlayerHealth : NetworkBehaviour
 
     public void Damage(float dmg)
     {
-        if (!isServer)
-            return;
+        //if (!isServer)
+        //    return;
 
-        m_currentHealth -= dmg;        
+        Debug.Log(dmg);
+        m_currentHealth -= dmg;
+        initDamageText(dmg.ToString(), transform);
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
             RpcDie();
         }
-            
+    }
+
+    public void initDamageText(string text, Transform position)
+    {
+        Debug.Log(text + " HEY ");
+        FloatingText instance = Instantiate(floatingText);
+        instance.transform.SetParent(floatingTextCanvas.transform, false);
+        instance.setText(text);
     }
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.

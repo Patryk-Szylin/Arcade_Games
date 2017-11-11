@@ -16,11 +16,12 @@ public class PlayerMovement : NetworkBehaviour
     private float stunnedDuration;
 
     private bool slowed;
-    private float slowedDuration;
+    private float slowedDuration1;
 
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
+        currentSpeed = m_moveSpeed;
     }
 
     public void MovePlayer(Vector3 dir)
@@ -33,18 +34,19 @@ public class PlayerMovement : NetworkBehaviour
         }
         else
         {
-            Vector3 moveDirection = dir * m_moveSpeed * Time.deltaTime;
+            Vector3 moveDirection = dir * currentSpeed * Time.deltaTime;
             m_rigidbody.velocity = moveDirection;
         }
 
         if (slowed)
         {
-            slowedDuration -= Time.deltaTime;
-            if (slowedDuration < 0)
+            slowedDuration1 -= Time.deltaTime;
+            if (slowedDuration1 < 0)
+            {
+                slowed = false;
                 currentSpeed = m_moveSpeed;
+            }
         }
-
-        slowedDuration -= Time.deltaTime;
     }
 
     // Status Effects
@@ -56,9 +58,8 @@ public class PlayerMovement : NetworkBehaviour
 
     public void slow(float slowAmount, float duration)
     {
-        currentSpeed = 0.2f; //change because this sucks
-
-        if (duration != 0)
-            slowedDuration = duration;
+        currentSpeed = slowAmount; //change because this sucks
+        slowed = true;
+        slowedDuration1 = duration;
     }
 }

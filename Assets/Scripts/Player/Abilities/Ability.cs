@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Ability : ScriptableObject {
+public abstract class Ability11 : ScriptableObject {
 
     public string aName = "New Ability";
     public Sprite aSprite;
