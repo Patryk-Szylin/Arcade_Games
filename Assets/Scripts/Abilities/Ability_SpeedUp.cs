@@ -19,6 +19,6 @@ public class Ability_SpeedUp : Ability
     public override void TriggerAbility()
     {
         //m_player.GetComponent<PlayerMovement>().m_currentMoveSpeed = 15f;
-        m_player.m_isBoosted = true;
+        m_player.m_Boosted = 1.4f;
     }
 }
