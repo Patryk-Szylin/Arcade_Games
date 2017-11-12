@@ -8,18 +8,25 @@ public class Projectile_Snipe : Projectile
 {
     public override void Launch()
     {
-        startLocation = projectileSpawnLocation.position;
         //Instantiate a copy of our projectile and store it in a new rigidbody variable called clonedBullet
-        Rigidbody projectileClone = Instantiate(m_prefab, projectileSpawnLocation.position, transform.rotation) as Rigidbody;
+        Rigidbody projectileClone = Instantiate(m_prefab, projectileSpawnLocation.position, projectileSpawnLocation.rotation) as Rigidbody;
+        projectileClone.rotation = projectileSpawnLocation.rotation;
+        //Add force to the instantiated bullet, pushing it forward away from the bulletSpawn location, 
+        // using projectile force for how hard to push it away
+        //projectileClone.AddForce(projectileSpawnLocation.transform.right * projectileForce);
+        // Add velocity to the bullet
+        //projectileClone.velocity = projectileClone.transform.right * 6;
 
-        if (projectileClone != null)
-        {
-            //Add force to the instantiated bullet, pushing it forward away from the bulletSpawn location, 
-            // using projectile force for how hard to push it away
-            projectileClone.AddForce(projectileSpawnLocation.transform.right * projectileForce);
+        //enemyProjectile
 
-            NetworkServer.Spawn(projectileClone.gameObject);
-        }
+        NetworkServer.Spawn(projectileClone.gameObject);
+    }
+
+    void Start()
+    {
+        startLocation = gameObject.GetComponent<Transform>().position;
+        Rigidbody test = gameObject.GetComponent<Rigidbody>();
+        test.AddForce(transform.right * projectileForce);
     }
 
     void Update()
@@ -39,11 +46,12 @@ public class Projectile_Snipe : Projectile
 
     public override void OnCollisionHit(Collider other)
     {
-        if (other.tag != "Player")
+        //if (other.tag != "Player")
+        if (other.tag == "Enemy" || other.tag == "Player")
         {
             explosion();
 
-            if (other.tag == "Enemy")
+            if (other.tag == "Enemy" || other.tag == "Player")
             {
                 PlayerHealth enemyHealth = other.GetComponent<PlayerHealth>();
                 if (enemyHealth != null)

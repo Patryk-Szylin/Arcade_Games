@@ -15,6 +15,7 @@ public class AbilitiesManager : NetworkBehaviour
 
     private bool abilityTrigger = false;
     private Vector3 mouseLocation;
+    public GameObject projectileSpawn;
     public GameObject projectileSpawnLocation;
     //public GameObject MouseWorldLocation;
 
@@ -33,14 +34,14 @@ public class AbilitiesManager : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
         movement = gameObject.GetComponent<PlayerMovement>();
 
         cooldownTime = new float[4];
-        foreach (Ability ability in abilities)
-        {
-            ability.projectileSpawnLocation = projectileSpawnLocation.transform;
-        }
-
         //indicatorAbility = new GameObject[numOfAbilities];
 
         //// Instantiate Abilities indicators
@@ -58,16 +59,20 @@ public class AbilitiesManager : NetworkBehaviour
         //}
 
         // Buttons
-        abilityUIButtons = new Button[4];
-        abilityUIButtons[0] = GameObject.Find("Button_1").GetComponent<Button>();
-        abilityUIButtons[1] = GameObject.Find("Button_2").GetComponent<Button>();
-        abilityUIButtons[2] = GameObject.Find("Button_3").GetComponent<Button>();
-        abilityUIButtons[3] = GameObject.Find("Button_4").GetComponent<Button>();
+        abilityUIButtons = new Button[5];
 
-        abilityUIButtons[0].GetComponent<ButtonScript>().rechargeTime = abilities[0].cooldown;
-        abilityUIButtons[1].GetComponent<ButtonScript>().rechargeTime = abilities[1].cooldown;
-        abilityUIButtons[2].GetComponent<ButtonScript>().rechargeTime = abilities[2].cooldown;
-        abilityUIButtons[3].GetComponent<ButtonScript>().rechargeTime = abilities[3].cooldown;
+        for(int i = 0; i < 5; i++)
+        {
+            string btnName = "Button_" + i.ToString();
+            abilityUIButtons[i] = GameObject.Find(btnName).GetComponent<Button>();
+
+            abilityUIButtons[i].GetComponent<ButtonScript>().rechargeTime = abilities[i].cooldown;
+            abilityUIButtons[i].GetComponent<ButtonScript>().abilityTitle = abilities[i].abilityTitle;
+            abilityUIButtons[i].GetComponent<ButtonScript>().toolTip = abilities[i].toolTip;
+            abilityUIButtons[i].GetComponent<ButtonScript>().abilityStatInfo = abilities[i].abilityStatInfo;
+            abilityUIButtons[i].GetComponent<ButtonScript>().BtnSprite = abilities[i].uiSprite;
+            abilityUIButtons[i].GetComponent<ButtonScript>().UpdateUI();
+        }
     }
 
     // Update is called once per frame
@@ -87,8 +92,8 @@ public class AbilitiesManager : NetworkBehaviour
             mouseLocation = hit.point;
             Vector3 targetDir = mouseLocation - transform.position;
             float angle = Mathf.Atan2(targetDir.z, targetDir.x) * Mathf.Rad2Deg;
-            projectileSpawnLocation.transform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
-            Debug.DrawLine(transform.position, hit.point);
+            projectileSpawn.transform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
+            //Debug.DrawLine(transform.position, hit.point);
         }
 
         // MouseWorldLocation.transform.position = mouseLocation;
@@ -146,13 +151,13 @@ public class AbilitiesManager : NetworkBehaviour
                 castAbility(currentAbility);
                 //indicatorAbility[currentAbility].SetActive(false);
                 abilityTrigger = false;
-            } 
+            }
         }
         else if (Input.GetButton("Ability1"))
         {
             if (abilities.Count >= 1)
             {
-                if (cooldownTime[0] <= 0)
+                if (cooldownTime[0] <= 0 && abilityCharge == false)
                 {
                     if (abilities[0].quickCast)
                         castAbility(0);
@@ -162,9 +167,9 @@ public class AbilitiesManager : NetworkBehaviour
                         //indicatorAbility[0].SetActive(true);
                         abilityTrigger = true;
                     }
-                    
+
                     movement.slow(abilities[0].movementSlow, abilities[0].movementSlowDuration);
-                    cooldownTime[0] = abilities[0].cooldown;
+                    
                 }
             }
         }
@@ -257,6 +262,7 @@ public class AbilitiesManager : NetworkBehaviour
         if (abilityCharge == true)
             return;
 
+        cooldownTime[num] = abilities[num].cooldown;
         Cmd_Cast(num);
         abilityUIButtons[num].onClick.Invoke();
 
@@ -266,7 +272,8 @@ public class AbilitiesManager : NetworkBehaviour
     [Command]
     public void Cmd_Cast(int i)
     {
-        abilities[i].Initilise();
+
+        abilities[i].Initilise(projectileSpawnLocation.transform);
         abilities[i].TriggerAbility();
     }
 

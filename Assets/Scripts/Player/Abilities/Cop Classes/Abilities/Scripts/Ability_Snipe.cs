@@ -5,14 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Abilities/Snipe", fileName = "Snipe")]
 public class Ability_Snipe : AbilityProjectile
 {
-    [HideInInspector] public Projectile launcher;
-
+    public Projectile launcher;
+    //[HideInInspector]
     [Header("Snipe Variables")]
     public float damage;
     public float range;
     public float blastRadius;
 
-    public override void Initilise()
+    public override void Initilise(Transform projectileSpawnLocation)
     {
         Vector3 direction = GetAbilityPointInWorldSpace();
         launcher = projectilePrefab.GetComponent<Projectile>();

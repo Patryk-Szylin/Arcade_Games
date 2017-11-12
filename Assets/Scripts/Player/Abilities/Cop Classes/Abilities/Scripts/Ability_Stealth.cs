@@ -7,7 +7,7 @@ public class Ability_Stealth : AbilityPassive
     [Header("Stealth Variables")]
     public float dur;
 
-    public override void Initilise() {
+    public override void Initilise(Transform projectileSpawnLocation) {
 
     }
 

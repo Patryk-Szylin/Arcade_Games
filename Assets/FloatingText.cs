@@ -15,10 +15,21 @@ public class FloatingText : MonoBehaviour {
         damageText = animator.GetComponent<Text>();
     }
 
-    public void setText(string text)
+    public void setText(float text, bool heal)
     {
         damageText = animator.GetComponent<Text>();
+        if(text > 25)
+        {
+            animator.Play("UI_PopUpTextBold_Anim");
+            damageText.fontStyle = FontStyle.Bold;
+        }
+
+        if(heal == true)
+        {
+            //set text to green
+        }
+
         if (damageText != null)
-            damageText.text = text;
+            damageText.text = text.ToString();
     }
 }

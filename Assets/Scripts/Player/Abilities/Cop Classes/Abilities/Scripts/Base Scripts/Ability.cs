@@ -39,7 +39,6 @@ public abstract class Ability : ScriptableObject
     [Header("Ability Settings")]
     public float cooldown;
     public bool quickCast;
-    [HideInInspector] public Transform projectileSpawnLocation;
     [Range(0, 100)]
     public float movementSlow;
     public float movementSlowDuration;
@@ -47,13 +46,15 @@ public abstract class Ability : ScriptableObject
 
     [Header("Variables")]
     public Sprite uiSprite;
+    public string abilityTitle;
     public string toolTip;
+    public string abilityStatInfo;
     public Sprite indicator;
     public AudioClip soundEffect;
 
     // @ Abstract functions
     public abstract void TriggerAbility();
-    public abstract void Initilise();
+    public abstract void Initilise(Transform projectileSpawnLocation);
 
     // This should be in utility class
     public Vector3 GetAbilityPointInWorldSpace()

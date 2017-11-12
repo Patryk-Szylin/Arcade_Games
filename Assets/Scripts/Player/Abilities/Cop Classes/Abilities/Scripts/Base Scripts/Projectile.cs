@@ -22,7 +22,7 @@ using UnityEngine.Networking;
 public abstract class Projectile : NetworkBehaviour
 {
     [HideInInspector] public Rigidbody m_prefab;
-    [HideInInspector] public Transform projectileSpawnLocation;  // This value is hidden and will be set during initilisation process of Ability_ scripts
+    [SyncVar] public Transform projectileSpawnLocation;  // This value is hidden and will be set during initilisation process of Ability_ scripts
     [HideInInspector] public Vector3 startLocation;
     [HideInInspector] public GameObject m_impactFX;
 
@@ -34,6 +34,8 @@ public abstract class Projectile : NetworkBehaviour
 
     private Collider projectileCollider;
     private Rigidbody projectileRigidBody;
+
+    private bool enemyProjectile = false;
 
 	// Use this for initialization
 	void Start ()

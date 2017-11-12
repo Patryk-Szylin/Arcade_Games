@@ -19,6 +19,15 @@ public class ButtonScript : MonoBehaviour {
     public Color endColor;
 
     private Text[] text;
+    public Sprite BtnSprite;
+
+    public Text toolTipText;
+    public Text toolTipInfo;
+    public Text toolTipStatInfo;
+    private Image backgroundImage;
+    public string abilityTitle;
+    public string toolTip;
+    public string abilityStatInfo;
 
     void Awake() {
         animator = GetComponent<Animator>();
@@ -33,9 +42,15 @@ public class ButtonScript : MonoBehaviour {
         cooldownButtonBehaviour = animator.GetBehaviour<CooldownButtonBehaviour>();
         cooldownButtonBehaviour.buttonScript = this;
 
-        //text[0].text = Input.GetButton();
+        backgroundImage = toolTipText.GetComponentInParent<Image>();
     }
 	
+    public void UpdateUI()
+    {
+        Image sprite = gameObject.GetComponent<Image>();
+        sprite.overrideSprite = BtnSprite;
+    }
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -71,7 +86,25 @@ public class ButtonScript : MonoBehaviour {
 
     public void KeyPressed()
     {
-        if(rechargeSlider.value == 0.0f)
+        if (rechargeSlider.value == 0.0f)
             animator.SetTrigger("Pressed");
     }
+
+    public void keyHoveredEnter()
+    {
+        toolTipText.text = abilityTitle;
+        toolTipInfo.text = toolTip;
+        abilityStatInfo.Replace("\\n", "\n");
+        toolTipStatInfo.text = abilityStatInfo;
+        backgroundImage.enabled = true;
+    }
+
+    public void keyHoveredLeave()
+    {
+        backgroundImage.enabled = false;
+        toolTipText.text = "";
+        toolTipInfo.text = "";
+        toolTipStatInfo.text = "";
+    }
+
 }

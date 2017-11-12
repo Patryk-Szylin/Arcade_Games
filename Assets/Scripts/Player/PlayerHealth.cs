@@ -54,15 +54,14 @@ public class PlayerHealth : NetworkBehaviour
             m_healthBar.sizeDelta = new Vector2(val / m_maxHealth * 150f, m_healthBar.sizeDelta.y);
     }
 
-
     public void Damage(float dmg)
     {
-        //if (!isServer)
-        //    return;
+        initDamageText(dmg, false);
+        Debug.Log("HIT" + dmg);
+        if (!isServer)
+            return;
 
-        Debug.Log(dmg);
         m_currentHealth -= dmg;
-        initDamageText(dmg.ToString(), transform);
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
@@ -70,12 +69,21 @@ public class PlayerHealth : NetworkBehaviour
         }
     }
 
-    public void initDamageText(string text, Transform position)
+    public void Heal(float heal)
     {
-        Debug.Log(text + " HEY ");
+        if (!isServer)
+            return;
+
+        m_currentHealth += heal;
+        initDamageText(heal, true);
+    }
+
+    public void initDamageText(float text, bool heal)
+    {
         FloatingText instance = Instantiate(floatingText);
+
         instance.transform.SetParent(floatingTextCanvas.transform, false);
-        instance.setText(text);
+        instance.setText(text, heal);
     }
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.
