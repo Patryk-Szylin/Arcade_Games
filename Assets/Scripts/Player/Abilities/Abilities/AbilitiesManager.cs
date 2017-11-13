@@ -167,18 +167,16 @@ public class AbilitiesManager : NetworkBehaviour
                         //indicatorAbility[0].SetActive(true);
                         abilityTrigger = true;
                     }
-
-                    movement.slow(abilities[0].movementSlow, abilities[0].movementSlowDuration);
-                    
+                    abilityCharge = true;
+                    movement.slow(abilities[0].movementSlow, abilities[0].movementSlowDuration); 
                 }
             }
         }
-
-        if (Input.GetButtonDown("Ability2"))
+        else if (Input.GetButtonDown("Ability2"))
         {
             if(abilities.Count >= 2)
             {
-                if (cooldownTime[1] <= 0)
+                if (cooldownTime[1] <= 0 && abilityCharge == false)
                 {
                     if (abilities[1].quickCast)
                          castAbility(1);
@@ -188,9 +186,8 @@ public class AbilitiesManager : NetworkBehaviour
                         //indicatorAbility[0].SetActive(true);
                         abilityTrigger = true;
                     }
-
+                    abilityCharge = true;
                     movement.slow(abilities[1].movementSlow, abilities[1].movementSlowDuration);
-                    cooldownTime[1] = abilities[1].cooldown;
                 }
             }
         }
@@ -250,7 +247,7 @@ public class AbilitiesManager : NetworkBehaviour
     void castAbility(int num)
     {
         if (abilities[num].chargeTimer > 0 && chargeTimeFire == false) {
-            abilityCharge = true;
+            
             chargeTime = abilities[num].chargeTimer;
             currentAbility = num;
             chargeUISlider.GetComponentInChildren<Image>().color = chargeStartColor;
