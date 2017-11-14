@@ -35,11 +35,11 @@ public class Ability_DamageOverTime : Ability
         string newLine = "\n";
 
         return string.Format(
-            "<size= 16> {0} </size>" + newLine
-            + "<size= 12> {1} </size>" + newLine
-            + "<size= 12> Cooldown : {2} </size>" + newLine
-            + "<size= 12> Damage per tick : <size= 14><color=red> {3} </color></size></size>" + newLine
-            + "<size= 12> Max Ticks : {4} </size>",
+            "<size= 32> {0} </size>" + newLine
+            + "<size= 24> {1} </size>" + newLine
+            + "<size= 24> Cooldown : {2} </size>" + newLine
+            + "<size= 24> Damage per tick : <size= 14><color=red> {3} </color></size></size>" + newLine
+            + "<size= 24> Max Ticks : {4} </size>",
             m_name, m_description, m_cooldown, m_damagePerTick, m_maxTicks);
     }
 

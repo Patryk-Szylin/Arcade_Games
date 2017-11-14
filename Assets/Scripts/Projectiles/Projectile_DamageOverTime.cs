@@ -46,7 +46,7 @@ public class Projectile_DamageOverTime : Projectile
 
         for (int i = 0; i < m_maxTicks; i++)
         {
-            playerhealth.m_currentHealth -= m_damagePerTick;
+            playerhealth.Damage(m_damagePerTick, m_owner);
             yield return new WaitForSeconds(1f);
         }
         Destroy(this.gameObject);

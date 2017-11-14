@@ -17,6 +17,7 @@ public class Ability_RocketLauncher : Ability
         var dest = GetAbilityPointInWorldSpace();
         SetRocketDestination(dest);
         var velocity = BallisticVelocity(m_destination, 45f, playerGunPos.position);
+        var projectileOwner = playerGunPos.GetComponentInParent<Player>();
 
         m_launcher = targetObj.GetComponent<Projectile_Rocket>();
         m_launcher.m_damage = m_damage;
@@ -25,6 +26,7 @@ public class Ability_RocketLauncher : Ability
         m_launcher.m_spawnPos = playerGunPos;
         m_launcher.m_radius = m_radius;
         m_launcher.m_impactFX = m_impactFX;
+        m_launcher.m_owner = projectileOwner;
     }
 
     public override void TriggerAbility()
@@ -57,11 +59,11 @@ public class Ability_RocketLauncher : Ability
         string newLine = "\n";
 
         return string.Format(
-            "<size= 16> {0} </size>" + newLine
-            + "<size= 12> {1} </size>" + newLine
-            + "<size= 12> Cooldown : {2} </size>" + newLine
-            + "<size= 12> Damage : <size= 14><color=red> {3} </color></size></size>" + newLine
-            + "<size= 12> Radius : {4} </size>",
+            "<size= 32> {0} </size>" + newLine
+            + "<size= 24> {1} </size>" + newLine
+            + "<size= 24> Cooldown : {2} </size>" + newLine
+            + "<size= 24> Damage : <size= 26><color=red> {3} </color></size></size>" + newLine
+            + "<size= 24> Radius : {4} </size>",
             m_name, m_description, m_cooldown, m_damage, m_radius);
     }
 }
