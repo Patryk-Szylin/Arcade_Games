@@ -18,10 +18,10 @@ public class Ability_Heal : Ability
         string newLine = "\n";
 
         return string.Format(
-            "<size= 16> {0} </size>" + newLine
-            + "<size= 12> {1} </size>" + newLine
-            + "<size= 12> Cooldown : {2} </size>" + newLine
-            + "<size= 12> Heal Amount : <size= 14><color=green> {3} </color></size></size>",
+            "<size= 32> {0} </size>" + newLine
+            + "<size= 24> {1} </size>" + newLine
+            + "<size= 24> Cooldown : {2} </size>" + newLine
+            + "<size= 24> Heal Amount : <size= 14><color=green> {3} </color></size></size>",
             m_name, m_description, m_cooldown, m_healAmount);
     }
 

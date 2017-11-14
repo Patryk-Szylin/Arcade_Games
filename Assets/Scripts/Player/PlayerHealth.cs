@@ -25,14 +25,12 @@ public class PlayerHealth : NetworkBehaviour
     public bool m_isDead = false;
 
 
-    [SyncVar(hook ="UpdateHealthBar")]
-    public float m_currentHealth;
-
+    [SyncVar(hook ="UpdateHealthBar")] public float m_currentHealth;
+    public Player m_lastAttacker;
 
 
     private void Start()
     {
-        //m_currentHealth = m_maxHealth;
         m_currentHealth = m_maxHealth;
 
     }
@@ -44,12 +42,22 @@ public class PlayerHealth : NetworkBehaviour
     }
 
 
-    public void Damage(float dmg)
+    public void Damage(float dmg, Player attacker = null)
     {
         if (!isServer)
             return;
 
-        m_currentHealth -= dmg;        
+        if (attacker != null)
+            m_lastAttacker = attacker;
+
+        m_currentHealth -= dmg;
+
+        // If last attacker exists, and last attacker is not me then add score
+        if (m_lastAttacker != null && m_lastAttacker != this.GetComponent<Player>())
+        {
+            m_lastAttacker.m_score += (int)dmg;
+            m_lastAttacker = null;
+        }
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
@@ -65,7 +73,7 @@ public class PlayerHealth : NetworkBehaviour
         m_isDead = true;
         print("Die Executed");
         SetActiveState(false);
-        //Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 
     public void Reset()

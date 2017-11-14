@@ -38,7 +38,7 @@ public class Projectile_Rocket : Projectile
             var player = nearbyObj.GetComponent<PlayerHealth>();
             if(player != null)
             {
-                player.m_currentHealth -= m_damage;
+                player.Damage(m_damage, m_owner);
             }
         }
 
