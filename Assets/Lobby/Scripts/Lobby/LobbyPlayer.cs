@@ -11,6 +11,13 @@ namespace Prototype.NetworkLobby
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
     public class LobbyPlayer : NetworkLobbyPlayer
     {
+        // 
+        public Button CharacteSelectrBtn;
+        public GameObject characterSelect;
+        public Button[] CharacterBtn;
+        public int avatarIndex = 5;
+        //
+
         static Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
         //used on server to avoid assigning the same color to two player
         static List<int> _colorInUse = new List<int>();
@@ -44,6 +51,9 @@ namespace Prototype.NetworkLobby
 
         public override void OnClientEnterLobby()
         {
+            //characterSelect =  GameObject.Find("CharacterSelection");
+            //CharacterBtn = characterSelect.GetComponents<Button>();
+
             base.OnClientEnterLobby();
 
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(1);
@@ -101,6 +111,27 @@ namespace Prototype.NetworkLobby
 
         void SetupLocalPlayer()
         {
+            //
+            characterSelect = GameObject.Find("CharacterSelection");
+            CharacterBtn = characterSelect.GetComponentsInChildren<Button>();
+            characterSelect.SetActive(false);
+
+            CharacteSelectrBtn.onClick.AddListener(delegate 
+            {
+                characterSelect.SetActive(!characterSelect.active);
+            });
+
+            foreach (Button btn in CharacterBtn)
+            {
+                btn.onClick.AddListener (delegate 
+                {
+                    AvatarPicker(btn.name);
+                    characterSelect.SetActive(!characterSelect.active);
+                    CharacteSelectrBtn.GetComponent<Image>().overrideSprite = btn.GetComponent<Image>().sprite;
+                });
+            }
+            //
+
             nameInput.interactable = true;
             remoteIcone.gameObject.SetActive(false);
             localIcone.gameObject.SetActive(true);
@@ -136,6 +167,46 @@ namespace Prototype.NetworkLobby
             //the add button if we reach maxLocalPlayer. We pass 0, as it was already counted on OnClientEnterLobby
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(0);
         }
+
+        //
+
+        void AvatarPicker(string buttonName)
+        {
+            switch (buttonName)
+            {
+                case "Player1Button":
+                    avatarIndex = 0;
+                    break;
+                case "Player2Button":
+                    avatarIndex = 1;
+                    break;
+                //case "Player3Button":
+                //    avatarIndex = 2;
+                //    break;
+                //case "Player4Button":
+                //    avatarIndex = 3;
+                //    break;
+            }
+
+            if (isServer)
+                RpcAvatarPicked(avatarIndex);
+            else
+                CmdAvatarPicked(avatarIndex);
+        }
+
+        [ClientRpc]
+        public void RpcAvatarPicked(int avIndex)
+        {
+            CmdAvatarPicked(avIndex);
+        }
+
+        [Command]
+        public void CmdAvatarPicked(int avIndex)
+        {
+            LobbyManager.s_Singleton.SetPlayerTypeLobby(GetComponent<NetworkIdentity>().connectionToClient, avIndex);
+        }
+
+        //
 
         //This enable/disable the remove button depending on if that is the only local player or not
         public void CheckRemoveButton()

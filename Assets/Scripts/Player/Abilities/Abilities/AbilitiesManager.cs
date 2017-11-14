@@ -42,21 +42,6 @@ public class AbilitiesManager : NetworkBehaviour
         movement = gameObject.GetComponent<PlayerMovement>();
 
         cooldownTime = new float[4];
-        //indicatorAbility = new GameObject[numOfAbilities];
-
-        //// Instantiate Abilities indicators
-        //for (int i = 0; i < indicator_ability.Length; i++)
-        //{
-        //    if (i < abilities.indicators.Length)
-        //    {
-        //        if (abilities.indicators[i] != null)
-        //        {
-        //            indicator_ability[i] = Instantiate(abilities.indicators[i]);
-        //            indicator_ability[i].transform.parent = gameObject.transform;
-        //            indicator_ability[i].SetActive(false);
-        //        }
-        //    }
-        //}
 
         // Buttons
         abilityUIButtons = new Button[5];
@@ -93,23 +78,7 @@ public class AbilitiesManager : NetworkBehaviour
             Vector3 targetDir = mouseLocation - transform.position;
             float angle = Mathf.Atan2(targetDir.z, targetDir.x) * Mathf.Rad2Deg;
             projectileSpawn.transform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
-            //Debug.DrawLine(transform.position, hit.point);
         }
-
-        // MouseWorldLocation.transform.position = mouseLocation;
-        //indicator_posistion.transform.position = mouseLocation;
-        //indicator_posistion.transform.rotation = abilities.projectilePoint.transform.rotation;
-
-        ////Abilities indicators pos DONT NEED TO UPDATE WHEN DISABLED
-        //foreach (GameObject indicator in indicator_ability)
-        //{
-        //    if (indicator != null)
-        //    {
-        //        indicator.transform.position = indicator_posistion.transform.position;
-        //        indicator.transform.rotation = indicator_posistion.transform.rotation;
-
-        //    }
-        //}
 
         // Ability Cooldown
         for (int i = 0; i < cooldownTime.Length; i++)
@@ -127,7 +96,6 @@ public class AbilitiesManager : NetworkBehaviour
             {
                 chargeTime -= Time.deltaTime;
                 chargeUISlider.value = 1 - (chargeTime / abilities[currentAbility].chargeTimer);
-                //chargeUISlider.GetComponentInChildren<Image>().color = Color.Lerp(chargeStartColor, chargeEndColor, 1 - chargeUISlider.value);
                 if (chargeUISlider.value > 0.95)
                 {
                     chargeUISlider.GetComponentInChildren<Image>().color = chargeEndColor;
@@ -143,105 +111,26 @@ public class AbilitiesManager : NetworkBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Ability1"))
+        if (Input.GetButton("Ability1"))
         {
-            // Indicator
-            if (abilityTrigger)
-            {
-                castAbility(currentAbility);
-                //indicatorAbility[currentAbility].SetActive(false);
-                abilityTrigger = false;
-            }
-        }
-        else if (Input.GetButton("Ability1"))
-        {
-            if (abilities.Count >= 1)
-            {
-                if (cooldownTime[0] <= 0 && abilityCharge == false)
-                {
-                    if (abilities[0].quickCast)
-                        castAbility(0);
-                    else
-                    {
-                        currentAbility = 0;
-                        //indicatorAbility[0].SetActive(true);
-                        abilityTrigger = true;
-                    }
-                    abilityCharge = true;
-                    movement.slow(abilities[0].movementSlow, abilities[0].movementSlowDuration); 
-                }
-            }
+            casta(0);
         }
         else if (Input.GetButtonDown("Ability2"))
         {
-            if(abilities.Count >= 2)
-            {
-                if (cooldownTime[1] <= 0 && abilityCharge == false)
-                {
-                    if (abilities[1].quickCast)
-                         castAbility(1);
-                    else
-                    {
-                        currentAbility = 1;
-                        //indicatorAbility[0].SetActive(true);
-                        abilityTrigger = true;
-                    }
-                    abilityCharge = true;
-                    movement.slow(abilities[1].movementSlow, abilities[1].movementSlowDuration);
-                }
-            }
+            casta(1);
         }
-        //else if (Input.GetButtonDown("Ability2"))
-        //{
-        //    if (abilities.Count >= 2)
-        //    {
-        //        if (abilities[1].cooldownTime <= 0)
-        //        {
-        //            if (abilities[1].quickCast)
-        //                castAbility(1);
-        //            else
-        //            {
-        //                currentAbility = 1;
-        //                //indicatorAbility[0].SetActive(true);
-        //                abilityTrigger = true;
-        //            }
-        //        }
-        //    }
-        //}
-        //else if (Input.GetButtonDown("Ability3"))
-        //{
-        //    if (abilities.Count >= 3)
-        //    {
-        //        if (abilities[2].cooldownTime <= 0)
-        //        {
-        //            if (abilities[2].quickCast)
-        //                castAbility(2);
-        //            else
-        //            {
-        //                currentAbility = 2;
-        //                //indicatorAbility[0].SetActive(true);
-        //                abilityTrigger = true;
-        //            }
-        //        }
-        //    }
-        //}
-        //else if (Input.GetButtonDown("Ability4"))
-        //{
-        //    if (abilities.Count >= 4)
-        //    {
-        //        if (abilities[3].cooldownTime <= 0)
-        //        {
-        //            if (abilities[3].quickCast)
-        //                castAbility(3);
-        //            else
-        //            {
-        //                currentAbility = 3;
-        //                //indicatorAbility[0].SetActive(true);
-        //                abilityTrigger = true;
-        //            }
-        //        }
-        //    }
-        //}
+        else if (Input.GetButtonDown("Ability2"))
+        {
+            casta(2);
+        }
+        else if (Input.GetButtonDown("Ability3"))
+        {
+            casta(3);
+        }
+        else if (Input.GetButtonDown("Ability4"))
+        {
+            casta(4);
+        }
     }
 
     void castAbility(int num)
@@ -295,6 +184,23 @@ public class AbilitiesManager : NetworkBehaviour
                 break;
 
             yield return new WaitForEndOfFrame();
+        }
+    }
+
+    void casta(int i)
+    {
+        if (cooldownTime[i] <= 0 && abilityCharge == false)
+        {
+            if (abilities[i].quickCast)
+                castAbility(i);
+            else
+            {
+                currentAbility = i;
+                abilityTrigger = true;
+            }
+
+            abilityCharge = true;
+            movement.slow(abilities[i].movementSlow, abilities[i].movementSlowDuration);
         }
     }
 }
