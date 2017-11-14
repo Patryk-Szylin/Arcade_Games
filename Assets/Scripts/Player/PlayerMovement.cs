@@ -14,17 +14,10 @@ public class PlayerMovement : NetworkBehaviour
     public void MovePlayer(Vector3 dir)
     {
         //m_moveSpeed = m_moveSpeed* m_Boosted;
-        float translation = dir.z * m_moveSpeed;
-        float straffe = dir.x * m_moveSpeed;
-        if (translation != 0 && straffe != 0)
-        {
-            translation = translation/1.8f;
-            straffe = straffe/1.8f;
-        }
-        translation *= Time.deltaTime;
-        straffe *= Time.deltaTime;
-
-        transform.Translate(straffe,0, translation);
+        dir = dir.normalized;
+        dir = dir * m_moveSpeed;
+        dir *= Time.deltaTime;
+        transform.Translate(dir);
 
     }
 }
