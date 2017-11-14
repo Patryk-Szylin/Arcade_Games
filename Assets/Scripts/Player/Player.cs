@@ -60,22 +60,22 @@ public class Player : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            m_pCast.Cmd_Cast_01();
+            m_pCast.CastAbility(0);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            m_pCast.Cmd_Cast_02();
+            m_pCast.CastAbility(1);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            m_pCast.Cmd_Cast_03();
+            m_pCast.CastAbility(2);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            m_pCast.Cmd_Cast_04();
+            m_pCast.CastAbility(3);
         }
     }
 

@@ -39,4 +39,24 @@ public class UIManager : MonoBehaviour
 
     public List<Text> m_cooldownDisplayTexts;
     public List<Image> m_darkMasks;
+    public List<Image> m_abilitySprites;
+    public List<Text> m_abilityTooltipObjects;
+    public List<Text> m_abilityToolcontent;
+    
+
+
+    public void DisplayToolTip(int abilityIndex)
+    {
+        //m_abilityTooltipObjects[abilityIndex].text = m_abilityToolcontent[abilityIndex].text;
+        m_abilityTooltipObjects[abilityIndex].gameObject.SetActive(true);
+        
+    }
+
+    public void HideToolTip(int abilityIndex)
+    {
+        m_abilityTooltipObjects[abilityIndex].gameObject.SetActive(false);
+    }
+
+
+
 }
