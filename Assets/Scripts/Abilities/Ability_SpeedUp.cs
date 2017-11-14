@@ -11,6 +11,11 @@ public class Ability_SpeedUp : Ability
 
     [HideInInspector] public PlayerMovement m_player;
 
+    public override string getToolTipStatInfo()
+    {
+        return string.Format("<size= 16> {0} </size>", m_name);
+    }
+
     public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos)
     {
         m_player = targetObj.GetComponent<PlayerMovement>();

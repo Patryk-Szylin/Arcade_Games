@@ -28,6 +28,10 @@ public class Drop : MonoBehaviour
         {
             print("TRIGGERED");
             player.m_abilities[3] = m_abilityDrop;
+            player.m_abilitiesReady[3] = true;
+            player.m_nextAbilityReadyTime[3] = 0;
+            player.m_cooldownLeft[3] = 0;
+            player.m_abilitySprites[3] = m_abilityDrop.m_abilityIcon;
             Destroy(this.gameObject);
         }
     }

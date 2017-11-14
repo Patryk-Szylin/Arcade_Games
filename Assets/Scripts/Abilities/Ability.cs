@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 
 /// <summary>
@@ -43,6 +45,13 @@ public abstract class Ability: ScriptableObject
     public float m_force;
     public int m_cooldown;              // TODO
 
+    [Header("UI Related")]
+    public string m_name;
+    public Sprite m_abilityIcon;
+    public string m_description;
+
+
+
     [Header("Ability Effects")]
     public GameObject m_abilityFX;      // For shooting/firing effect
     public GameObject m_impactFX;       // e.g. Explosion
@@ -69,4 +78,5 @@ public abstract class Ability: ScriptableObject
         return Vector3.zero;
     }
 
+    public abstract String getToolTipStatInfo();
 }

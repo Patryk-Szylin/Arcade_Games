@@ -5,6 +5,10 @@ using UnityEngine.Networking;
 
 public class PlayerCast : NetworkBehaviour
 {
+    // CONSTANTS
+    public const int MAX_ABILITY_COUNT = 4;
+
+
     public Rigidbody m_projectilePrefab;
     public Transform m_projectileSpawn;
     public List<Ability> m_abilities = new List<Ability>();
@@ -16,28 +20,44 @@ public class PlayerCast : NetworkBehaviour
 
     //=========
     private float m_nextReadyTime;
-    //private float m_cooldownLeft;
-    //bool m_abilityReady = false;
 
     public List<bool> m_abilitiesReady = new List<bool>();
     public List<float> m_nextAbilityReadyTime = new List<float>();
     public List<float> m_cooldownLeft = new List<float>();
+    public List<Sprite> m_abilitySprites = new List<Sprite>();
+    public Sprite m_noAbilitySprite;
 
 
     private void Start()
     {
-        for (int i = 0; i < 4; i++)
+        if (isLocalPlayer)
         {
-            if (m_abilities[i] != null)
+            for (int i = 0; i < 4; i++)
             {
-                m_abilitiesReady.Add(true);
-                m_nextAbilityReadyTime.Add(0);
-                m_cooldownLeft.Add(m_abilities[i].m_cooldown);
+                if (m_abilities[i] != null)
+                {
+                    m_abilitiesReady.Add(true);
+                    m_nextAbilityReadyTime.Add(0);
+                    m_cooldownLeft.Add(m_abilities[i].m_cooldown);
+                    m_abilitySprites.Add(m_abilities[i].m_abilityIcon);
+                }
+                else
+                {
+                    m_abilitiesReady.Add(false);
+                    m_nextAbilityReadyTime.Add(0);
+                    m_cooldownLeft.Add(0);
+                    m_abilitySprites.Add(m_noAbilitySprite);
+                }                    
             }
-            else
-                m_cooldownLeft.Add(0);
+        }
+
+        if(m_abilities[3] == null)
+        {
+            UIManager.Instance.m_abilitySprites[3].sprite = m_noAbilitySprite;
         }
     }
+
+
 
     public void Cast()
     {
@@ -47,56 +67,53 @@ public class PlayerCast : NetworkBehaviour
     }
 
     [Command]
-    public void Cmd_Cast_01()
-    {        
-        CastAbility(0);
-    }
-
-    [Command]
-    public void Cmd_Cast_02()
+    public void Cmd_Cast(int abilityIndex)
     {
-        CastAbility(1);
-    }
-
-    [Command]
-    public void Cmd_Cast_03()
-    {
-        CastAbility(2);
-    }
-
-    // Special Ability
-    [Command]
-    public void Cmd_Cast_04()
-    {
-        CastAbility(3);
+        m_abilities[abilityIndex].Initilise(m_abilities[abilityIndex].m_projectilePrefab, m_projectileSpawn);
+        m_abilities[abilityIndex].TriggerAbility();
     }
 
     private void Update()
     {
-        UpdateCooldownUI(0);
-        UpdateCooldownUI(1);
-        UpdateCooldownUI(2);
-        //UpdateCooldownUI(3);
+        if (isLocalPlayer)
+        {
+            UpdateCooldownUI(0);
+            UpdateCooldownUI(1);
+            UpdateCooldownUI(2);
+
+            if (m_abilities[3])
+            {
+                UpdateCooldownUI(3);
+            }            
+        }
     }
 
-
-    void CastAbility(int index)
+    public void CastAbility(int index)
     {
-
-        if (m_abilitiesReady[index])
+        // UI STUFF
+        if (m_abilitiesReady[index] && m_abilities[index]  != null)
         {
             m_nextAbilityReadyTime[index] = m_abilities[index].m_cooldown + Time.time;
             m_cooldownLeft[index] = m_abilities[index].m_cooldown;
-            m_abilities[index].Initilise(m_abilities[index].m_projectilePrefab, m_projectileSpawn);
-            m_abilities[index].TriggerAbility();
+
 
             // Re-enable ui
             AbilityReady(index, true);
+            Cmd_Cast(index);
         }
     }
 
     void UpdateCooldownUI(int index)
     {
+        if (!isLocalPlayer)
+            return;
+
+        //print(UIManager.Instance.m_abilityIcons.Count);
+
+        UIManager.Instance.m_abilitySprites[index].sprite = m_abilities[index].m_abilityIcon;
+        UpdateToolTipUI(index);
+
+        
 
         bool cooldownComplete = (Time.time > m_nextAbilityReadyTime[index]);
 
@@ -104,7 +121,7 @@ public class PlayerCast : NetworkBehaviour
         {
             AbilityReady(index, false);
             m_abilitiesReady[index] = true;
-        }            
+        }
         else
         {
             m_abilitiesReady[index] = false;
@@ -112,17 +129,22 @@ public class PlayerCast : NetworkBehaviour
         }
     }
 
+
+    void UpdateToolTipUI(int index)
+    {
+        UIManager.Instance.m_abilityTooltipObjects[index].text = m_abilities[index].getToolTipStatInfo();
+    }
+
     void CoolDown(int index, float cooldown)
     {
-        m_cooldownLeft[index] -= Time.deltaTime;
-        float roundedCD = Mathf.Round(m_cooldownLeft[index]);
         if (isLocalPlayer)
         {
+            m_cooldownLeft[index] -= Time.deltaTime;
+            float roundedCD = Mathf.Round(m_cooldownLeft[index]);
+
             UIManager.Instance.m_cooldownDisplayTexts[index].text = roundedCD.ToString();
             UIManager.Instance.m_darkMasks[index].fillAmount = (m_cooldownLeft[index] / cooldown);
         }
-
-
     }
 
     void AbilityReady(int index, bool ui_enabled)
@@ -132,7 +154,6 @@ public class PlayerCast : NetworkBehaviour
             UIManager.Instance.m_cooldownDisplayTexts[index].enabled = ui_enabled;
             UIManager.Instance.m_darkMasks[index].enabled = ui_enabled;
         }
-
     }
 
 }
