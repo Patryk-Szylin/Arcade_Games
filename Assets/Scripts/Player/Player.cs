@@ -46,17 +46,31 @@ public class Player : NetworkBehaviour
         if (!isLocalPlayer || m_pHealth.m_isDead)
             return;
 
+
+        if (Input.GetKey(KeyCode.Tab))
+            UI_Scoreboard.Instance.ShowScoreboard();
+        else
+            UI_Scoreboard.Instance.HideScoreboard();
+
+
         if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
         {
             m_pCast.Cast();
         }
 
-        ExecuteAbilities();
+        // Check for ability input
+        CheckForAbilityInput();
+
+
+
+
+
+
 
     }
 
 
-    public void ExecuteAbilities()
+    public void CheckForAbilityInput()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

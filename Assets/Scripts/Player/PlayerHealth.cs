@@ -57,6 +57,8 @@ public class PlayerHealth : NetworkBehaviour
         {
             m_lastAttacker.m_score += (int)dmg;
             m_lastAttacker = null;
+            //GameManager.Instance.UpdateScoreboard();
+            UI_Scoreboard.Instance.UpdateScoreboard();
         }
 
         if (m_currentHealth <= 0 && !m_isDead)
