@@ -60,6 +60,7 @@ public abstract class Ability: ScriptableObject
     // @ Abstract functions
     public abstract void TriggerAbility();
     public abstract void Initilise(Rigidbody targetObj, Transform PlayerGunPos);
+    public abstract String getToolTipStatInfo();
 
 
     // This should be in utility class
@@ -78,5 +79,12 @@ public abstract class Ability: ScriptableObject
         return Vector3.zero;
     }
 
-    public abstract String getToolTipStatInfo();
+    public Player getProjectileOwner(Transform fromGunPos)
+    {
+        return fromGunPos.GetComponentInParent<Player>();
+    }
+
+    
 }
+
+

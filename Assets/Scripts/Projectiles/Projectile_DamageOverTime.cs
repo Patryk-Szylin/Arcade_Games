@@ -27,7 +27,6 @@ public class Projectile_DamageOverTime : Projectile
         if (rbody != null)
         {
             rbody.velocity = m_velocity;
-
             NetworkServer.Spawn(rbody.gameObject);
         }
     }
@@ -46,6 +45,9 @@ public class Projectile_DamageOverTime : Projectile
 
         for (int i = 0; i < m_maxTicks; i++)
         {
+            if (playerhealth.m_isDead)
+                break;
+
             playerhealth.Damage(m_damagePerTick, m_owner);
             yield return new WaitForSeconds(1f);
         }
