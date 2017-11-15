@@ -14,7 +14,10 @@ public class PlayerMovement : NetworkBehaviour
     public void MovePlayer(Vector3 dir)
     {
         //m_moveSpeed = m_moveSpeed* m_Boosted;
-        dir = dir.normalized;
+        if (dir.x == 1 && dir.z == 1)
+        {
+            dir = dir.normalized;
+        }
         dir = dir * m_moveSpeed;
         dir *= Time.deltaTime;
         transform.Translate(dir);
