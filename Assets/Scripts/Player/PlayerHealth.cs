@@ -107,14 +107,14 @@ public class PlayerHealth : NetworkBehaviour
             sourcePlayer.kills++;
             Player player = gameObject.GetComponent<Player>();
             player.deaths++;
-            GameManager.Instance.onPlayerKilledCallback.Invoke(player.name, sourcePlayer.name);
+
+            PlayerSetup name = gameObject.GetComponent<PlayerSetup>();
+            PlayerSetup sourceName = sourcePlayer.GetComponent<PlayerSetup>();
+            GameManager.Instance.onPlayerKilledCallback.Invoke(name.m_playerName, sourceName.m_playerName);
         }
 
         m_isDead = true;
         SetActiveState(false);
-
-        //Disable
-        //Call Respawn
 
         StartCoroutine(Respawn());
     }

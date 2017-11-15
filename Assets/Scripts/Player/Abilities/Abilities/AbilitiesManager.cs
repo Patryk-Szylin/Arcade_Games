@@ -41,7 +41,7 @@ public class AbilitiesManager : NetworkBehaviour
 
         movement = gameObject.GetComponent<PlayerMovement>();
 
-        cooldownTime = new float[4];
+        cooldownTime = new float[5];
 
         // Buttons
         abilityUIButtons = new Button[5];
@@ -123,15 +123,15 @@ public class AbilitiesManager : NetworkBehaviour
         {
             casta(1);
         }
-        else if (Input.GetButtonDown("Ability2"))
+        else if (Input.GetButtonDown("Ability3"))
         {
             casta(2);
         }
-        else if (Input.GetButtonDown("Ability3"))
+        else if (Input.GetButtonDown("Ability4"))
         {
             casta(3);
         }
-        else if (Input.GetButtonDown("Ability4"))
+        else if (Input.GetButtonDown("Ability5"))
         {
             casta(4);
         }

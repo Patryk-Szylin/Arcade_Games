@@ -26,10 +26,10 @@ desktop: 1920x1080 60Hz; virtual: 4480x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.066499 ms
+UnloadTime: 2.198634 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1fed8 -> priority: 1 
-  Thread -> id: 1fbe0 -> priority: 1 
+  Thread -> id: 21ac8 -> priority: 1 
+  Thread -> id: 2104c -> priority: 1 
 DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
  
 (Filename:  Line: 447)
@@ -38,21 +38,7 @@ DontDestroyOnLoad only work for root GameObjects or components on root GameObjec
  
 (Filename:  Line: 447)
 
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.334291 ms
-[Server] function 'System.Void GameManager::Start()' called on client
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3808.
-Total: 3.163909 ms (FindLiveObjects: 0.187279 ms CreateObjectMapping: 0.162775 ms MarkObjects: 2.187257 ms  DeleteObjects: 0.620471 ms)
-
-Did not find target for RPC message for 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Did not find target for RPC message for 4
+Trying to send command for object without authority.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -60,15 +46,14 @@ Trying to send command for object without authority.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 5
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
+ClientDisconnected due to error: Timeout
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Trying to send command for object without authority.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.724310 ms
 
-Player 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1042.
+Total: 1.178808 ms (FindLiveObjects: 0.080512 ms CreateObjectMapping: 0.043465 ms MarkObjects: 1.038495 ms  DeleteObjects: 0.009626 ms)
 

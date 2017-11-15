@@ -62,6 +62,7 @@ public class GameManager : NetworkBehaviour
     private void Start()
     {
         StartCoroutine("GameLoop");
+        setEnemyHealthBars();
     }
 
 
@@ -93,7 +94,8 @@ public class GameManager : NetworkBehaviour
     {
         Reset();
         RpcStartGame();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        setEnemyHealthBars();
     }
 
     [ClientRpc]
@@ -102,7 +104,6 @@ public class GameManager : NetworkBehaviour
         UpdateMessage("Game has begun!");
         
         EnablePlayers(false);
-
         setEnemyHealthBars();
     }
 
@@ -223,16 +224,16 @@ public class GameManager : NetworkBehaviour
 
     void OnGUI ()
     {
-        GUILayout.BeginArea(new Rect(200, 200, 200, 500));
-        GUILayout.BeginVertical();
+        //GUILayout.BeginArea(new Rect(200, 200, 200, 500));
+        //GUILayout.BeginVertical();
 
-        foreach(string playerID in players.Keys)
-        {
-            GUILayout.Label(playerID + " - " + players[playerID].transform.name);
-        }
+        //foreach(string playerID in players.Keys)
+        //{
+        //    GUILayout.Label(playerID + " - " + players[playerID].transform.name);
+        //}
 
-        GUILayout.EndVertical();
-        GUILayout.EndArea();
+        //GUILayout.EndVertical();
+        //GUILayout.EndArea();
     }
 
     void setEnemyHealthBars()

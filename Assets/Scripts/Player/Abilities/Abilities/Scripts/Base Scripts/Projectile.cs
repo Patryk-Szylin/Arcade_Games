@@ -35,7 +35,7 @@ public abstract class Projectile : NetworkBehaviour
     private Collider projectileCollider;
     private Rigidbody projectileRigidBody;
 
-    private bool enemyProjectile = false;
+    public bool enemyProjectile = false;
 
     [HideInInspector] public string sourceID;
 

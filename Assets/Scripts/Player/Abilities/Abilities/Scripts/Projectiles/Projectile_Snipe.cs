@@ -20,6 +20,15 @@ public class Projectile_Snipe : Projectile
         startLocation = gameObject.GetComponent<Transform>().position;
         Rigidbody test = gameObject.GetComponent<Rigidbody>();
         test.AddForce(transform.right * projectileForce);
+
+        if(GameManager.GetPlayer(sourceID).name == GameObject.FindGameObjectWithTag("Player").name) //Same Player
+        {
+            enemyProjectile = false;
+        }
+        else
+        {
+            enemyProjectile = true;
+        }
     }
 
     void Update()
