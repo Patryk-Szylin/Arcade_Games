@@ -19,412 +19,30 @@ Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Man
 Loading C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.190 seconds
+- Completed reload, in  0.046 seconds
 Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Jordan Blackett\Documents\Arcade_Games\Test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 4480x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-The referenced script on this Behaviour (Game Object 'Projectile') is missing!
+UnloadTime: 1.301327 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at UIScoreBoard.OnEnable () [0x00000] in <filename unknown>:0 
  
-(Filename:  Line: 1754)
+(Filename:  Line: -1)
 
-The referenced script on this Behaviour (Game Object 'Dummy') is missing!
- 
-(Filename:  Line: 1754)
-
-UnloadTime: 1.243277 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 17dbc -> priority: 1 
-  Thread -> id: 173cc -> priority: 1 
+  Thread -> id: 1cea4 -> priority: 1 
+  Thread -> id: 1d2a8 -> priority: 1 
 ________Launch game from lobby scene only!________
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Start () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: -1)
 
 NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
@@ -434,13 +52,15 @@ NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Update () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: -1)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Update () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: -1)
 
 NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
@@ -458,14 +78,15 @@ NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:60428}
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:55063}
 ServerDisconnected due to error: Timeout
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Start () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: -1)
 
 NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
@@ -491,7 +112,35 @@ NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:55809}
+ServerDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:60056}
+ServerDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
 NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HIT18
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -503,7 +152,7 @@ NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+HIT18
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -515,7 +164,7 @@ NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+HIT18
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -527,7 +176,7 @@ NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+HIT18
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -539,7 +188,7 @@ NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+HIT18
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -551,67 +200,7 @@ NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+HIT18
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -627,119 +216,7 @@ NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:57150}
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:55567}
 ServerDisconnected due to error: Timeout
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)

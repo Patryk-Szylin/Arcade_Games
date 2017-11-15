@@ -111,7 +111,11 @@ public class AbilitiesManager : NetworkBehaviour
             }
         }
 
-        if (Input.GetButton("Ability1"))
+        if (Input.GetButtonDown("Ability1"))
+        {
+            casta(0);
+        }
+        else if (Input.GetButton("Ability1"))
         {
             casta(0);
         }
@@ -136,12 +140,10 @@ public class AbilitiesManager : NetworkBehaviour
     void castAbility(int num)
     {
         if (abilities[num].chargeTimer > 0 && chargeTimeFire == false) {
-            
             chargeTime = abilities[num].chargeTimer;
             currentAbility = num;
             chargeUISlider.GetComponentInChildren<Image>().color = chargeStartColor;
             chargeUISlider.value = 0;
-            //rechargeEnd = Time.time + abilities[num].chargeTimer;
             return;
         }
         

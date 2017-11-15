@@ -113,22 +113,25 @@ namespace Prototype.NetworkLobby
         {
             //
             characterSelect = GameObject.Find("CharacterSelection");
-            CharacterBtn = characterSelect.GetComponentsInChildren<Button>();
-            characterSelect.SetActive(false);
-
-            CharacteSelectrBtn.onClick.AddListener(delegate 
+            if(characterSelect != null)
             {
-                characterSelect.SetActive(!characterSelect.active);
-            });
+                CharacterBtn = characterSelect.GetComponentsInChildren<Button>();
+                characterSelect.SetActive(false);
 
-            foreach (Button btn in CharacterBtn)
-            {
-                btn.onClick.AddListener (delegate 
+                CharacteSelectrBtn.onClick.AddListener(delegate
                 {
-                    AvatarPicker(btn.name);
                     characterSelect.SetActive(!characterSelect.active);
-                    CharacteSelectrBtn.GetComponent<Image>().overrideSprite = btn.GetComponent<Image>().sprite;
                 });
+
+                foreach (Button btn in CharacterBtn)
+                {
+                    btn.onClick.AddListener(delegate
+                   {
+                       AvatarPicker(btn.name);
+                       characterSelect.SetActive(!characterSelect.active);
+                       CharacteSelectrBtn.GetComponent<Image>().overrideSprite = btn.GetComponent<Image>().sprite;
+                   });
+                }
             }
             //
 

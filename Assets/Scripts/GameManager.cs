@@ -7,8 +7,6 @@ using Prototype.NetworkLobby; // Allows me to use Network lobby components
 
 public class GameManager : NetworkBehaviour
 {
-
-
     #region Singleton
 
 

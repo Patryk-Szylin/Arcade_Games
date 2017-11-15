@@ -22,6 +22,11 @@ public class Player : NetworkBehaviour
     //PlayerCast m_pCast;
     PlayerHealth m_pHealth;
 
+    [SerializeField]
+    GameObject scoreboard;
+
+    public int kills;
+    public int deaths;
 
     private void OnDestroy()
     {
@@ -30,15 +35,36 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         m_pSetup = GetComponent<PlayerSetup>();
         m_pMovement = GetComponent<PlayerMovement>();
         //m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
+
+        scoreboard = GameObject.Find("Scoreboard");
+        scoreboard.SetActive(false);
     }
 
 
     private void Update()
     {
+        if(!isLocalPlayer)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            scoreboard.SetActive(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            scoreboard.SetActive(false);
+        }
+
 
         if (m_isHiding)
             RpcHidePlayer(true);
