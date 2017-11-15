@@ -48,7 +48,7 @@ public class Ability_Sniper_AA : Projectile
                 PlayerHealth enemyHealth = other.GetComponent<PlayerHealth>();
                 if (enemyHealth != null)
                 {
-                    enemyHealth.Damage(damage);
+                    //enemyHealth.RpcDamage(damage);
                 }
             }
 

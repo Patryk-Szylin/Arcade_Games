@@ -26,198 +26,49 @@ desktop: 1920x1080 60Hz; virtual: 4480x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.301327 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at UIScoreBoard.OnEnable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
+UnloadTime: 1.066499 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1cea4 -> priority: 1 
-  Thread -> id: 1d2a8 -> priority: 1 
-________Launch game from lobby scene only!________
+  Thread -> id: 1fed8 -> priority: 1 
+  Thread -> id: 1fbe0 -> priority: 1 
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 447)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.334291 ms
+[Server] function 'System.Void GameManager::Start()' called on client
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Player.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3808.
+Total: 3.163909 ms (FindLiveObjects: 0.187279 ms CreateObjectMapping: 0.162775 ms MarkObjects: 2.187257 ms  DeleteObjects: 0.620471 ms)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+Did not find target for RPC message for 4
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Player.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Player.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+Did not find target for RPC message for 4
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+Trying to send command for object without authority.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+Player 5
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
+Trying to send command for object without authority.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:55063}
-ServerDisconnected due to error: Timeout
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Player.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:55809}
-ServerDisconnected due to error: Timeout
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Player.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:60056}
-ServerDisconnected due to error: Timeout
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Player.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Die Executed
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NetworkWriter debug_Sphere (UnityEngine.Transform) has no NetworkIdentity
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:55567}
-ServerDisconnected due to error: Timeout
+Player 5
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 

@@ -141,6 +141,6 @@ public class Cop_Sniper_Abilities : Abilities1
     void CmdTaserHit(GameObject playerHit)
     {
         playerHit.GetComponent<PlayerMovement>().stun(stunDuration);
-        playerHit.GetComponent<PlayerHealth>().Damage(1);
+        //playerHit.GetComponent<PlayerHealth>().RpcDamage(1);
     }
 }

@@ -12,7 +12,7 @@ public class Team_Manager : MonoBehaviour
 
     public int playerTeam;
     public int teamSize;
- 
+
     // Use this for initialization
     void Start () {
         StartCoroutine(startInfo());
@@ -79,4 +79,6 @@ public class Team_Manager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         getUpdate();
     }
+
+
 }

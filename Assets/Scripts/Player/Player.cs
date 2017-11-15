@@ -25,8 +25,8 @@ public class Player : NetworkBehaviour
     [SerializeField]
     GameObject scoreboard;
 
-    public int kills;
-    public int deaths;
+    [SyncVar] public int kills;
+    [SyncVar] public int deaths;
 
     private void OnDestroy()
     {

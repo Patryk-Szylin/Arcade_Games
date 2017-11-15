@@ -161,7 +161,7 @@ public class AbilitiesManager : NetworkBehaviour
     public void Cmd_Cast(int i)
     {
 
-        abilities[i].Initilise(projectileSpawnLocation.transform);
+        abilities[i].Initilise(projectileSpawnLocation.transform, transform.name);
         abilities[i].TriggerAbility();
     }
 

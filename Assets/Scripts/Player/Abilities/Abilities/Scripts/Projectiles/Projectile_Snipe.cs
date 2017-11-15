@@ -11,13 +11,6 @@ public class Projectile_Snipe : Projectile
         //Instantiate a copy of our projectile and store it in a new rigidbody variable called clonedBullet
         Rigidbody projectileClone = Instantiate(m_prefab, projectileSpawnLocation.position, projectileSpawnLocation.rotation) as Rigidbody;
         projectileClone.rotation = projectileSpawnLocation.rotation;
-        //Add force to the instantiated bullet, pushing it forward away from the bulletSpawn location, 
-        // using projectile force for how hard to push it away
-        //projectileClone.AddForce(projectileSpawnLocation.transform.right * projectileForce);
-        // Add velocity to the bullet
-        //projectileClone.velocity = projectileClone.transform.right * 6;
-
-        //enemyProjectile
 
         NetworkServer.Spawn(projectileClone.gameObject);
     }
@@ -53,11 +46,9 @@ public class Projectile_Snipe : Projectile
 
             if (other.tag == "Enemy" || other.tag == "Player")
             {
-                PlayerHealth enemyHealth = other.GetComponent<PlayerHealth>();
-                if (enemyHealth != null)
-                {
-                    enemyHealth.Damage(damage);
-                }
+                GameObject playerID = GameObject.FindGameObjectWithTag("Player");
+                CmdPlayerDamage(other.name, damage, sourceID);
+                Debug.Log(playerID.name);
             }
 
             Destroy(this.gameObject);
@@ -67,5 +58,13 @@ public class Projectile_Snipe : Projectile
     private void OnTriggerEnter(Collider other)
     {
         OnCollisionHit(other);
+    }
+
+    [Command]
+    void CmdPlayerDamage (string playerID, float dmg, string sourceID)
+    {
+        Debug.Log(sourceID + " Hit" + playerID);
+        Player player = GameManager.GetPlayer(playerID);
+        player.GetComponent<PlayerHealth>().RpcDamage(dmg, sourceID);
     }
 }

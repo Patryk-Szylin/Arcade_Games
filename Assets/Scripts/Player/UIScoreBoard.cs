@@ -5,9 +5,6 @@ using UnityEngine;
 public class UIScoreBoard : MonoBehaviour
 {
     [SerializeField]
-    Team_Manager team;
-
-    [SerializeField]
     GameObject playerScoreboardItem;
 
     [SerializeField]
@@ -15,32 +12,16 @@ public class UIScoreBoard : MonoBehaviour
 
     void OnEnable()
     {
-        GameObject localplayer = team.localPlayer;
-        GameObject[] players = team.enemyTeam;
+        Player[] players = GameManager.GetAllPlayers();
 
-        if (localplayer == null)
-            return;
-
-        // Local Player Panel
-        PlayerSetup playerName = localplayer.GetComponent<PlayerSetup>();
-        Player playerInfo = localplayer.GetComponent<Player>();
-        GameObject panelGO = Instantiate(playerScoreboardItem, scoreboardList) as GameObject;
-        PlayerScoreboardPanel panel = panelGO.GetComponent<PlayerScoreboardPanel>();
-        if (panel != null)
+        foreach (Player player in players)
         {
-            panel.Setup(playerName.m_playerName, playerInfo.kills, playerInfo.deaths);
-        }
-
-        // Enemies
-        foreach (GameObject player in players)
-        {
-            playerName = localplayer.GetComponent<PlayerSetup>();
-            playerInfo = localplayer.GetComponent<Player>();
-            panelGO = Instantiate(playerScoreboardItem, scoreboardList) as GameObject;
-            panel = panelGO.GetComponent<PlayerScoreboardPanel>();
+            PlayerSetup playerName = player.GetComponent<PlayerSetup>();
+            GameObject panelGO = Instantiate(playerScoreboardItem, scoreboardList) as GameObject;
+            PlayerScoreboardPanel panel = panelGO.GetComponent<PlayerScoreboardPanel>();
             if (panel != null)
             {
-                panel.Setup(playerName.m_playerName, playerInfo.kills, playerInfo.deaths);
+                panel.Setup(playerName.m_playerName, player.kills, player.deaths);
             }
         }
     }

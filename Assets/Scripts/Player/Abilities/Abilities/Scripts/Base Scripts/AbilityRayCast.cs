@@ -9,7 +9,7 @@ public class AbilityRayCast : Ability {
 
     }
 
-    public override void Initilise(Transform projectileSpawnLocation)
+    public override void Initilise(Transform projectileSpawnLocation, string souceID)
     {
 
     }

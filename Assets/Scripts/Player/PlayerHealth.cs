@@ -25,6 +25,7 @@ public class PlayerHealth : NetworkBehaviour
 
     [Header("Player Debug Options")]
     public bool m_isDead = false;
+    public float respawnTime = 5;
 
     [SyncVar(hook ="UpdateHealthBar")]
     public float m_currentHealth;
@@ -38,14 +39,19 @@ public class PlayerHealth : NetworkBehaviour
 
     //false = enemy team
     private bool teamSide;
+    public string DEBUGID;
 
     [Header("PopUpText")]
     public FloatingText floatingText;
     public Canvas floatingTextCanvas;
 
+    public bool isDead;
+
     private void Start()
     {
         m_currentHealth = m_maxHealth;
+
+        DEBUGID = transform.name;
     }
 
     void UpdateHealthBar(float val)
@@ -54,10 +60,14 @@ public class PlayerHealth : NetworkBehaviour
             m_healthBar.sizeDelta = new Vector2(val / m_maxHealth * 150f, m_healthBar.sizeDelta.y);
     }
 
-    public void Damage(float dmg)
+    [ClientRpc]
+    public void RpcDamage(float dmg, string sourceID)
     {
+        if (m_isDead)
+            return;
+
         initDamageText(dmg, false);
-        Debug.Log("HIT" + dmg);
+
         if (!isServer)
             return;
 
@@ -65,7 +75,7 @@ public class PlayerHealth : NetworkBehaviour
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
-            RpcDie();
+            RpcDie(sourceID);
         }
     }
 
@@ -88,12 +98,34 @@ public class PlayerHealth : NetworkBehaviour
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.
     [ClientRpc]
-    void RpcDie()
+    void RpcDie(string sourceID)
     {
+        //KILL/Death
+        Player sourcePlayer = GameManager.GetPlayer(sourceID);
+        if (sourcePlayer != null)
+        {
+            sourcePlayer.kills++;
+            Player player = gameObject.GetComponent<Player>();
+            player.deaths++;
+            GameManager.Instance.onPlayerKilledCallback.Invoke(player.name, sourcePlayer.name);
+        }
+
         m_isDead = true;
-        print("Die Executed");
         SetActiveState(false);
-        //Destroy(gameObject);
+
+        //Disable
+        //Call Respawn
+
+        StartCoroutine(Respawn());
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(respawnTime);
+
+        Reset();
+        Transform startPoint = NetworkManager.singleton.GetStartPosition();
+        transform.position = startPoint.position;
     }
 
     public void Reset()
@@ -124,9 +156,7 @@ public class PlayerHealth : NetworkBehaviour
 
     public void setTeam(bool team)
     {
-        teamSide = team;
-
-        if (teamSide)
+        if (team)
         {
             // Team HealthBar
             m_healthBar_Front.GetComponent<Image>().color = teamColor;

@@ -5,5 +5,5 @@ using UnityEngine;
 public class AbilityPassive : Ability {
 
     public override void TriggerAbility() { }
-    public override void Initilise(Transform projectileSpawnLocation) { }
+    public override void Initilise(Transform projectileSpawnLocation, string souceID) { }
 }

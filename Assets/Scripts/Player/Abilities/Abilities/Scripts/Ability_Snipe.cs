@@ -12,7 +12,7 @@ public class Ability_Snipe : AbilityProjectile
     public float range;
     public float blastRadius;
 
-    public override void Initilise(Transform projectileSpawnLocation)
+    public override void Initilise(Transform projectileSpawnLocation, string sourceID)
     {
         Vector3 direction = GetAbilityPointInWorldSpace();
         launcher = projectilePrefab.GetComponent<Projectile>();
@@ -27,6 +27,7 @@ public class Ability_Snipe : AbilityProjectile
         launcher.m_prefab = projectilePrefab;
         launcher.projectileSpawnLocation = projectileSpawnLocation;
         launcher.m_impactFX = m_impactFX;
+        launcher.sourceID = sourceID;
     }
 
     public override void TriggerAbility()

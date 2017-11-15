@@ -14,5 +14,5 @@ public class AbilityProjectile : Ability
     public GameObject m_trailFX = null; // Used if there's a trail 
 
     public override void TriggerAbility() { }
-    public override void Initilise(Transform projectileSpawnLocation) { }
+    public override void Initilise(Transform projectileSpawnLocation, string souceID) { }
 }

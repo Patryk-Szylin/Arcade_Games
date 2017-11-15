@@ -37,8 +37,10 @@ public abstract class Projectile : NetworkBehaviour
 
     private bool enemyProjectile = false;
 
-	// Use this for initialization
-	void Start ()
+    [HideInInspector] public string sourceID;
+
+    // Use this for initialization
+    void Start ()
     {
         projectileCollider = GetComponent<Collider>();
         projectileRigidBody = GetComponent<Rigidbody>();

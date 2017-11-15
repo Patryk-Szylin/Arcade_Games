@@ -194,7 +194,7 @@ public class Cop_1_Abilities : Abilities1
     void CmdPepperSprayHit(GameObject playerHit)
     {
         playerHit.GetComponent<PlayerMovement>().stun(stunDuration);
-        playerHit.GetComponent<PlayerHealth>().Damage(1);
+        //playerHit.GetComponent<PlayerHealth>().RpcDamage(1);
     }
 }
 

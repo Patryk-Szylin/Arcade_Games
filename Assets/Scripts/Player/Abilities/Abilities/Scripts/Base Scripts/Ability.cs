@@ -54,7 +54,7 @@ public abstract class Ability : ScriptableObject
 
     // @ Abstract functions
     public abstract void TriggerAbility();
-    public abstract void Initilise(Transform projectileSpawnLocation);
+    public abstract void Initilise(Transform projectileSpawnLocation, string souceID);
 
     // This should be in utility class
     public Vector3 GetAbilityPointInWorldSpace()
