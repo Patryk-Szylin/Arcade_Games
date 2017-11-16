@@ -25,14 +25,13 @@ public class PlayerHealth : NetworkBehaviour
     public bool m_isDead = false;
 
 
-    [SyncVar(hook ="UpdateHealthBar")] public float m_currentHealth;
+    [SyncVar(hook = "UpdateHealthBar")] public float m_currentHealth;
     public Player m_lastAttacker;
 
 
     private void Start()
     {
-        m_currentHealth = m_maxHealth;
-
+        Reset();
     }
 
     void UpdateHealthBar(float val)
@@ -63,19 +62,21 @@ public class PlayerHealth : NetworkBehaviour
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
+            m_isDead = true;
             RpcDie();
         }
-            
+
     }
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.
     [ClientRpc]
     void RpcDie()
-    {
-        m_isDead = true;
+    {        
         print("Die Executed");
         SetActiveState(false);
-        Destroy(this.gameObject);
+        //Publisher.Instance.Notify(EVENT_TYPE.ON_PLAYER_DEATH);
+        //Destroy(this.gameObject);
+        //gameObject.SendMessage("Disable");
     }
 
     public void Reset()
@@ -84,7 +85,6 @@ public class PlayerHealth : NetworkBehaviour
         SetActiveState(true);
         m_isDead = false;
     }
-
 
     void SetActiveState(bool state)
     {
@@ -102,6 +102,19 @@ public class PlayerHealth : NetworkBehaviour
         {
             r.enabled = state;
         }
+
+        this.GetComponent<Rigidbody>().useGravity = state;
+        if (state == false)
+        {
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        } else
+        {
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+        }
+
+
     }
 
 
