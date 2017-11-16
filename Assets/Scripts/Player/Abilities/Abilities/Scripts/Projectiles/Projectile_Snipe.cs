@@ -49,9 +49,14 @@ public class Projectile_Snipe : Projectile
     public override void OnCollisionHit(Collider other)
     {
         //if (other.tag != "Player")
-        if (other.tag == "Enemy" || other.tag == "Player")
+        if (other.tag == "Enemy" || other.tag == "Player" || other.tag == "Object")
         {
             explosion();
+
+            if(other.tag == "Object")
+            {
+                Destroy(this.gameObject);
+            }
 
             if (other.tag == "Enemy" || other.tag == "Player")
             {
