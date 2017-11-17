@@ -9,6 +9,7 @@
 		Tags { "RenderType"="Opaque" "Queue"="Geometry-100" }
 		ColorMask 0
 		ZWrite off
+		ZTest Off
 		LOD 200
 
 		Stencil {
