@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using Prototype.NetworkLobby; // Allows me to use Network lobby components
+using System.Linq;
 
 public class GameManager : NetworkBehaviour
 {
-
-
     #region Singleton
 
 
@@ -52,10 +51,18 @@ public class GameManager : NetworkBehaviour
     [SyncVar] bool m_gameOver = false;
     Player m_winner;
 
+    //Score
+    private static Dictionary<string, Player> players = new Dictionary<string, Player>();
+    private const string PLAYERIDPREFIX = "Player ";
+
+    public delegate void OnPlayerKilledCallback(string player, string source);
+    public OnPlayerKilledCallback onPlayerKilledCallback;
+
     [Server]
     private void Start()
     {
         StartCoroutine("GameLoop");
+        setEnemyHealthBars();
     }
 
 
@@ -87,7 +94,8 @@ public class GameManager : NetworkBehaviour
     {
         Reset();
         RpcStartGame();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        setEnemyHealthBars();
     }
 
     [ClientRpc]
@@ -96,6 +104,7 @@ public class GameManager : NetworkBehaviour
         UpdateMessage("Game has begun!");
         
         EnablePlayers(false);
+        setEnemyHealthBars();
     }
 
     Player GetWinner()
@@ -189,4 +198,56 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    // Register Player
+    public static void AddPlayer(string netID, Player player)
+    {
+        string playerID = PLAYERIDPREFIX + netID;
+        players.Add(playerID, player);
+        player.transform.name = playerID;
+    }
+
+    // Unregister Player - call when play dc's WIP
+    public static void RemovePlayer(string netID)
+    {
+        players.Remove(netID);
+    }
+
+    public static Player GetPlayer(string playerID)
+    {
+        return players[playerID];
+    }
+
+    public static Player[] GetAllPlayers()
+    {
+        return players.Values.ToArray();
+    }
+
+    void OnGUI ()
+    {
+        //GUILayout.BeginArea(new Rect(200, 200, 200, 500));
+        //GUILayout.BeginVertical();
+
+        //foreach(string playerID in players.Keys)
+        //{
+        //    GUILayout.Label(playerID + " - " + players[playerID].transform.name);
+        //}
+
+        //GUILayout.EndVertical();
+        //GUILayout.EndArea();
+    }
+
+    void setEnemyHealthBars()
+    {
+        Player[] players = GameManager.GetAllPlayers();
+
+        foreach (Player player in players)
+        {
+            PlayerHealth playerHealthBar = player.GetComponent<PlayerHealth>();
+            if(playerHealthBar != null)
+            {
+                if (player.tag == "Enemy")
+                    playerHealthBar.setTeam(false);
+            }
+        }
+    }
 }
