@@ -49,21 +49,14 @@ public class PlayerCast : NetworkBehaviour
                     m_abilitySprites.Add(m_noAbilitySprite);
                 }                    
             }
+
+            if (m_abilities[3] == null)
+            {
+                UIManager.Instance.m_abilitySprites[3].sprite = m_noAbilitySprite;
+            }
         }
 
-        if(m_abilities[3] == null)
-        {
-            UIManager.Instance.m_abilitySprites[3].sprite = m_noAbilitySprite;
-        }
-    }
 
-
-
-    public void Cast()
-    {
-        //CmdSpawnProjectile();
-
-        StartCoroutine("Reload");
     }
 
     [Command]
@@ -84,7 +77,7 @@ public class PlayerCast : NetworkBehaviour
             if (m_abilities[3])
             {
                 UpdateCooldownUI(3);
-            }            
+            }
         }
     }
 
