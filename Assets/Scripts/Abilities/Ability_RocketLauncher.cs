@@ -12,19 +12,20 @@ public class Ability_RocketLauncher : Ability
     public float m_radius;
     public float m_damage;
 
-    public override void Initilise(Rigidbody targetObj, Transform playerGunPos)
+    public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos)
     {
         var dest = GetAbilityPointInWorldSpace();
         SetRocketDestination(dest);
-        var velocity = BallisticVelocity(m_destination, 45f, playerGunPos.position);
+        var velocity = BallisticVelocity(m_destination, 45f, PlayerGunPos.position);
 
         m_launcher = targetObj.GetComponent<Projectile_Rocket>();
         m_launcher.m_damage = m_damage;
         m_launcher.m_velocity = velocity;
         m_launcher.m_prefab = m_projectilePrefab;
-        m_launcher.m_spawnPos = playerGunPos;
+        m_launcher.m_spawnPos = PlayerGunPos;
         m_launcher.m_radius = m_radius;
         m_launcher.m_impactFX = m_impactFX;
+        m_launcher.m_owner = getProjectileOwner(PlayerGunPos);           // Initilize projectile owner when spawning projectiles. This is used to determine scores
     }
 
     public override void TriggerAbility()
@@ -52,4 +53,16 @@ public class Ability_RocketLauncher : Ability
         return velocity * dir.normalized; // Return a normalized vector.
     }
 
+    public override string getToolTipStatInfo()
+    {
+        string newLine = "\n";
+
+        return string.Format(
+            "<size= 32> {0} </size>" + newLine
+            + "<size= 24> {1} </size>" + newLine
+            + "<size= 24> Cooldown : {2} </size>" + newLine
+            + "<size= 24> Damage : <size= 26><color=red> {3} </color></size></size>" + newLine
+            + "<size= 24> Radius : {4} </size>",
+            m_name, m_description, m_cooldown, m_damage, m_radius);
+    }
 }
