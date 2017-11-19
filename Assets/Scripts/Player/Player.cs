@@ -57,10 +57,10 @@ public class Player : NetworkBehaviour, IObserver
             UI_Scoreboard.Instance.HideScoreboard();
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
-        {
-            m_pCast.Cast();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
+        //{
+        //    m_pCast.Cast();
+        //}
 
         // Check for ability input
         CheckForAbilityInput();
