@@ -30,6 +30,19 @@ public class Ability_DamageOverTime : Ability
     public float m_damagePerTick;
     public float m_maxTicks;
 
+    public override string getToolTipStatInfo()
+    {
+        string newLine = "\n";
+
+        return string.Format(
+            "<size= 32> {0} </size>" + newLine
+            + "<size= 24> {1} </size>" + newLine
+            + "<size= 24> Cooldown : {2} </size>" + newLine
+            + "<size= 24> Damage per tick : <size= 14><color=red> {3} </color></size></size>" + newLine
+            + "<size= 24> Max Ticks : {4} </size>",
+            m_name, m_description, m_cooldown, m_damagePerTick, m_maxTicks);
+    }
+
     public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos)
     {
         var destination = GetAbilityPointInWorldSpace();
@@ -42,6 +55,7 @@ public class Ability_DamageOverTime : Ability
         m_launcher.m_maxTicks = m_maxTicks;
         m_launcher.m_spawnPos = PlayerGunPos;
         m_launcher.m_velocity = dir * m_force;
+        m_launcher.m_owner = getProjectileOwner(PlayerGunPos);
     }
 
     public override void TriggerAbility()

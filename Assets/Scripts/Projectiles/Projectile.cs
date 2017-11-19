@@ -26,6 +26,7 @@ public abstract class Projectile : NetworkBehaviour {
     [HideInInspector] public Rigidbody m_prefab;
     [HideInInspector] public Transform m_spawnPos;  // This value is hidden and will be set during initilisation process of Ability_ scripts
     [HideInInspector] public GameObject m_impactFX;
+    public Player m_owner;
 
     private Collider m_collider;
     private Rigidbody m_rigidBody;

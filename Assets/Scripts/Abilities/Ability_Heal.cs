@@ -13,6 +13,18 @@ public class Ability_Heal : Ability
     [Header("Heal Specific")]
     public float m_healAmount;
 
+    public override string getToolTipStatInfo()
+    {
+        string newLine = "\n";
+
+        return string.Format(
+            "<size= 32> {0} </size>" + newLine
+            + "<size= 24> {1} </size>" + newLine
+            + "<size= 24> Cooldown : {2} </size>" + newLine
+            + "<size= 24> Heal Amount : <size= 14><color=green> {3} </color></size></size>",
+            m_name, m_description, m_cooldown, m_healAmount);
+    }
+
     public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos)
     {
         var destination = GetAbilityPointInWorldSpace();

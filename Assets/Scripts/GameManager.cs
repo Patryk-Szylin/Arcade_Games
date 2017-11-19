@@ -44,6 +44,8 @@ public class GameManager : NetworkBehaviour
 
     [SyncVar] public int m_playerCount = 0;
     public static List<Player> m_allPlayers = new List<Player>();
+    public List<Text> m_labelPlayerNames = new List<Text>();
+    public List<Text> m_labelPlayerScores = new List<Text>();
 
     [Header("Others")]
     public Text m_waitingMsgText;
@@ -63,9 +65,9 @@ public class GameManager : NetworkBehaviour
     {
         LobbyManager lobbyManager = LobbyManager.s_Singleton;
 
-        if(lobbyManager != null)
+        if (lobbyManager != null)
         {
-            while(m_allPlayers.Count < lobbyManager._playerNumber)
+            while (m_allPlayers.Count < lobbyManager._playerNumber)
             {
                 yield return null; // Wait one frame and wait till all players connect to the server
             }
@@ -87,6 +89,7 @@ public class GameManager : NetworkBehaviour
     {
         Reset();
         RpcStartGame();
+        UI_Scoreboard.Instance.UpdateScoreboard();
         yield return new WaitForSeconds(2f);
     }
 
@@ -94,7 +97,7 @@ public class GameManager : NetworkBehaviour
     private void RpcStartGame()
     {
         UpdateMessage("Game has begun!");
-        
+
         EnablePlayers(false);
     }
 
@@ -117,13 +120,13 @@ public class GameManager : NetworkBehaviour
             m_gameOver = true;
     }
 
-    
+
     IEnumerator Play()
     {
         yield return new WaitForSeconds(1f);
         RpcPlayGame();
 
-        while(m_gameOver == false)
+        while (m_gameOver == false)
         {
             CheckScores();
             yield return null;
@@ -134,11 +137,11 @@ public class GameManager : NetworkBehaviour
 
     [ClientRpc]
     private void RpcPlayGame()
-    {        
-        EnablePlayers(true);
+    {
+        EnablePlayers(true);        
         UpdateMessage("");
     }
-    
+
     IEnumerator GameOver()
     {
         RpcEndGame();
@@ -153,7 +156,7 @@ public class GameManager : NetworkBehaviour
     [ClientRpc]
     private void RpcEndGame()
     {
-        EnablePlayers(false);     
+        EnablePlayers(false);
     }
 
     void EnablePlayers(bool state)
@@ -188,5 +191,86 @@ public class GameManager : NetworkBehaviour
             m_allPlayers[i].m_score = 0;
         }
     }
+
+
+    // SCOREBOARD UI functionality
+    [ClientRpc]
+    public void RpcUpdateScoreboard(string[] playerNames, int[] playerScores)
+    {
+        for (int i = 0; i < m_allPlayers.Count; i++)
+        {
+            if (playerNames[i] != null)
+            {
+                UI_Scoreboard.Instance.m_uiPlayerNames[i].text = playerNames[i];
+            }
+
+            if (playerScores[i] != null)
+            {
+                UI_Scoreboard.Instance.m_uiPlayerScores[i].text = playerScores[i].ToString();
+            }
+        }
+    }
+
+    //[Server]
+    //public void UpdateScoreboard()
+    //{
+    //    string[] names = new string[m_allPlayers.Count];
+    //    int[] scores = new int[m_allPlayers.Count]; ;
+
+    //    for (int i = 0; i < m_allPlayers.Count; i++)
+    //    {
+    //        if(m_allPlayers[i] != null)
+    //        {
+    //            names[i] = m_allPlayers[i].GetComponent<PlayerSetup>().m_playerName;
+    //            scores[i] = m_allPlayers[i].m_score;
+    //        }
+    //    }
+
+    //    RpcUpdateScoreboard(names, scores);
+    //}
+
+    //public Dictionary<string, int> getPlayerNamesAndScores()
+    //{
+    //    Dictionary<string, int> temp = new Dictionary<string, int>();
+    //    var names = new string[m_allPlayers.Count];
+    //    var scores = new int[m_allPlayers.Count];
+
+    //    for (int i = 0; i < m_allPlayers.Count; i++)
+    //    {
+    //        var name = m_allPlayers[i].GetComponent<PlayerSetup>().m_playerName;
+    //        var score = scores[i] = m_allPlayers[i].m_score;
+
+    //        temp.Add(name, score);            
+    //    }
+
+    //    return temp;
+    //}
+
+    public string[] getPlayerNames()
+    {
+        var names = new string[m_allPlayers.Count];
+
+        for (int i = 0; i < m_allPlayers.Count; i++)
+        {
+            names[i] = m_allPlayers[i].GetComponent<PlayerSetup>().m_playerName;
+        }
+
+        return names;
+    }
+
+    public int[] getPlayerScores()
+    {
+        var scores = new int[m_allPlayers.Count];
+
+        for (int i = 0; i < m_allPlayers.Count; i++)
+        {
+            scores[i] = m_allPlayers[i].m_score;
+        }
+
+        return scores;
+    }
+
+
+
 
 }
