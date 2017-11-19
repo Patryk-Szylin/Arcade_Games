@@ -5,61 +5,26 @@ using UnityEngine.Networking;
 
 public class PlayerMovement : NetworkBehaviour
 {
-    public float m_moveSpeed = 100f;
-
-    Rigidbody m_rigidbody;
-
-    private float currentSpeed = 1.0f;
-
-    // Status Effects
-    private bool stunned;
-    private float stunnedDuration;
-
-    private bool slowed;
-    private float slowedDuration1;
-
+    public float m_moveSpeed = 10f;
+    public float m_Boosted = 1;
+    public Vector3 Test;
+    public Vector3 Test2;
     private void Start()
     {
-        m_rigidbody = GetComponent<Rigidbody>();
-        currentSpeed = m_moveSpeed;
     }
 
     public void MovePlayer(Vector3 dir)
     {
-        if (stunned)
+        Test = dir;
+        //m_moveSpeed = m_moveSpeed* m_Boosted;
+        if (dir.x == 1 && dir.z == 1 || dir.x == 1 && dir.z == -1 || dir.x == -1 && dir.z == 1 || dir.x == -1 && dir.z == -1)
         {
-            stunnedDuration -= Time.deltaTime;
-            if (stunnedDuration < 0)
-                stunned = false;
+            dir = dir.normalized;
         }
-        else
-        {
-            Vector3 moveDirection = dir * currentSpeed * Time.deltaTime;
-            m_rigidbody.velocity = moveDirection;
-        }
+        dir = dir * m_moveSpeed;
+        dir *= Time.deltaTime;
+        Test2 = dir;
+        transform.Translate(dir);
 
-        if (slowed)
-        {
-            slowedDuration1 -= Time.deltaTime;
-            if (slowedDuration1 < 0)
-            {
-                slowed = false;
-                currentSpeed = m_moveSpeed;
-            }
-        }
-    }
-
-    // Status Effects
-    public void stun(float duration)
-    {
-        stunned = true;
-        stunnedDuration = duration;
-    }
-
-    public void slow(float slowAmount, float duration)
-    {
-        currentSpeed = slowAmount; //change because this sucks
-        slowed = true;
-        slowedDuration1 = duration;
     }
 }
