@@ -5,38 +5,26 @@ using UnityEngine.Networking;
 
 public class PlayerMovement : NetworkBehaviour
 {
-    public float m_baseMoveSpeed = 500f;
-
-    public float m_currentMoveSpeed = 500f;
-    public bool m_isBoosted = false;
-
-    Rigidbody m_rigidbody;
-
-
+    public float m_moveSpeed = 10f;
+    public float m_Boosted = 1;
+    public Vector3 Test;
+    public Vector3 Test2;
     private void Start()
     {
-        m_rigidbody = GetComponent<Rigidbody>();
     }
 
     public void MovePlayer(Vector3 dir)
-    {       
-
-        if(dir.x == 1 && dir.z == 1)
+    {
+        Test = dir;
+        //m_moveSpeed = m_moveSpeed* m_Boosted;
+        if (dir.x == 1 && dir.z == 1 || dir.x == 1 && dir.z == -1 || dir.x == -1 && dir.z == 1 || dir.x == -1 && dir.z == -1)
         {
             dir = dir.normalized;
         }
+        dir = dir * m_moveSpeed;
+        dir *= Time.deltaTime;
+        Test2 = dir;
+        transform.Translate(dir);
 
-        Vector3 moveDirection = dir * m_currentMoveSpeed * Time.deltaTime;
-        m_rigidbody.velocity = moveDirection;
     }
-
-
-
-    public IEnumerator ApplyBoost(float multiplier, float duration)
-    {
-        m_currentMoveSpeed = 1000f;
-        yield return new WaitForSeconds(duration);
-        m_currentMoveSpeed = m_baseMoveSpeed;
-    }
-
 }
