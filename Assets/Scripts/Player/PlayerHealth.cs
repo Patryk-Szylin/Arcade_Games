@@ -16,42 +16,25 @@ using UnityEngine.UI;
 public class PlayerHealth : NetworkBehaviour
 {
     [Header("Player Options")]
-    public float m_maxHealth = 1000f;
+    public float m_maxHealth = 10f;
 
     [Header("Player's UI elements")]
     public RectTransform m_healthBar;
-    public GameObject m_healthBar_Front;
-    public GameObject m_healthBar_Background;
 
     [Header("Player Debug Options")]
     public bool m_isDead = false;
-    public float respawnTime = 5;
+
 
     [SyncVar(hook ="UpdateHealthBar")]
     public float m_currentHealth;
 
-    [Header("Health Bar Colours")]
-    public Color teamColor;
-    public Color teamColor_background;
-    [Space]
-    public Color enemyColor;
-    public Color enemyColor_background;
 
-    //false = enemy team
-    private bool teamSide;
-    public string DEBUGID;
-
-    [Header("PopUpText")]
-    public FloatingText floatingText;
-    public Canvas floatingTextCanvas;
-
-    public bool isDead;
 
     private void Start()
     {
+        //m_currentHealth = m_maxHealth;
         m_currentHealth = m_maxHealth;
 
-        DEBUGID = transform.name;
     }
 
     void UpdateHealthBar(float val)
@@ -60,86 +43,29 @@ public class PlayerHealth : NetworkBehaviour
             m_healthBar.sizeDelta = new Vector2(val / m_maxHealth * 150f, m_healthBar.sizeDelta.y);
     }
 
-    [ClientRpc]
-    public void RpcDamage(float dmg, string sourceID)
+
+    public void Damage(float dmg)
     {
-        if (m_isDead)
-            return;
-
-        initDamageText(dmg, false);
-
         if (!isServer)
             return;
 
-        m_currentHealth -= dmg;
+        m_currentHealth -= dmg;        
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
-            RpcDie(sourceID);
+            RpcDie();
         }
-    }
-
-    [ClientRpc]
-    public void RpcHeal(float heal, string sourceID)
-    {
-        if (m_isDead)
-            return;
-
-        // Calculate how much health is missing
-        float diff = m_maxHealth - m_currentHealth;
-
-        // Check if difference is less than m_healAmount
-        if (diff < heal)
-        {
-            heal = diff;
-        }
-
-        initDamageText(heal, true);
-
-        if (!isServer)
-            return;
-
-        m_currentHealth += heal;
-    }
-
-    public void initDamageText(float text, bool heal)
-    {
-        Debug.Log("log1");
-        FloatingText instance = Instantiate(floatingText);
-        instance.transform.SetParent(floatingTextCanvas.transform, false);
-        instance.setText(text, heal);
+            
     }
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.
     [ClientRpc]
-    void RpcDie(string sourceID)
+    void RpcDie()
     {
-        //KILL/Death
-        Player sourcePlayer = GameManager.GetPlayer(sourceID);
-        if (sourcePlayer != null)
-        {
-            sourcePlayer.kills++;
-            Player player = gameObject.GetComponent<Player>();
-            player.deaths++;
-
-            PlayerSetup name = gameObject.GetComponent<PlayerSetup>();
-            PlayerSetup sourceName = sourcePlayer.GetComponent<PlayerSetup>();
-            GameManager.Instance.onPlayerKilledCallback.Invoke(name.m_playerName, sourceName.m_playerName);
-        }
-
         m_isDead = true;
+        print("Die Executed");
         SetActiveState(false);
-
-        StartCoroutine(Respawn());
-    }
-
-    private IEnumerator Respawn()
-    {
-        yield return new WaitForSeconds(respawnTime);
-
-        Reset();
-        Transform startPoint = NetworkManager.singleton.GetStartPosition();
-        transform.position = startPoint.position;
+        //Destroy(gameObject);
     }
 
     public void Reset()
@@ -168,20 +94,5 @@ public class PlayerHealth : NetworkBehaviour
         }
     }
 
-    public void setTeam(bool team)
-    {
-        if (team)
-        {
-            // Team HealthBar
-            m_healthBar_Front.GetComponent<Image>().color = teamColor;
-            m_healthBar_Background.GetComponent<Image>().color = teamColor_background;
-        }
-        else
-        {
-            // Enemy HealthBar
-            m_healthBar_Front.GetComponent<Image>().color = enemyColor;
-            m_healthBar_Background.GetComponent<Image>().color = enemyColor_background;
-        }
-    }
 
 }

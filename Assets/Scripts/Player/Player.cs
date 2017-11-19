@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 [RequireComponent(typeof(PlayerSetup))]
 [RequireComponent(typeof(PlayerMovement))]
-//[RequireComponent(typeof(PlayerCast))]
+[RequireComponent(typeof(PlayerCast))]
 [RequireComponent(typeof(PlayerHealth))]
 
 public class Player : NetworkBehaviour
@@ -16,15 +16,12 @@ public class Player : NetworkBehaviour
     public bool m_isHiding = false;
     public Dictionary<int, bool> m_hidingInBush = new Dictionary<int, bool>();
 
+
     public PlayerSetup m_pSetup;
     PlayerMovement m_pMovement;
+    PlayerCast m_pCast;
     PlayerHealth m_pHealth;
 
-    [SerializeField]
-    GameObject scoreboard;
-
-    [SyncVar] public int kills;
-    [SyncVar] public int deaths;
 
     private void OnDestroy()
     {
@@ -33,39 +30,54 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
         m_pSetup = GetComponent<PlayerSetup>();
         m_pMovement = GetComponent<PlayerMovement>();
+        m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
-
-        scoreboard = GameObject.Find("Scoreboard");
-        scoreboard.SetActive(false);
     }
 
 
     private void Update()
     {
-        if(!isLocalPlayer)
-        {
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            scoreboard.SetActive(true);
-        }
-        else if (Input.GetKeyUp(KeyCode.Tab))
-        {
-            scoreboard.SetActive(false);
-        }
 
         if (m_isHiding)
             RpcHidePlayer(true);
+
+        if (!isLocalPlayer || m_pHealth.m_isDead)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
+        {
+            m_pCast.Cast();
+        }
+
+        ExecuteAbilities();
+
     }
 
+
+    public void ExecuteAbilities()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            m_pCast.Cmd_Cast_01();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            m_pCast.Cmd_Cast_02();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            m_pCast.Cmd_Cast_03();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            m_pCast.Cmd_Cast_04();
+        }
+    }
 
     private void FixedUpdate()
     {
