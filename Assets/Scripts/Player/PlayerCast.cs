@@ -74,6 +74,7 @@ public class PlayerCast : NetworkBehaviour
             UpdateCooldownUI(1);
             UpdateCooldownUI(2);
 
+            // Initilly when players start game, there's no 4th ability. So only update ui if there's one.
             if (m_abilities[3])
             {
                 UpdateCooldownUI(3);
