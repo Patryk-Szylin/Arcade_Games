@@ -51,7 +51,7 @@ public class UI_Scoreboard : MonoBehaviour
         string[] playerNames = GameManager.Instance.getPlayerNames();
         int[] playerScores = GameManager.Instance.getPlayerScores();
 
-        //GameManager.Instance.RpcUpdateScoreboard(playerNames, playerScores);
+        GameManager.Instance.RpcUpdateScoreboard(playerNames, playerScores);
     }
 
     public void ShowScoreboard()
