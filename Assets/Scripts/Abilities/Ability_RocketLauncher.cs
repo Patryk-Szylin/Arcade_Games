@@ -12,9 +12,10 @@ public class Ability_RocketLauncher : Ability
     public float m_radius;
     public float m_damage;
 
-    public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos)
+    public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos, Vector3 destination)
     {
-        var dest = GetAbilityPointInWorldSpace();
+        //var dest = GetAbilityPointInWorldSpace();
+        var dest = destination;
         SetRocketDestination(dest);
         var velocity = BallisticVelocity(m_destination, 45f, PlayerGunPos.position);
 

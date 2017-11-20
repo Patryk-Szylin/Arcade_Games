@@ -59,25 +59,9 @@ public abstract class Ability: ScriptableObject
 
     // @ Abstract functions
     public abstract void TriggerAbility();
-    public abstract void Initilise(Rigidbody targetObj, Transform PlayerGunPos);
+    public abstract void Initilise(Rigidbody targetObj, Transform PlayerGunPos, Vector3 destination);
     public abstract String getToolTipStatInfo();
 
-
-    // This should be in utility class
-    public Vector3 GetAbilityPointInWorldSpace()
-    {
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //var rayWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit hit;
-
-
-        if (Physics.Raycast(ray, out hit, 99999f))
-        {
-            return hit.point;
-        }
-
-        return Vector3.zero;
-    }
 
     public Player getProjectileOwner(Transform fromGunPos)
     {

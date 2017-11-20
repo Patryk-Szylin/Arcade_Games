@@ -16,7 +16,7 @@ public class Ability_SpeedUp : Ability
         return string.Format("<size= 16> {0} </size>", m_name);
     }
 
-    public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos)
+    public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos, Vector3 destination)
     {
         m_player = targetObj.GetComponent<PlayerMovement>();
     }
