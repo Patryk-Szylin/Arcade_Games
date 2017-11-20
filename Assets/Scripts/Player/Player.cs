@@ -10,7 +10,7 @@ using System;
 [RequireComponent(typeof(PlayerCast))]
 [RequireComponent(typeof(PlayerHealth))]
 
-public class Player : NetworkBehaviour, IObserver
+public class Player : NetworkBehaviour
 {
     [Header("Player's Specific")]
     [SyncVar]
@@ -145,15 +145,6 @@ public class Player : NetworkBehaviour, IObserver
 
         MeshRenderer r = this.GetComponent<MeshRenderer>();
         r.enabled = state;
-    }
-
-    void IObserver.OnNotify(EVENT_TYPE eventType)
-    {
-        if (eventType == EVENT_TYPE.ON_PLAYER_DEATH)
-        {
-            print("GONNA EXECUTE DIE NOW");
-            StartCoroutine("Respawn");
-        }
     }
 }
 
