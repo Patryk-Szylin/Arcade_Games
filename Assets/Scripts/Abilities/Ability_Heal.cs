@@ -36,6 +36,7 @@ public class Ability_Heal : Ability
         m_launcher.m_prefab = m_projectilePrefab;
         m_launcher.m_spawnPos = PlayerGunPos;
         m_launcher.m_velocity = dir * m_force;
+        m_launcher.m_owner = getProjectileOwner(PlayerGunPos);
     }
 
     public override void TriggerAbility()

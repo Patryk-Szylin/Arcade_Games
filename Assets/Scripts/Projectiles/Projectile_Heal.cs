@@ -26,8 +26,6 @@ public class Projectile_Heal : Projectile
 
         if(player != null)
         {
-            print(player.name);
-
             // Making sure that player's current health can never exceed their max health capacity
             if(player.m_currentHealth < player.m_maxHealth)
             {
@@ -54,7 +52,11 @@ public class Projectile_Heal : Projectile
 
     public void OnTriggerEnter(Collider other)
     {
-        OnCollisionHit(other);
+        if (other.GetComponent<Player>() != m_owner)
+        {
+            print("EXECUTING HEALIGN");
+            OnCollisionHit(other);
+        }
     }
 
 

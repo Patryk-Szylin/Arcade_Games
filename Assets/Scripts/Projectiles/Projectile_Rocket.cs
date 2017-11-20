@@ -47,6 +47,9 @@ public class Projectile_Rocket : Projectile
 
     private void OnTriggerEnter(Collider other)
     {
-        OnCollisionHit(other);
+        if (other.GetComponent<Player>() != m_owner)
+        {
+            OnCollisionHit(other);
+        }        
     }
 }

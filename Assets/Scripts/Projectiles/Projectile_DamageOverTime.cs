@@ -56,7 +56,10 @@ public class Projectile_DamageOverTime : Projectile
 
     public void OnTriggerEnter(Collider other)
     {
-        OnCollisionHit(other);
+        if (other.GetComponent<Player>() != m_owner)
+        {
+            OnCollisionHit(other);
+        }
     }
 
 }
