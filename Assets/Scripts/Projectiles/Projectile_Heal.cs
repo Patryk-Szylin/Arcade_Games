@@ -7,6 +7,8 @@ public class Projectile_Heal : Projectile
 {
     [HideInInspector] public float m_healAmount;
 
+    Collider otherPlayer;
+
     public override void Launch()
     {
         Rigidbody rbody = Instantiate(m_prefab, m_spawnPos.position, m_spawnPos.rotation) as Rigidbody;
@@ -50,13 +52,30 @@ public class Projectile_Heal : Projectile
         }
     }
 
-    public void OnTriggerEnter(Collider other)
+    //public void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.GetComponent<Player>() != m_owner)
+    //    {
+    //        print("EXECUTING HEALIGN");
+    //        OnCollisionHit(other);
+    //    }
+    //}
+
+
+    [Command]
+    void CmdCheckForCollision()
     {
-        if (other.GetComponent<Player>() != m_owner)
+        if (otherPlayer.GetComponent<Player>() != m_owner)
         {
-            print("EXECUTING HEALIGN");
-            OnCollisionHit(other);
+            OnCollisionHit(otherPlayer);
         }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        otherPlayer = other;
+        CmdCheckForCollision();
     }
 
 

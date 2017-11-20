@@ -9,8 +9,10 @@ public class Projectile_Rocket : Projectile
     [HideInInspector] public float m_damage;
     [HideInInspector] public float m_radius;
 
+    Collider otherPlayer;
+
     public override void Launch()
-    {        
+    {
         Rigidbody rbody = Instantiate(m_prefab, m_spawnPos.position, m_spawnPos.rotation) as Rigidbody;
         if (rbody != null)
         {
@@ -28,7 +30,7 @@ public class Projectile_Rocket : Projectile
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, m_radius);
 
-        foreach(var nearbyObj in colliders)
+        foreach (var nearbyObj in colliders)
         {
             // Check whether any colliders have destructible on them,
             // If so, damage them
@@ -36,7 +38,7 @@ public class Projectile_Rocket : Projectile
             // Check if any of the colliders are players
             // If so, deal damage
             var player = nearbyObj.GetComponent<PlayerHealth>();
-            if(player != null)
+            if (player != null)
             {
                 player.Damage(m_damage, m_owner);
             }
@@ -45,11 +47,20 @@ public class Projectile_Rocket : Projectile
         Destroy(this.gameObject);
     }
 
+    
+    [Command]
+    void CmdCheckForCollision()
+    {
+        if(otherPlayer.GetComponent<Player>() != m_owner)
+        {
+            OnCollisionHit(otherPlayer);
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>() != m_owner)
-        {
-            OnCollisionHit(other);
-        }        
+        otherPlayer = other;
+        CmdCheckForCollision();
     }
 }

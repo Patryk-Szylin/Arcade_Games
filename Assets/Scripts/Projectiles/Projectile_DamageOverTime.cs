@@ -13,6 +13,8 @@ public class Projectile_DamageOverTime : Projectile
     private MeshRenderer _sprites;
     private Collider _collider;
 
+    Collider otherPlayer;
+
     private void OnEnable()
     {
         _sprites = GetComponent<MeshRenderer>();
@@ -54,12 +56,28 @@ public class Projectile_DamageOverTime : Projectile
         Destroy(this.gameObject);
     }
 
-    public void OnTriggerEnter(Collider other)
+    //public void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.GetComponent<Player>() != m_owner)
+    //    {
+    //        OnCollisionHit(other);
+    //    }
+    //}
+
+    [Command]
+    void CmdCheckForCollision()
     {
-        if (other.GetComponent<Player>() != m_owner)
+        if (otherPlayer.GetComponent<Player>() != m_owner)
         {
-            OnCollisionHit(other);
+            OnCollisionHit(otherPlayer);
         }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        otherPlayer = other;
+        CmdCheckForCollision();
     }
 
 }
