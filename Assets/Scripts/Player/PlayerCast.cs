@@ -60,9 +60,9 @@ public class PlayerCast : NetworkBehaviour
     }
 
     [Command]
-    public void Cmd_Cast(int abilityIndex)
+    public void Cmd_Cast(int abilityIndex, Vector3 direction)
     {
-        m_abilities[abilityIndex].Initilise(m_abilities[abilityIndex].m_projectilePrefab, m_projectileSpawn);
+        m_abilities[abilityIndex].Initilise(m_abilities[abilityIndex].m_projectilePrefab, m_projectileSpawn, direction);
         m_abilities[abilityIndex].TriggerAbility();
     }
 
@@ -78,6 +78,7 @@ public class PlayerCast : NetworkBehaviour
             {
                 UpdateCooldownUI(3);
             }
+            
         }
     }
 
@@ -89,10 +90,12 @@ public class PlayerCast : NetworkBehaviour
             m_nextAbilityReadyTime[index] = m_abilities[index].m_cooldown + Time.time;
             m_cooldownLeft[index] = m_abilities[index].m_cooldown;
 
+            Vector3 castDirection = GetAbilityPointInWorldSpace();
+
 
             // Re-enable ui
             AbilityReady(index, true);
-            Cmd_Cast(index);
+            Cmd_Cast(index, castDirection);
         }
     }
 
@@ -147,6 +150,22 @@ public class PlayerCast : NetworkBehaviour
             UIManager.Instance.m_cooldownDisplayTexts[index].enabled = ui_enabled;
             UIManager.Instance.m_darkMasks[index].enabled = ui_enabled;
         }
+    }
+
+    // This should be in utility class
+    public Vector3 GetAbilityPointInWorldSpace()
+    {
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //var rayWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit hit;
+
+
+        if (Physics.Raycast(ray, out hit, 99999f))
+        {
+            return hit.point;
+        }
+
+        return Vector3.zero;
     }
 
 }

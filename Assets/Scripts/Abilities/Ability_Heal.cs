@@ -25,9 +25,9 @@ public class Ability_Heal : Ability
             m_name, m_description, m_cooldown, m_healAmount);
     }
 
-    public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos)
+    public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos, Vector3 destination)
     {
-        var destination = GetAbilityPointInWorldSpace();
+        //var destination = GetAbilityPointInWorldSpace();
         var dir = (destination - PlayerGunPos.position).normalized;
 
         m_launcher = targetObj.GetComponent<Projectile_Heal>();
