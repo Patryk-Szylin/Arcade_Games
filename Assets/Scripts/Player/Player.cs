@@ -116,16 +116,17 @@ public class Player : NetworkBehaviour
 
     IEnumerator Respawn()
     {
-        print("DUSAHDUASD");
+        
         //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         yield return new WaitForSeconds(m_respawnTime);
+        transform.position = Vector3.zero;
         m_pHealth.Reset();        
     }
 
-    //void Disable()
-    //{
-    //    StartCoroutine("Respawn");
-    //}
+    void Disable()
+    {
+        StartCoroutine("Respawn");
+    }
 
     // This function is getting called inside Bush.cs
     [ClientRpc]

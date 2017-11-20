@@ -22,6 +22,7 @@ public class PlayerHealth : NetworkBehaviour
     public RectTransform m_healthBar;
 
     [Header("Player Debug Options")]
+    [SyncVar]
     public bool m_isDead = false;
 
 
@@ -63,6 +64,7 @@ public class PlayerHealth : NetworkBehaviour
         if (m_currentHealth <= 0 && !m_isDead)
         {
             m_isDead = true;
+
             RpcDie();
         }
 
@@ -74,7 +76,6 @@ public class PlayerHealth : NetworkBehaviour
     {        
         print("Die Executed");
         SetActiveState(false);
-        //Publisher.Instance.Notify(EVENT_TYPE.ON_PLAYER_DEATH);
         //Destroy(this.gameObject);
         //gameObject.SendMessage("Disable");
     }
@@ -103,16 +104,16 @@ public class PlayerHealth : NetworkBehaviour
             r.enabled = state;
         }
 
-        this.GetComponent<Rigidbody>().useGravity = state;
-        if (state == false)
-        {
-            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-        } else
-        {
-            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        //this.GetComponent<Rigidbody>().useGravity = state;
+        //if (state == false)
+        //{
+        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        //} else
+        //{
+        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
-        }
+        //}
 
 
     }
