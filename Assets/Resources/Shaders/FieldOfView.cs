@@ -50,6 +50,14 @@ public class FieldOfView : NetworkBehaviour
 
     void FindVisibleTargets()
     {
+        // TODO: REFACTORED
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject e in enemies)
+        {
+            Player r = e.GetComponent<Player>();
+            r.Hide(false);
+        }
+
         visibleTargets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
@@ -62,11 +70,15 @@ public class FieldOfView : NetworkBehaviour
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
+                    Player r = target.GetComponent<Player>();
+                    r.Hide(true);
                     visibleTargets.Add(target);
                 }
             }
         }
     }
+
+    //void disable
 
     void DrawFieldOfView()
     {

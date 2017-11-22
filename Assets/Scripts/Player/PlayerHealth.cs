@@ -149,6 +149,13 @@ public class PlayerHealth : NetworkBehaviour
         m_isDead = false;
     }
 
+    public void SetUIState(bool state)
+    {
+        foreach (Canvas c in GetComponentsInChildren<Canvas>())
+        {
+            c.enabled = state;
+        }
+    }
 
     void SetActiveState(bool state)
     {

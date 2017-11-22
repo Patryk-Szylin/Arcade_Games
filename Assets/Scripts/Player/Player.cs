@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof(PlayerSetup))]
@@ -89,6 +90,22 @@ public class Player : NetworkBehaviour
         return new Vector3(h, 0, v);
     }
 
+    // TODO: Refactored
+    public void Hide(bool state)
+    {
+        // Player Model
+        //MeshRenderer r = this.GetComponent<MeshRenderer>();
+        //r.enabled = state;
+
+        foreach (Renderer r in GetComponentsInChildren<Renderer>())
+        {
+            r.enabled = state;
+        }
+
+        // Health Bar
+        PlayerHealth healthBar = this.GetComponent<PlayerHealth>();
+        healthBar.SetUIState(state);
+    }
 
     // This function is getting called inside Bush.cs
     [ClientRpc]
