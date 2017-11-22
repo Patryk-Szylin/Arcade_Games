@@ -181,9 +181,6 @@ public class PlayerHealth : NetworkBehaviour
 
         }
 
-
-
-
     }
 
     public void setTeam(bool team)
