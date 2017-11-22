@@ -104,7 +104,7 @@ public class PlayerHealth : NetworkBehaviour
 
     public void initDamageText(float text, bool heal)
     {
-        Debug.Log("log1");
+        //Debug.Log("log1");
         FloatingText instance = Instantiate(floatingText);
         instance.transform.SetParent(floatingTextCanvas.transform, false);
         instance.setText(text, heal);
@@ -169,10 +169,21 @@ public class PlayerHealth : NetworkBehaviour
             c.enabled = state;
         }
 
-        foreach (Renderer r in GetComponentsInChildren<Renderer>())
+        this.GetComponent<Rigidbody>().useGravity = state;
+        if (state == false)
         {
-            r.enabled = state;
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         }
+        else
+        {
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+        }
+
+
+
+
     }
 
     public void setTeam(bool team)

@@ -167,7 +167,7 @@ public class AbilitiesManager : NetworkBehaviour
         {
             abilities[i].numOfShotsDone = 0;
             StartCoroutine(burstFire(i, direction));
-            Debug.Log(abilities[i].numOfShotsDone);
+            //Debug.Log(abilities[i].numOfShotsDone);
         }
         else
         {

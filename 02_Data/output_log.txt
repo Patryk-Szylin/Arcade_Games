@@ -1,0 +1,192 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 680 (ID=0x1180)
+    Vendor:   NVIDIA
+    VRAM:     2017 MB
+    Driver:   23.21.13.8813
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.128 seconds
+Platform assembly: E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\_Year3\Arcade Games\TEMP_Thursday's practical test\Arcade_Games-THURSDAY_TESTING (1)\Arcade_Games-THURSDAY_TESTING\02_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 144Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.590314 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 4e0c -> priority: 1 
+  Thread -> id: 3a7c -> priority: 1 
+  Thread -> id: 4c8c -> priority: 1 
+  Thread -> id: 4ee8 -> priority: 1 
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.496686 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1158.
+Total: 0.901987 ms (FindLiveObjects: 0.059625 ms CreateObjectMapping: 0.037412 ms MarkObjects: 0.794134 ms  DeleteObjects: 0.010229 ms)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+The referenced script on this Behaviour (Game Object 'ThirdPersonController (1)') is missing!
+ 
+(Filename:  Line: 1743)
+
+The referenced script on this Behaviour (Game Object 'ThirdPersonController (1)') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.328819 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 17446.
+Total: 6.880647 ms (FindLiveObjects: 1.026207 ms CreateObjectMapping: 0.318589 ms MarkObjects: 5.478270 ms  DeleteObjects: 0.057287 ms)
+
+[Server] function 'System.Void GameManager::Start()' called on client
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for BigExplosionEffect(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for BigExplosionEffect(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for BigExplosionEffect(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for BigExplosionEffect(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
+ClientDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 10.897792 ms
+
+Unloading 410 unused Assets to reduce memory usage. Loaded Objects now: 1178.
+Total: 1.758377 ms (FindLiveObjects: 0.052318 ms CreateObjectMapping: 0.045888 ms MarkObjects: 1.006332 ms  DeleteObjects: 0.653546 ms)
+

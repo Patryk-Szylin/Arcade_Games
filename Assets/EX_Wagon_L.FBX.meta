@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 953289d51a4d1b9419cf36df2084ca03
+timeCreated: 1510911150
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Axel_L
+    100002: Back_L
+    100004: Beams_L
+    100006: Beamsv_L
+    100008: //RootNode
+    100010: Front_L
+    100012: Planks_L
+    100014: Seat_L
+    100016: Sides_L
+    100018: Support_L
+    100020: Whee3_L
+    100022: Wheel2_L
+    100024: Wheel4_L
+    100026: Wheel_L
+    400000: Axel_L
+    400002: Back_L
+    400004: Beams_L
+    400006: Beamsv_L
+    400008: //RootNode
+    400010: Front_L
+    400012: Planks_L
+    400014: Seat_L
+    400016: Sides_L
+    400018: Support_L
+    400020: Whee3_L
+    400022: Wheel2_L
+    400024: Wheel4_L
+    400026: Wheel_L
+    2300000: Axel_L
+    2300002: Back_L
+    2300004: Beams_L
+    2300006: Beamsv_L
+    2300008: Front_L
+    2300010: Planks_L
+    2300012: Seat_L
+    2300014: Sides_L
+    2300016: Support_L
+    2300018: Whee3_L
+    2300020: Wheel2_L
+    2300022: Wheel4_L
+    2300024: Wheel_L
+    3300000: Axel_L
+    3300002: Back_L
+    3300004: Beams_L
+    3300006: Beamsv_L
+    3300008: Front_L
+    3300010: Planks_L
+    3300012: Seat_L
+    3300014: Sides_L
+    3300016: Support_L
+    3300018: Whee3_L
+    3300020: Wheel2_L
+    3300022: Wheel4_L
+    3300024: Wheel_L
+    4300000: Planks_L
+    4300002: Sides_L
+    4300004: Back_L
+    4300006: Beams_L
+    4300008: Support_L
+    4300010: Front_L
+    4300012: Seat_L
+    4300014: Beamsv_L
+    4300016: Axel_L
+    4300018: Wheel_L
+    4300020: Wheel2_L
+    4300022: Wheel4_L
+    4300024: Whee3_L
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #27'
+    second: {fileID: 2100000, guid: f9661508f2f21d6458d06f005f9e9694, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
