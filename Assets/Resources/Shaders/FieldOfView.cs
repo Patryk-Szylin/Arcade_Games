@@ -6,13 +6,12 @@ using UnityEngine.Networking;
 public class FieldOfView : NetworkBehaviour
 {
     public float viewRadius;
-    [Range(0, 360)]
-    public float viewAngle;
+    [Range(0, 360)] public float viewAngle;
 
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
-    [HideInInspector]
+    //[HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
 
     public float meshResolution;
@@ -25,9 +24,8 @@ public class FieldOfView : NetworkBehaviour
     void Start()
     {
         if(!isLocalPlayer)
-        {
             return;
-        }
+
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
@@ -173,6 +171,7 @@ public class FieldOfView : NetworkBehaviour
         }
     }
 
+    // Direction from angle - 
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
     {
         if (!angleIsGlobal)

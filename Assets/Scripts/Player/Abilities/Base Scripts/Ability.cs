@@ -44,6 +44,11 @@ public abstract class Ability : ScriptableObject
     public float movementSlowDuration;
     public float chargeTimer;
 
+    public bool burst = false;
+    public float numOfShots;
+    public float numOfShotsDone = 0;
+    public float timeBetweenShots;
+
     [Header("Variables")]
     public Sprite uiSprite;
     public string abilityTitle;

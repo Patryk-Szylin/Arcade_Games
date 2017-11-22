@@ -43,7 +43,7 @@ public class Projectile_Rocket : Projectile
             if (player != null)
             {
                 //player.Damage(damage, m_owner);
-                CmdPlayerDamage(player.name, damage, sourceID);
+                CmdPlayerDamage(other.name, damage, sourceID);
             }
         }
 

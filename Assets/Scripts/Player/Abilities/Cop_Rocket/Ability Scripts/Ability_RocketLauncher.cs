@@ -26,6 +26,7 @@ public class Ability_RocketLauncher : AbilityProjectile
         m_launcher.projectileSpawnLocation = playerGunPos;
         m_launcher.blastRadius = m_radius;
         m_launcher.m_impactFX = m_impactFX;
+        m_launcher.sourceID = sourceID;
     }
 
     public override void TriggerAbility()

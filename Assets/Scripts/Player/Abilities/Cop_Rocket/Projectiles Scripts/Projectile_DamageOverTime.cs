@@ -48,19 +48,19 @@ public class Projectile_DamageOverTime : Projectile
 
             if (other.tag == "Enemy" || other.tag == "Player")
             {
-                StartCoroutine(ApplyDoT(other.gameObject));
+                StartCoroutine(ApplyDoT(other.gameObject, other.name));
             }
         }  
     }
 
-    public IEnumerator ApplyDoT(GameObject player)
+    public IEnumerator ApplyDoT(GameObject player, string name)
     {
         _sprites.enabled = false;
         _collider.enabled = false;
 
         for (int i = 0; i < m_maxTicks; i++)
         {
-            CmdPlayerDamage(player.name, m_damagePerTick, sourceID);
+            CmdPlayerDamage(name, m_damagePerTick, sourceID);
             yield return new WaitForSeconds(1f);
         }
         Destroy(this.gameObject);

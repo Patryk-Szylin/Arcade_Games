@@ -163,9 +163,32 @@ public class AbilitiesManager : NetworkBehaviour
     [Command]
     public void Cmd_Cast(int i, Vector3 direction)
     {
+        if (abilities[i].burst == true)
+        {
+            abilities[i].numOfShotsDone = 0;
+            StartCoroutine(burstFire(i, direction));
+            Debug.Log(abilities[i].numOfShotsDone);
+        }
+        else
+        {
+            abilities[i].Initilise(projectileSpawnLocation.transform, transform.name, direction);
+            abilities[i].TriggerAbility();
+        }
+    }
 
-        abilities[i].Initilise(projectileSpawnLocation.transform, transform.name, direction);
-        abilities[i].TriggerAbility();
+    public IEnumerator burstFire(int index, Vector3 direction)
+    {
+        abilities[index].numOfShotsDone += 1;
+        // Fire
+        abilities[index].Initilise(projectileSpawnLocation.transform, transform.name, direction);
+        abilities[index].TriggerAbility();
+
+        yield return new WaitForSeconds(abilities[index].timeBetweenShots);
+
+        if (abilities[index].numOfShotsDone < abilities[index].numOfShots)
+        {
+            StartCoroutine(burstFire(index, direction));
+        }
     }
 
     public IEnumerator Fade(Color color, float end, float lerpTime)

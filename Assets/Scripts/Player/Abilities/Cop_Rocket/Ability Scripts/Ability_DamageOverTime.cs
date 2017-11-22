@@ -42,6 +42,7 @@ public class Ability_DamageOverTime : AbilityProjectile
         m_launcher.m_maxTicks = m_maxTicks;
         m_launcher.projectileSpawnLocation = playerGunPos;
         m_launcher.m_velocity = dir * projectileForce;
+        m_launcher.sourceID = sourceID;
     }
 
     public override void TriggerAbility()
