@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using System.Linq;
 
+[RequireComponent(typeof(Player))]
 public class PlayerSetup : NetworkBehaviour
 {
     [SyncVar(hook = "UpdateColour")] public Color m_playerColor;
@@ -21,10 +22,9 @@ public class PlayerSetup : NetworkBehaviour
         if (!isLocalPlayer)
         {
             cam.enabled = false;
+            gameObject.tag = "Enemy";
             return;
-        }
-            
-            
+        }   
     }
 
     public override void OnStartClient()
@@ -41,9 +41,18 @@ public class PlayerSetup : NetworkBehaviour
             }
         }
 
+
+        string playerNetID = GetComponent<NetworkIdentity>().netId.ToString();
+        Player player = GetComponent<Player>();
+        GameManager.AddPlayer(playerNetID, player);
+
         UpdateColour(m_playerColor);
         UpdateName(m_playerName);
+        Player movement = gameObject.GetComponent<Player>();
+        //movement.enabled = false;
     }
+
+    //
 
     private void UpdateName(string playerName)
     {
@@ -51,6 +60,7 @@ public class PlayerSetup : NetworkBehaviour
         {
             m_playerNameText.enabled = true;
             m_playerNameText.text = playerName;
+            //m_playerNameText.text = transform.name;
         }
     }
 

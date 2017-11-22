@@ -16,23 +16,42 @@ using UnityEngine.UI;
 public class PlayerHealth : NetworkBehaviour
 {
     [Header("Player Options")]
-    public float m_maxHealth = 10f;
+    public float m_maxHealth = 1000f;
 
     [Header("Player's UI elements")]
     public RectTransform m_healthBar;
+    public GameObject m_healthBar_Front;
+    public GameObject m_healthBar_Background;
 
     [Header("Player Debug Options")]
-    [SyncVar]
     public bool m_isDead = false;
+    public float respawnTime = 5;
 
+    [SyncVar(hook ="UpdateHealthBar")]
+    public float m_currentHealth;
 
-    [SyncVar(hook = "UpdateHealthBar")] public float m_currentHealth;
-    public Player m_lastAttacker;
+    [Header("Health Bar Colours")]
+    public Color teamColor;
+    public Color teamColor_background;
+    [Space]
+    public Color enemyColor;
+    public Color enemyColor_background;
 
+    //false = enemy team
+    private bool teamSide;
+    public string DEBUGID;
+
+    [Header("PopUpText")]
+    public FloatingText floatingText;
+    public Canvas floatingTextCanvas;
+
+    public bool isDead;
 
     private void Start()
     {
-        Reset();
+        m_currentHealth = m_maxHealth;
+
+        DEBUGID = transform.name;
     }
 
     void UpdateHealthBar(float val)
@@ -41,43 +60,86 @@ public class PlayerHealth : NetworkBehaviour
             m_healthBar.sizeDelta = new Vector2(val / m_maxHealth * 150f, m_healthBar.sizeDelta.y);
     }
 
-
-    public void Damage(float dmg, Player attacker = null)
+    [ClientRpc]
+    public void RpcDamage(float dmg, string sourceID)
     {
+        if (m_isDead)
+            return;
+
+        initDamageText(dmg, false);
+
         if (!isServer)
             return;
 
-        if (attacker != null)
-            m_lastAttacker = attacker;
-
         m_currentHealth -= dmg;
-
-        // If last attacker exists, and last attacker is not me then add score
-        if (m_lastAttacker != null && m_lastAttacker != this.GetComponent<Player>())
-        {
-            m_lastAttacker.m_score += (int)dmg;
-            m_lastAttacker = null;
-            //GameManager.Instance.UpdateScoreboard();
-            UI_Scoreboard.Instance.UpdateScoreboard();
-        }
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
-            m_isDead = true;
+            RpcDie(sourceID);
+        }
+    }
 
-            RpcDie();
+    [ClientRpc]
+    public void RpcHeal(float heal, string sourceID)
+    {
+        if (m_isDead)
+            return;
+
+        // Calculate how much health is missing
+        float diff = m_maxHealth - m_currentHealth;
+
+        // Check if difference is less than m_healAmount
+        if (diff < heal)
+        {
+            heal = diff;
         }
 
+        initDamageText(heal, true);
+
+        if (!isServer)
+            return;
+
+        m_currentHealth += heal;
+    }
+
+    public void initDamageText(float text, bool heal)
+    {
+        Debug.Log("log1");
+        FloatingText instance = Instantiate(floatingText);
+        instance.transform.SetParent(floatingTextCanvas.transform, false);
+        instance.setText(text, heal);
     }
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.
     [ClientRpc]
-    void RpcDie()
-    {        
-        print("Die Executed");
+    void RpcDie(string sourceID)
+    {
+        //KILL/Death
+        Player sourcePlayer = GameManager.GetPlayer(sourceID);
+        if (sourcePlayer != null)
+        {
+            sourcePlayer.kills++;
+            Player player = gameObject.GetComponent<Player>();
+            player.deaths++;
+
+            PlayerSetup name = gameObject.GetComponent<PlayerSetup>();
+            PlayerSetup sourceName = sourcePlayer.GetComponent<PlayerSetup>();
+            GameManager.Instance.onPlayerKilledCallback.Invoke(name.m_playerName, sourceName.m_playerName);
+        }
+
+        m_isDead = true;
         SetActiveState(false);
-        //Destroy(this.gameObject);
-        gameObject.SendMessage("Disable");
+
+        StartCoroutine(Respawn());
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(respawnTime);
+
+        Reset();
+        Transform startPoint = NetworkManager.singleton.GetStartPosition();
+        transform.position = startPoint.position;
     }
 
     public void Reset()
@@ -86,6 +148,7 @@ public class PlayerHealth : NetworkBehaviour
         SetActiveState(true);
         m_isDead = false;
     }
+
 
     void SetActiveState(bool state)
     {
@@ -103,20 +166,22 @@ public class PlayerHealth : NetworkBehaviour
         {
             r.enabled = state;
         }
-
-        //this.GetComponent<Rigidbody>().useGravity = state;
-        //if (state == false)
-        //{
-        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-        //} else
-        //{
-        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-
-        //}
-
-
     }
 
+    public void setTeam(bool team)
+    {
+        if (team)
+        {
+            // Team HealthBar
+            m_healthBar_Front.GetComponent<Image>().color = teamColor;
+            m_healthBar_Background.GetComponent<Image>().color = teamColor_background;
+        }
+        else
+        {
+            // Enemy HealthBar
+            m_healthBar_Front.GetComponent<Image>().color = enemyColor;
+            m_healthBar_Background.GetComponent<Image>().color = enemyColor_background;
+        }
+    }
 
 }

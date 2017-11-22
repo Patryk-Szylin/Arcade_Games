@@ -2,27 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-using System;
 
 
 [RequireComponent(typeof(PlayerSetup))]
 [RequireComponent(typeof(PlayerMovement))]
-[RequireComponent(typeof(PlayerCast))]
+//[RequireComponent(typeof(PlayerCast))]
 [RequireComponent(typeof(PlayerHealth))]
 
 public class Player : NetworkBehaviour
 {
     [Header("Player's Specific")]
-    [SyncVar]
-    public int m_score;
+    [SyncVar] public int m_score;
     public bool m_isHiding = false;
     public Dictionary<int, bool> m_hidingInBush = new Dictionary<int, bool>();
-    public float m_respawnTime;
 
     public PlayerSetup m_pSetup;
     PlayerMovement m_pMovement;
-    PlayerCast m_pCast;
     PlayerHealth m_pHealth;
+
+    [SerializeField]
+    GameObject scoreboard;
+
+    [SyncVar] public int kills;
+    [SyncVar] public int deaths;
 
     private void OnDestroy()
     {
@@ -31,65 +33,39 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         m_pSetup = GetComponent<PlayerSetup>();
         m_pMovement = GetComponent<PlayerMovement>();
-        m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
 
-        // Subscribe 
-        //if (isLocalPlayer)
-            //Publisher.Instance.AddObserver(this);
+        scoreboard = GameObject.Find("Scoreboard");
+        scoreboard.SetActive(false);
     }
 
 
     private void Update()
     {
+        if(!isLocalPlayer)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            scoreboard.SetActive(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            scoreboard.SetActive(false);
+        }
 
         if (m_isHiding)
             RpcHidePlayer(true);
-
-        if (!isLocalPlayer || m_pHealth.m_isDead)
-            return;
-
-        if (Input.GetKey(KeyCode.Tab))
-            UI_Scoreboard.Instance.ShowScoreboard();
-        else
-            UI_Scoreboard.Instance.HideScoreboard();
-
-
-        //if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
-        //{
-        //    m_pCast.Cast();
-        //}
-
-        // Check for ability input
-        CheckForAbilityInput();
-
     }
 
-
-    public void CheckForAbilityInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            m_pCast.CastAbility(0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            m_pCast.CastAbility(1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            m_pCast.CastAbility(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            m_pCast.CastAbility(3);
-        }
-    }
 
     private void FixedUpdate()
     {
@@ -98,7 +74,6 @@ public class Player : NetworkBehaviour
 
         Vector3 inputDir = GetInput();
         m_pMovement.MovePlayer(inputDir);
-
 
         if (m_hidingInBush.Count != 0)
         {
@@ -114,19 +89,6 @@ public class Player : NetworkBehaviour
         return new Vector3(h, 0, v);
     }
 
-    IEnumerator Respawn()
-    {
-        
-        //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-        yield return new WaitForSeconds(m_respawnTime);
-        transform.position = Vector3.zero;
-        m_pHealth.Reset();        
-    }
-
-    void Disable()
-    {
-        StartCoroutine("Respawn");
-    }
 
     // This function is getting called inside Bush.cs
     [ClientRpc]
@@ -139,13 +101,16 @@ public class Player : NetworkBehaviour
         // Otherwise, hide All other players that are in the bush
         var uis = GetComponentsInChildren<Canvas>();
 
-        foreach (Canvas ui in uis)
+        foreach(Canvas ui in uis)
         {
             ui.enabled = state;
         }
 
         MeshRenderer r = this.GetComponent<MeshRenderer>();
         r.enabled = state;
-    }
+    } 
+
+
+
 }
 
