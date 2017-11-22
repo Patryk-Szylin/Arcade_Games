@@ -23,12 +23,13 @@ public class FieldOfView : NetworkBehaviour
 
     void Start()
     {
-        if(!isLocalPlayer)
-            return;
 
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
+
+        if(!isLocalPlayer)
+            return;
 
         StartCoroutine("FindTargetsWithDelay", .2f);
     }

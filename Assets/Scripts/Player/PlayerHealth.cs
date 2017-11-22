@@ -104,7 +104,7 @@ public class PlayerHealth : NetworkBehaviour
 
     public void initDamageText(float text, bool heal)
     {
-        Debug.Log("log1");
+        //Debug.Log("log1");
         FloatingText instance = Instantiate(floatingText);
         instance.transform.SetParent(floatingTextCanvas.transform, false);
         instance.setText(text, heal);
@@ -169,10 +169,7 @@ public class PlayerHealth : NetworkBehaviour
             c.enabled = state;
         }
 
-        foreach (Renderer r in GetComponentsInChildren<Renderer>())
-        {
-            r.enabled = state;
-        }
+
     }
 
     public void setTeam(bool team)

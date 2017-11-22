@@ -53,7 +53,7 @@ public class Projectile_Snipe : Projectile
             {
                 GameObject playerID = GameObject.FindGameObjectWithTag("Player");
                 CmdPlayerDamage(other.name, damage, sourceID);
-                Debug.Log(playerID.name);
+                //Debug.Log(playerID.name);
             }
 
             Destroy(this.gameObject);
@@ -68,7 +68,7 @@ public class Projectile_Snipe : Projectile
     [Command]
     void CmdPlayerDamage (string playerID, float dmg, string sourceID)
     {
-        Debug.Log(sourceID + " Hit" + playerID);
+        //Debug.Log(sourceID + " Hit" + playerID);
         Player player = GameManager.GetPlayer(playerID);
         player.GetComponent<PlayerHealth>().RpcDamage(dmg, sourceID);
     }

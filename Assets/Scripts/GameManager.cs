@@ -226,19 +226,19 @@ public class GameManager : NetworkBehaviour
         return players.Values.ToArray();
     }
 
-    void OnGUI ()
-    {
-        GUILayout.BeginArea(new Rect(200, 200, 200, 500));
-        GUILayout.BeginVertical();
+    //void OnGUI ()
+    //{
+    //    GUILayout.BeginArea(new Rect(200, 200, 200, 500));
+    //    GUILayout.BeginVertical();
 
-        foreach (string playerID in players.Keys)
-        {
-            GUILayout.Label(playerID + " - " + players[playerID].transform.name);
-        }
+    //    foreach (string playerID in players.Keys)
+    //    {
+    //        GUILayout.Label(playerID + " - " + players[playerID].transform.name);
+    //    }
 
-        GUILayout.EndVertical();
-        GUILayout.EndArea();
-    }
+    //    GUILayout.EndVertical();
+    //    GUILayout.EndArea();
+    //}
 
     void setEnemyHealthBars()
     {
