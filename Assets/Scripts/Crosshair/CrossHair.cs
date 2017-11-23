@@ -16,7 +16,22 @@ public class CrossHair : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButton(0))
+		if(Input.GetKey("1"))
+        {
+            cursorSizeX = Mathf.Lerp(16, 32, Time.deltaTime);
+            cursorSizeY = Mathf.Lerp(16, 32, Time.deltaTime);
+        }
+        else if (Input.GetKey("2"))
+        {
+            cursorSizeX = Mathf.Lerp(16, 32, Time.deltaTime);
+            cursorSizeY = Mathf.Lerp(16, 32, Time.deltaTime);
+        }
+        else if (Input.GetKey("3"))
+        {
+            cursorSizeX = Mathf.Lerp(16, 32, Time.deltaTime);
+            cursorSizeY = Mathf.Lerp(16, 32, Time.deltaTime);
+        }
+        else if (Input.GetKey("4"))
         {
             cursorSizeX = Mathf.Lerp(16, 32, Time.deltaTime);
             cursorSizeY = Mathf.Lerp(16, 32, Time.deltaTime);
@@ -26,7 +41,7 @@ public class CrossHair : MonoBehaviour {
             cursorSizeX = Mathf.Lerp(32, 16, Time.deltaTime);
             cursorSizeY = Mathf.Lerp(32, 16, Time.deltaTime);
         }
-	}
+    }
     void OnGUI()
     {
         GUI.DrawTexture(new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, cursorSizeX, cursorSizeY), cursorTexture);
