@@ -62,7 +62,7 @@ public class PlayerCast : NetworkBehaviour
     [Command]
     public void Cmd_Cast(int abilityIndex, Vector3 direction)
     {
-        m_abilities[abilityIndex].Initilise(m_abilities[abilityIndex].m_projectilePrefab, m_projectileSpawn, direction);
+        m_abilities[abilityIndex].Initilise(m_projectileSpawn, direction);
         m_abilities[abilityIndex].TriggerAbility();
     }
 

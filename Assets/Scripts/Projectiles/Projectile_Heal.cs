@@ -61,6 +61,13 @@ public class Projectile_Heal : Projectile
     //    }
     //}
 
+    private void Update()
+    {
+        CheckRange();
+    }
+
+
+
 
     [Command]
     void CmdCheckForCollision()

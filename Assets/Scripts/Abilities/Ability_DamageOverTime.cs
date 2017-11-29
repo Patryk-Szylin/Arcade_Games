@@ -22,7 +22,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Abilities/Damage Over Time", fileName = "DoT")]
-public class Ability_DamageOverTime : Ability
+public class Ability_DamageOverTime : Ability_Projectile
 {
     [HideInInspector] public Projectile_DamageOverTime m_launcher;
 
@@ -43,19 +43,26 @@ public class Ability_DamageOverTime : Ability
             m_name, m_description, m_cooldown, m_damagePerTick, m_maxTicks);
     }
 
-    public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos, Vector3 destination)
+    public override void Initilise(Transform PlayerGunPos, Vector3 destination)
     {
         //var destination = GetAbilityPointInWorldSpace();
         var dir = (destination - PlayerGunPos.position).normalized;
 
-        m_launcher = targetObj.GetComponent<Projectile_DamageOverTime>();
+        m_launcher = m_projectilePrefab.GetComponent<Projectile_DamageOverTime>();
         m_launcher.m_impactFX = m_impactFX;
+        m_launcher.m_missFX = m_missFX;
         m_launcher.m_prefab = m_projectilePrefab;
         m_launcher.m_damagePerTick = m_damagePerTick;
         m_launcher.m_maxTicks = m_maxTicks;
         m_launcher.m_spawnPos = PlayerGunPos;
         m_launcher.m_velocity = dir * m_force;
+        m_launcher.m_range = m_range;
         m_launcher.m_owner = getProjectileOwner(PlayerGunPos);
+    }
+
+    public override void Initilise()
+    {
+        throw new System.NotImplementedException();
     }
 
     public override void TriggerAbility()
