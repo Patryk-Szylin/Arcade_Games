@@ -5,124 +5,3924 @@ Direct3D:
     Renderer: NVIDIA GeForce GTX 680 (ID=0x1180)
     Vendor:   NVIDIA
     VRAM:     2017 MB
-    Driver:   22.21.13.8205
+    Driver:   23.21.13.8813
 Begin MonoManager ReloadAssembly
-Platform assembly: E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.058 seconds
-Platform assembly: E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: E:\_Year3\Arcade Games\Mechanics\Abilities\Abilities\Arcade_Games\1_Data\Managed\System.dll (this message is harmless)
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.049 seconds
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\1_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 144Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.913093 ms
+UnloadTime: 0.921277 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 12d4 -> priority: 1 
-  Thread -> id: 43f0 -> priority: 1 
-  Thread -> id: 4858 -> priority: 1 
-  Thread -> id: 2790 -> priority: 1 
+  Thread -> id: d68 -> priority: 1 
+  Thread -> id: 5614 -> priority: 1 
+  Thread -> id: 562c -> priority: 1 
+  Thread -> id: 63b0 -> priority: 1 
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.528643 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3494.
+Total: 2.189788 ms (FindLiveObjects: 0.166017 ms CreateObjectMapping: 0.096161 ms MarkObjects: 1.478078 ms  DeleteObjects: 0.448947 ms)
+
 [Server] function 'System.Void GameManager::Start()' called on client
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-IndexOutOfRangeException: Array index is out of range.
-  at GameManager.RpcUpdateScoreboard (System.String[] playerNames, System.Int32[] playerScores) [0x00000] in <filename unknown>:0 
-  at GameManager.InvokeRpcRpcUpdateScoreboard (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkIdentity.HandleRPC (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.ClientScene.OnRPCMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkConnection.TransportReceive (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkClient.Update () [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkClient.UpdateClients () [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-SpawnObject for BigExplosionEffect(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+Found no behaviour for incoming [ClientRpc:InvokeRpcRpcStartGame] on Scatterer (UnityEngine.GameObject),  the server and client should have the same NetworkBehaviour instances [netId=17].
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-TRIGGERED
+ClientRpc [ClientRpc:InvokeRpcRpcStartGame] handler not found [netId=17]
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-ArgumentOutOfRangeException: Argument is out of range.
-Parameter name: index
-  at System.Collections.Generic.List`1[System.Boolean].CheckIndex (Int32 index) [0x00000] in <filename unknown>:0 
-  at System.Collections.Generic.List`1[System.Boolean].set_Item (Int32 index, Boolean value) [0x00000] in <filename unknown>:0 
-  at Drop.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-TRIGGERED
+Found no behaviour for incoming [ClientRpc:InvokeRpcRpcUpdateScoreboard] on Scatterer (UnityEngine.GameObject),  the server and client should have the same NetworkBehaviour instances [netId=17].
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-TRIGGERED
+ClientRpc [ClientRpc:InvokeRpcRpcUpdateScoreboard] handler not found [netId=17]
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-TRIGGERED
+Found no behaviour for incoming [ClientRpc:InvokeRpcRpcPlayGame] on Scatterer (UnityEngine.GameObject),  the server and client should have the same NetworkBehaviour instances [netId=17].
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-reactor filed to acomplish request with code {1234}, bytesReceived {0}
-reactor filed to acomplish request with code {1234}, bytesReceived {0}
-reactor filed to acomplish request with code {1234}, bytesReceived {0}
-reactor filed to acomplish request with code {1234}, bytesReceived {0}
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
-ClientDisconnected due to error: Timeout
+ClientRpc [ClientRpc:InvokeRpcRpcPlayGame] handler not found [netId=17]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 NullReferenceException: Object reference not set to an instance of an object
-  at PlayerCast.Cmd_Cast (Int32 abilityIndex) [0x00000] in <filename unknown>:0 
-  at PlayerCast.InvokeCmdCmd_Cast (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkConnection.TransportReceive (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at PlayerCast.Cmd_Cast (Int32 abilityIndex) [0x00000] in <filename unknown>:0 
-  at PlayerCast.InvokeCmdCmd_Cast (UnityEngine.Networking.NetworkBehaviour obj, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkIdentity.HandleCommand (Int32 cmdHash, UnityEngine.Networking.NetworkReader reader) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer.OnCommandMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkConnection.HandleReader (UnityEngine.Networking.NetworkReader reader, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkConnection.HandleBytes (System.Byte[] buffer, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkConnection.TransportReceive (System.Byte[] bytes, Int32 numBytes, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer+ServerSimpleWrapper.OnData (UnityEngine.Networking.NetworkConnection conn, Int32 receivedSize, Int32 channelId) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServerSimple.HandleData (Int32 connectionId, Int32 channelId, Int32 receivedSize, Byte error) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServerSimple.Update () [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer.InternalUpdate () [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkServer.Update () [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-TRIGGERED
+25
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-reactor filed to acomplish request with code {1234}, bytesReceived {0}
-reactor filed to acomplish request with code {1234}, bytesReceived {0}
-reactor filed to acomplish request with code {1234}, bytesReceived {0}
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Found no behaviour for incoming [ClientRpc:InvokeRpcRpcUpdateScoreboard] on Scatterer (UnityEngine.GameObject),  the server and client should have the same NetworkBehaviour instances [netId=17].
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ClientRpc [ClientRpc:InvokeRpcRpcUpdateScoreboard] handler not found [netId=17]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Found no behaviour for incoming [ClientRpc:InvokeRpcRpcUpdateScoreboard] on Scatterer (UnityEngine.GameObject),  the server and client should have the same NetworkBehaviour instances [netId=17].
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ClientRpc [ClientRpc:InvokeRpcRpcUpdateScoreboard] handler not found [netId=17]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Found no behaviour for incoming [ClientRpc:InvokeRpcRpcUpdateScoreboard] on Scatterer (UnityEngine.GameObject),  the server and client should have the same NetworkBehaviour instances [netId=17].
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ClientRpc [ClientRpc:InvokeRpcRpcUpdateScoreboard] handler not found [netId=17]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Found no behaviour for incoming [ClientRpc:InvokeRpcRpcUpdateScoreboard] on Scatterer (UnityEngine.GameObject),  the server and client should have the same NetworkBehaviour instances [netId=17].
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ClientRpc [ClientRpc:InvokeRpcRpcUpdateScoreboard] handler not found [netId=17]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_Heal.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Found no behaviour for incoming [ClientRpc:InvokeRpcRpcUpdateScoreboard] on Scatterer (UnityEngine.GameObject),  the server and client should have the same NetworkBehaviour instances [netId=17].
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ClientRpc [ClientRpc:InvokeRpcRpcUpdateScoreboard] handler not found [netId=17]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile.CheckRange () [0x00000] in <filename unknown>:0 
+  at Projectile_DamageOverTime.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+

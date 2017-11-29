@@ -15,6 +15,8 @@ public class Projectile_DamageOverTime : Projectile
 
     Collider otherPlayer;
 
+
+
     private void OnEnable()
     {
         _sprites = GetComponent<MeshRenderer>();
@@ -33,11 +35,24 @@ public class Projectile_DamageOverTime : Projectile
         }
     }
 
+    private void Update()
+    {
+        CheckRange();
+    }
+
+
     public override void OnCollisionHit(Collider other)
     {
         var ph = other.GetComponent<PlayerHealth>();
-        if (ph)
-            StartCoroutine(ApplyDoT(ph));        
+
+        if(ph != null)
+        {
+            // If the projectile collided, don't check for range anymore
+            CheckRange = () => { };
+
+            InstantiateFX(m_impactFX);
+            StartCoroutine(ApplyDoT(ph));            
+        }        
     }
 
     public IEnumerator ApplyDoT(PlayerHealth playerhealth)
@@ -47,22 +62,16 @@ public class Projectile_DamageOverTime : Projectile
 
         for (int i = 0; i < m_maxTicks; i++)
         {
+            print("APPLYING DOT");
+
             if (playerhealth.m_isDead)
                 break;
 
             playerhealth.Damage(m_damagePerTick, m_owner);
             yield return new WaitForSeconds(1f);
         }
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
-
-    //public void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.GetComponent<Player>() != m_owner)
-    //    {
-    //        OnCollisionHit(other);
-    //    }
-    //}
 
     [Command]
     void CmdCheckForCollision()

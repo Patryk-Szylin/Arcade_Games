@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Abilities/Rocket Launcher", fileName = "Rocket Launcher")]
-public class Ability_RocketLauncher : Ability
+public class Ability_RocketLauncher : Ability_Projectile
 {
     [HideInInspector] public Vector3 m_destination;
     [HideInInspector] public Projectile_Rocket m_launcher;
@@ -12,14 +12,15 @@ public class Ability_RocketLauncher : Ability
     public float m_radius;
     public float m_damage;
 
-    public override void Initilise(Rigidbody targetObj, Transform PlayerGunPos, Vector3 destination)
+    public override void Initilise(Transform PlayerGunPos, Vector3 destination)
     {
         //var dest = GetAbilityPointInWorldSpace();
         var dest = destination;
         SetRocketDestination(dest);
         var velocity = BallisticVelocity(m_destination, 45f, PlayerGunPos.position);
 
-        m_launcher = targetObj.GetComponent<Projectile_Rocket>();
+        m_launcher = m_projectilePrefab.GetComponent<Projectile_Rocket>();
+        //m_launcher = targetObj.GetComponent<Projectile_Rocket>();
         m_launcher.m_damage = m_damage;
         m_launcher.m_velocity = velocity;
         m_launcher.m_prefab = m_projectilePrefab;
@@ -65,5 +66,10 @@ public class Ability_RocketLauncher : Ability
             + "<size= 24> Damage : <size= 26><color=red> {3} </color></size></size>" + newLine
             + "<size= 24> Radius : {4} </size>",
             m_name, m_description, m_cooldown, m_damage, m_radius);
+    }
+
+    public override void Initilise()
+    {
+        throw new System.NotImplementedException();
     }
 }

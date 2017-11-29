@@ -25,9 +25,11 @@ public class PlayerHealth : NetworkBehaviour
     [SyncVar]
     public bool m_isDead = false;
 
-
     [SyncVar(hook = "UpdateHealthBar")] public float m_currentHealth;
     public Player m_lastAttacker;
+
+    public bool m_isDotTagged = false;
+
 
 
     private void Start()
@@ -40,7 +42,6 @@ public class PlayerHealth : NetworkBehaviour
         if (m_healthBar != null)
             m_healthBar.sizeDelta = new Vector2(val / m_maxHealth * 150f, m_healthBar.sizeDelta.y);
     }
-
 
     public void Damage(float dmg, Player attacker = null)
     {
@@ -112,11 +113,30 @@ public class PlayerHealth : NetworkBehaviour
         //{
         //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-
         //}
-
-
     }
+
+
+
+
+
+    public IEnumerator ApplyDoT(float ticks, float dmg, Player owner)
+    {
+        
+        for (int i = 0; i < ticks; i++)
+        {
+            print("APPLYING DOT");
+
+            if (m_isDead)
+                break;
+
+            Damage(dmg, owner);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+
+
 
 
 }
