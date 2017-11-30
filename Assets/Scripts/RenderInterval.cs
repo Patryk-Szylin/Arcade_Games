@@ -5,6 +5,8 @@ using UnityEngine;
 public class RenderInterval : MonoBehaviour {
     [SerializeField] float interval = 0.5f;
 
+    
+
     void Awake()
     {
         GetComponent<Camera>().enabled = false;
@@ -15,4 +17,6 @@ public class RenderInterval : MonoBehaviour {
     {
         GetComponent<Camera>().Render();
     }
+
+
 }
