@@ -105,15 +105,16 @@ public class PlayerHealth : NetworkBehaviour
             r.enabled = state;
         }
 
-        //this.GetComponent<Rigidbody>().useGravity = state;
-        //if (state == false)
-        //{
-        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-        //} else
-        //{
-        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-        //}
+        this.GetComponent<Rigidbody>().useGravity = state;
+        if (state == false)
+        {
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        }
+        else
+        {
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        }
     }
 
 

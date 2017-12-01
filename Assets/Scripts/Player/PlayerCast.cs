@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class PlayerCast : NetworkBehaviour
 {
     // CONSTANTS
-    public const int MAX_ABILITY_COUNT = 4;
+    public const int MAX_ABILITY_COUNT = 5;
 
     public Rigidbody m_projectilePrefab;
     public Transform m_projectileSpawn;
@@ -32,7 +32,7 @@ public class PlayerCast : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < MAX_ABILITY_COUNT; i++)
             {
                 if (m_abilities[i] != null)
                 {
@@ -50,9 +50,10 @@ public class PlayerCast : NetworkBehaviour
                 }                    
             }
 
-            if (m_abilities[3] == null)
+            // Check for last ability (pickable ability/gun)
+            if (m_abilities[MAX_ABILITY_COUNT - 1] == null)
             {
-                UIManager.Instance.m_abilitySprites[3].sprite = m_noAbilitySprite;
+                UIManager.Instance.m_abilitySprites[MAX_ABILITY_COUNT - 1].sprite = m_noAbilitySprite;
             }
         }
 
@@ -73,11 +74,13 @@ public class PlayerCast : NetworkBehaviour
             UpdateCooldownUI(0);
             UpdateCooldownUI(1);
             UpdateCooldownUI(2);
+            UpdateCooldownUI(3);
+
 
             // Initilly when players start game, there's no 4th ability. So only update ui if there's one.
-            if (m_abilities[3])
+            if (m_abilities[MAX_ABILITY_COUNT - 1])
             {
-                UpdateCooldownUI(3);
+                UpdateCooldownUI(MAX_ABILITY_COUNT - 1);
             }
 
 
@@ -170,5 +173,11 @@ public class PlayerCast : NetworkBehaviour
 
         return Vector3.zero;
     }
+
+    public int GetMaxAbilityCount()
+    {
+        return MAX_ABILITY_COUNT;
+    }
+
 
 }

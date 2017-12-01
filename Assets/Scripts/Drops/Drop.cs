@@ -22,16 +22,18 @@ public class Drop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var player = other.GetComponent<PlayerCast>();        
+        var player = other.GetComponent<PlayerCast>();
+        //var maxAbilityCount = player.GetMaxAbilityCount();
+        //var lastAbility = maxAbilityCount - 1;
 
         if (player != null)
         {
             print("TRIGGERED");
-            player.m_abilities[3] = m_abilityDrop;
-            player.m_abilitiesReady[3] = true;
-            player.m_nextAbilityReadyTime[3] = 0;
-            player.m_cooldownLeft[3] = 0;
-            player.m_abilitySprites[3] = m_abilityDrop.m_abilityIcon;
+            player.m_abilities[4] = m_abilityDrop;
+            player.m_abilitiesReady[4] = true;
+            player.m_nextAbilityReadyTime[4] = 0;
+            player.m_cooldownLeft[4] = 0;
+            player.m_abilitySprites[4] = m_abilityDrop.m_abilityIcon;
             Destroy(this.gameObject);
         }
     }

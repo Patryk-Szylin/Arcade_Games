@@ -70,24 +70,29 @@ public class Player : NetworkBehaviour
 
     public void CheckForAbilityInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             m_pCast.CastAbility(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             m_pCast.CastAbility(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             m_pCast.CastAbility(2);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             m_pCast.CastAbility(3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            m_pCast.CastAbility(4);
         }
     }
 
@@ -116,10 +121,11 @@ public class Player : NetworkBehaviour
 
     IEnumerator Respawn()
     {
-        
+
         //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         yield return new WaitForSeconds(m_respawnTime);
-        transform.position = Vector3.zero;
+        Transform startPoint = NetworkManager.singleton.GetStartPosition();
+        transform.position = startPoint.position;
         m_pHealth.Reset();        
     }
 
