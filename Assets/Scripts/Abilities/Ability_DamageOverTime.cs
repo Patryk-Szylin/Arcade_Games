@@ -43,10 +43,10 @@ public class Ability_DamageOverTime : Ability_Projectile
             m_name, m_description, m_cooldown, m_damagePerTick, m_maxTicks);
     }
 
-    public override void Initilise(Transform PlayerGunPos, Vector3 destination)
+    public override void Initilise(Transform PlayerGunPos, Vector3 mousePos)
     {
         //var destination = GetAbilityPointInWorldSpace();
-        var dir = (destination - PlayerGunPos.position).normalized;
+        var dir = (mousePos - PlayerGunPos.position).normalized;
 
         m_launcher = m_projectilePrefab.GetComponent<Projectile_DamageOverTime>();
         m_launcher.m_impactFX = m_impactFX;

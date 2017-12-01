@@ -23,7 +23,7 @@ public class Ability_Snipe : Ability_Projectile
             m_name, m_description, m_cooldown, m_damage);
     }
 
-    public override void Initilise(Transform playerGunPos, Vector3 destination)
+    public override void Initilise(Transform playerGunPos, Vector3 mousePos)
     {
         m_launcher = m_projectilePrefab.GetComponent<Projectile_Snipe>();
 

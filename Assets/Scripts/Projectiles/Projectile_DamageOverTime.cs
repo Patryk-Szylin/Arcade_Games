@@ -15,22 +15,25 @@ public class Projectile_DamageOverTime : Projectile
 
     Collider otherPlayer;
 
-
-
     private void OnEnable()
     {
         _sprites = GetComponent<MeshRenderer>();
         _collider = GetComponent<Collider>();
     }
 
+    private void Start()
+    {
+        m_startLoc = m_spawnPos.position;
+        CheckRange = CheckProjectileRange;
+    }
+
     public override void Launch()
     {
         Rigidbody rbody = Instantiate(m_prefab, m_spawnPos.position, m_spawnPos.rotation) as Rigidbody;
 
-
         if (rbody != null)
         {
-            rbody.velocity = m_velocity;
+            rbody.velocity = m_velocity;            
             NetworkServer.Spawn(rbody.gameObject);
         }
     }
@@ -70,7 +73,7 @@ public class Projectile_DamageOverTime : Projectile
             playerhealth.Damage(m_damagePerTick, m_owner);
             yield return new WaitForSeconds(1f);
         }
-        //Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     [Command]

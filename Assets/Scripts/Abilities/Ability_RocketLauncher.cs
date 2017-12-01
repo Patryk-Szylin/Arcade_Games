@@ -12,15 +12,14 @@ public class Ability_RocketLauncher : Ability_Projectile
     public float m_radius;
     public float m_damage;
 
-    public override void Initilise(Transform PlayerGunPos, Vector3 destination)
+    public override void Initilise(Transform PlayerGunPos, Vector3 mousePos)
     {
         //var dest = GetAbilityPointInWorldSpace();
-        var dest = destination;
+        var dest = mousePos;
         SetRocketDestination(dest);
         var velocity = BallisticVelocity(m_destination, 45f, PlayerGunPos.position);
 
         m_launcher = m_projectilePrefab.GetComponent<Projectile_Rocket>();
-        //m_launcher = targetObj.GetComponent<Projectile_Rocket>();
         m_launcher.m_damage = m_damage;
         m_launcher.m_velocity = velocity;
         m_launcher.m_prefab = m_projectilePrefab;

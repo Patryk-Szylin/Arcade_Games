@@ -55,7 +55,7 @@ public abstract class Ability: ScriptableObject
     // @ Abstract functions    
     public abstract String getToolTipStatInfo();
     public abstract void TriggerAbility();
-    public abstract void Initilise(Transform playerGunPos, Vector3 destination);    // Used if projectiles
+    public abstract void Initilise(Transform playerGunPos, Vector3 mousePos);    // Used if projectiles
     public abstract void Initilise();                                               // Used if passive
 
 

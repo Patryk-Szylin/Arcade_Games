@@ -8,7 +8,6 @@ public class PlayerCast : NetworkBehaviour
     // CONSTANTS
     public const int MAX_ABILITY_COUNT = 4;
 
-
     public Rigidbody m_projectilePrefab;
     public Transform m_projectileSpawn;
     public List<Ability> m_abilities = new List<Ability>();
@@ -17,15 +16,16 @@ public class PlayerCast : NetworkBehaviour
     public float m_reloadTime = 1f;                     // needs to be moved to an ability
     public bool m_isReloading = false;
 
-
-    //=========
-    private float m_nextReadyTime;
-
     public List<bool> m_abilitiesReady = new List<bool>();
     public List<float> m_nextAbilityReadyTime = new List<float>();
     public List<float> m_cooldownLeft = new List<float>();
     public List<Sprite> m_abilitySprites = new List<Sprite>();
     public Sprite m_noAbilitySprite;
+
+    //=========
+    private float m_nextReadyTime;
+
+
 
 
     private void Start()
@@ -60,9 +60,9 @@ public class PlayerCast : NetworkBehaviour
     }
 
     [Command]
-    public void Cmd_Cast(int abilityIndex, Vector3 direction)
+    public void Cmd_Cast(int abilityIndex, Vector3 mousePos)
     {
-        m_abilities[abilityIndex].Initilise(m_projectileSpawn, direction);
+        m_abilities[abilityIndex].Initilise(m_projectileSpawn, mousePos);
         m_abilities[abilityIndex].TriggerAbility();
     }
 
@@ -79,7 +79,8 @@ public class PlayerCast : NetworkBehaviour
             {
                 UpdateCooldownUI(3);
             }
-            
+
+
         }
     }
 
@@ -91,12 +92,14 @@ public class PlayerCast : NetworkBehaviour
             m_nextAbilityReadyTime[index] = m_abilities[index].m_cooldown + Time.time;
             m_cooldownLeft[index] = m_abilities[index].m_cooldown;
 
-            Vector3 castDirection = GetAbilityPointInWorldSpace();
-
-
             // Re-enable ui
             AbilityReady(index, true);
-            Cmd_Cast(index, castDirection);
+
+            Vector3 mousePos = GetMousePointInScreenSpace();
+            var targetDir = (mousePos - m_projectileSpawn.position).normalized;
+            m_projectileSpawn.transform.LookAt(mousePos);
+
+            Cmd_Cast(index, mousePos);
         }
     }
 
@@ -154,12 +157,11 @@ public class PlayerCast : NetworkBehaviour
     }
 
     // This should be in utility class
-    public Vector3 GetAbilityPointInWorldSpace()
+    public Vector3 GetMousePointInScreenSpace()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //var rayWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit hit;
-
 
         if (Physics.Raycast(ray, out hit, 99999f))
         {

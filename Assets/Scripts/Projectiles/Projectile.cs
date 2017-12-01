@@ -42,11 +42,11 @@ public abstract class Projectile : NetworkBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        m_collider = GetComponent<Collider>();
-        m_rigidBody = GetComponent<Rigidbody>();
         m_startLoc = m_spawnPos.position;
         CheckRange = CheckProjectileRange;
-        
+
+        m_collider = GetComponent<Collider>();
+        m_rigidBody = GetComponent<Rigidbody>();              
     }
 
     public abstract void Launch();
@@ -56,14 +56,12 @@ public abstract class Projectile : NetworkBehaviour {
     // Every projectile will share this function, might as well put in the base class.
     public void CheckProjectileRange()
     {
-        print(m_range);
         if (Vector3.Distance(transform.position, m_startLoc) > m_range)
         {
             InstantiateFX(m_missFX);
             Destroy(this.gameObject);
         }
     }
-
 
     public void InstantiateFX(GameObject missFX)
     {

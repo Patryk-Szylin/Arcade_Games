@@ -9,7 +9,7 @@ public class Projectile_Snipe : Projectile
     Collider otherPlayer;
 
     public override void Launch()
-    {
+    {        
         //Instantiate a copy of our projectile and store it in a new rigidbody variable called clonedBullet
         Rigidbody projectileClone = Instantiate(m_prefab, m_spawnPos.position, m_spawnPos.rotation) as Rigidbody;
         projectileClone.rotation = m_spawnPos.rotation;
@@ -25,7 +25,9 @@ public class Projectile_Snipe : Projectile
 
     private void Start()
     {
-        //m_startLoc = m_spawnPos.position;
+        m_startLoc = m_spawnPos.position;
+        CheckRange = CheckProjectileRange;
+
         this.GetComponent<Rigidbody>().AddForce(m_spawnPos.forward * m_force);
     }
 

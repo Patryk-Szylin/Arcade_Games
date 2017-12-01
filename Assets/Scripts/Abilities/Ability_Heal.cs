@@ -25,14 +25,15 @@ public class Ability_Heal : Ability_Projectile
             m_name, m_description, m_cooldown, m_healAmount);
     }
 
-    public override void Initilise(Transform PlayerGunPos, Vector3 destination)
+    public override void Initilise(Transform PlayerGunPos, Vector3 mousePos)
     {
         //var destination = GetAbilityPointInWorldSpace();
-        var dir = (destination - PlayerGunPos.position).normalized;
+        var dir = (mousePos - PlayerGunPos.position).normalized;
 
         m_launcher = m_projectilePrefab.GetComponent<Projectile_Heal>();
         m_launcher.m_healAmount = m_healAmount;
         m_launcher.m_impactFX = m_impactFX;
+        m_launcher.m_missFX = m_missFX;
         m_launcher.m_prefab = m_projectilePrefab;
         m_launcher.m_spawnPos = PlayerGunPos;
         m_launcher.m_velocity = dir * m_force;
