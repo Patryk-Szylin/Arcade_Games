@@ -105,12 +105,8 @@ public class PlayerCast : NetworkBehaviour
         if (!isLocalPlayer)
             return;
 
-        //print(UIManager.Instance.m_abilityIcons.Count);
-
         UIManager.Instance.m_abilitySprites[index].sprite = m_abilities[index].m_abilityIcon;
-        UpdateToolTipUI(index);
-
-        
+        UpdateToolTipUI(index);        
 
         bool cooldownComplete = (Time.time > m_nextAbilityReadyTime[index]);
 
@@ -171,6 +167,13 @@ public class PlayerCast : NetworkBehaviour
     public int GetMaxAbilityCount()
     {
         return MAX_ABILITY_COUNT;
+    }
+
+    public void Reset()
+    {
+        m_abilities[MAX_ABILITY_COUNT - 1] = null;
+        UIManager.Instance.m_abilitySprites[MAX_ABILITY_COUNT - 1].sprite = m_noAbilitySprite;
+
     }
 
 }

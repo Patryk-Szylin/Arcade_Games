@@ -125,7 +125,8 @@ public class Player : NetworkBehaviour
         yield return new WaitForSeconds(m_respawnTime);
         Transform startPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = startPoint.position;
-        m_pHealth.Reset();        
+        m_pHealth.Reset();
+        m_pCast.Reset();
     }
 
     void Disable()
