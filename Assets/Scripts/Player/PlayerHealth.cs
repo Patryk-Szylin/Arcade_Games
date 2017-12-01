@@ -77,7 +77,6 @@ public class PlayerHealth : NetworkBehaviour
     {        
         print("Die Executed");
         SetActiveState(false);
-        //Destroy(this.gameObject);
         gameObject.SendMessage("Disable");
     }
 

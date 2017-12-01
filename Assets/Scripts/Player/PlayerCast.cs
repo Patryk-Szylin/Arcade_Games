@@ -173,7 +173,6 @@ public class PlayerCast : NetworkBehaviour
     {
         m_abilities[MAX_ABILITY_COUNT - 1] = null;
         UIManager.Instance.m_abilitySprites[MAX_ABILITY_COUNT - 1].sprite = m_noAbilitySprite;
-
     }
 
 }
