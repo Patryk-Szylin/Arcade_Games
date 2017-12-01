@@ -61,7 +61,6 @@ public class Projectile_Rocket : Projectile
     private void OnTriggerEnter(Collider other)
     {
         otherPlayer = other;
-        print(other.gameObject.name);
         CmdCheckForCollision();
     }
 }

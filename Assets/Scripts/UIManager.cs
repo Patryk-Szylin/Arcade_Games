@@ -40,6 +40,7 @@ public class UIManager : MonoBehaviour
     public List<Image> m_darkMasks;
     public List<Image> m_abilitySprites;
     public List<Text> m_abilityTooltipObjects;   
+    
 
 
     public void DisplayToolTip(int abilityIndex)

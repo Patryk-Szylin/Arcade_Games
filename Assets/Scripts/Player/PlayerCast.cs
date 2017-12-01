@@ -22,11 +22,7 @@ public class PlayerCast : NetworkBehaviour
     public List<Sprite> m_abilitySprites = new List<Sprite>();
     public Sprite m_noAbilitySprite;
 
-    //=========
     private float m_nextReadyTime;
-
-
-
 
     private void Start()
     {
@@ -82,8 +78,6 @@ public class PlayerCast : NetworkBehaviour
             {
                 UpdateCooldownUI(MAX_ABILITY_COUNT - 1);
             }
-
-
         }
     }
 
@@ -178,6 +172,5 @@ public class PlayerCast : NetworkBehaviour
     {
         return MAX_ABILITY_COUNT;
     }
-
 
 }

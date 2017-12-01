@@ -121,7 +121,6 @@ public class Player : NetworkBehaviour
 
     IEnumerator Respawn()
     {
-
         //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         yield return new WaitForSeconds(m_respawnTime);
         Transform startPoint = NetworkManager.singleton.GetStartPosition();

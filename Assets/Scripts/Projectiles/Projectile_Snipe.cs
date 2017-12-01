@@ -27,7 +27,6 @@ public class Projectile_Snipe : Projectile
     {
         m_startLoc = m_spawnPos.position;
         CheckRange = CheckProjectileRange;
-
         this.GetComponent<Rigidbody>().AddForce(m_spawnPos.forward * m_force);
     }
 

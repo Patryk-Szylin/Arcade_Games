@@ -73,6 +73,7 @@ public class Projectile_DamageOverTime : Projectile
             playerhealth.Damage(m_damagePerTick, m_owner);
             yield return new WaitForSeconds(1f);
         }
+
         Destroy(this.gameObject);
     }
 
