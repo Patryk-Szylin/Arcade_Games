@@ -57,24 +57,31 @@ public class PlayerHealth : NetworkBehaviour
         if (m_lastAttacker != null && m_lastAttacker != this.GetComponent<Player>())
         {
             m_lastAttacker.m_score += (int)dmg;
-            m_lastAttacker = null;
-            //GameManager.Instance.UpdateScoreboard();
-            UI_Scoreboard.Instance.UpdateScoreboard();
+            
+            UI_Scoreboard.Instance.UpdateScoreboard();            
         }
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
-            m_isDead = true;
+            if(m_lastAttacker != this.GetComponent<Player>())
+            {
+                m_lastAttacker.m_kills += 1;
+            }
 
-            RpcDie();
+            this.GetComponent<Player>().m_deaths += 1;
+            UI_Scoreboard.Instance.UpdateScoreboard();
+
+            m_isDead = true;
+            RpcDie();            
         }
 
+        m_lastAttacker = null;
     }
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.
     [ClientRpc]
     void RpcDie()
-    {        
+    {
         print("Die Executed");
         SetActiveState(false);
         gameObject.SendMessage("Disable");
@@ -122,7 +129,7 @@ public class PlayerHealth : NetworkBehaviour
 
     public IEnumerator ApplyDoT(float ticks, float dmg, Player owner)
     {
-        
+
         for (int i = 0; i < ticks; i++)
         {
             print("APPLYING DOT");

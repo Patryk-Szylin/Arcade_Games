@@ -35,7 +35,9 @@ public class UI_Scoreboard : MonoBehaviour
     #endregion
 
     public List<Text> m_uiPlayerNames;
-    public List<Text> m_uiPlayerScores;
+    public List<Text> m_uiPlayerKills;
+    public List<Text> m_uiPlayerDeaths;
+
 
     private Canvas m_canvas;
 
@@ -49,9 +51,10 @@ public class UI_Scoreboard : MonoBehaviour
     public void UpdateScoreboard()
     {
         string[] playerNames = GameManager.Instance.getPlayerNames();
-        int[] playerScores = GameManager.Instance.getPlayerScores();
+        int[] playerKills = GameManager.Instance.getPlayerKills();
+        int[] playerDeaths = GameManager.Instance.getPlayerDeaths();
 
-        GameManager.Instance.RpcUpdateScoreboard(playerNames, playerScores);
+        GameManager.Instance.RpcUpdateScoreboard(playerNames, playerKills, playerDeaths);
     }
 
     public void ShowScoreboard()

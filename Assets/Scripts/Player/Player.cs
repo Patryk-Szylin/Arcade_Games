@@ -15,6 +15,12 @@ public class Player : NetworkBehaviour
     [Header("Player's Specific")]
     [SyncVar]
     public int m_score;
+    [SyncVar]
+    public int m_kills;
+    [SyncVar]
+    public int m_deaths;
+
+
     public bool m_isHiding = false;
     public Dictionary<int, bool> m_hidingInBush = new Dictionary<int, bool>();
     public float m_respawnTime;
@@ -36,9 +42,6 @@ public class Player : NetworkBehaviour
         m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
 
-        // Subscribe 
-        //if (isLocalPlayer)
-            //Publisher.Instance.AddObserver(this);
     }
 
 
@@ -56,11 +59,6 @@ public class Player : NetworkBehaviour
         else
             UI_Scoreboard.Instance.HideScoreboard();
 
-
-        //if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
-        //{
-        //    m_pCast.Cast();
-        //}
 
         // Check for ability input
         CheckForAbilityInput();
@@ -94,6 +92,8 @@ public class Player : NetworkBehaviour
         {
             m_pCast.CastAbility(4);
         }
+
+
     }
 
     private void FixedUpdate()

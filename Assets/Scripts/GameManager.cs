@@ -41,6 +41,7 @@ public class GameManager : NetworkBehaviour
 
     [Header("Game Options")]
     public int m_maxScore = 2;
+    [SyncVar] public float m_timeLimitInSeconds = 15f;
 
     [SyncVar] public int m_playerCount = 0;
     public static List<Player> m_allPlayers = new List<Player>();
@@ -49,17 +50,47 @@ public class GameManager : NetworkBehaviour
 
     [Header("Others")]
     public Text m_waitingMsgText;
+    public Text m_gameTimerText;
     private string m_waitingString = "Waiting for Players";
 
-    [SyncVar] bool m_gameOver = false;
+    [SyncVar] public bool m_gameOver = false;
+    private bool m_hasGameStarted = false;
     Player m_winner;
 
     [Server]
     private void Start()
     {
+        RpcSetTimerText();
         StartCoroutine("GameLoop");
     }
 
+    [ClientRpc]
+    void RpcSetTimerText()
+    {
+        m_gameTimerText.text = m_timeLimitInSeconds.ToString();
+    }
+
+    private void Update()
+    {
+        if (m_hasGameStarted)
+        {
+            RpcStartTimer();
+        }
+    }
+
+    [ClientRpc]
+    void RpcStartTimer()
+    {
+        m_timeLimitInSeconds -= Time.deltaTime;
+        var timer = Mathf.RoundToInt(m_timeLimitInSeconds);
+        if (timer <= 0)
+        {
+            timer = 0;
+            m_gameOver = true;
+        }
+
+        m_gameTimerText.text = timer.ToString();
+    }
 
     IEnumerator GameLoop()
     {
@@ -101,12 +132,22 @@ public class GameManager : NetworkBehaviour
         EnablePlayers(false);
     }
 
+    // Later this needs to check if other players have the same kill amount, then
+    // Take into account accuracy.
     Player GetWinner()
     {
         for (int i = 0; i < m_allPlayers.Count; i++)
         {
-            if (m_allPlayers[i].m_score >= m_maxScore)
-                return m_allPlayers[i];
+            for (int j = 0; j < m_allPlayers.Count; j++)
+            {
+                var highestPlayer = m_allPlayers[i];
+
+                if (highestPlayer.m_kills < m_allPlayers[j].m_kills)
+                {
+                    highestPlayer = m_allPlayers[j];
+                    return highestPlayer;
+                }
+            }
         }
 
         return null;
@@ -116,19 +157,19 @@ public class GameManager : NetworkBehaviour
     {
         m_winner = GetWinner();
 
-        if (m_winner != null)
-            m_gameOver = true;
+        //if (m_winner != null)
+        //    m_gameOver = true;
     }
 
 
     IEnumerator Play()
     {
         yield return new WaitForSeconds(1f);
+        m_hasGameStarted = true;
         RpcPlayGame();
 
         while (m_gameOver == false)
         {
-            CheckScores();
             yield return null;
         }
 
@@ -138,15 +179,20 @@ public class GameManager : NetworkBehaviour
     [ClientRpc]
     private void RpcPlayGame()
     {
-        EnablePlayers(true);        
+        EnablePlayers(true);
         UpdateMessage("");
     }
 
     IEnumerator GameOver()
     {
+        print("Game over");
+        m_hasGameStarted = false;
+        CheckScores();
         RpcEndGame();
         RpcUpdateMessage("Game Over \n " + m_winner.m_pSetup.m_playerName + " is the winner!"); // Later add a text that announces a winner      
-        yield return new WaitForSeconds(5f);
+        //RpcUpdateMessage("GAME OVER !!!!!");            // TODO: When KDA is merged with this, display the winner's name as well
+
+        yield return new WaitForSeconds(10f);
         Reset();
 
         LobbyManager.s_Singleton._playerNumber = 0;
@@ -189,62 +235,29 @@ public class GameManager : NetworkBehaviour
             var playerHealth = m_allPlayers[i].GetComponent<PlayerHealth>();
             playerHealth.Reset();
             m_allPlayers[i].m_score = 0;
+            m_allPlayers[i].m_kills = 0;
+            m_allPlayers[i].m_deaths = 0;
+
         }
     }
 
 
     // SCOREBOARD UI functionality
     [ClientRpc]
-    public void RpcUpdateScoreboard(string[] playerNames, int[] playerScores)
+    public void RpcUpdateScoreboard(string[] playerNames, int[] playerKills, int[] playerDeaths)
     {
+        print(m_allPlayers.Count);
         for (int i = 0; i < m_allPlayers.Count; i++)
         {
-            if (playerNames[i] != null)
-            {
-                UI_Scoreboard.Instance.m_uiPlayerNames[i].text = playerNames[i];
-            }
+            //if (playerNames[i] != null)
+            //{
+            //    UI_Scoreboard.Instance.m_uiPlayerNames[i].text = playerNames[i];
+            //}
 
-            if (playerScores[i] != null)
-            {
-                UI_Scoreboard.Instance.m_uiPlayerScores[i].text = playerScores[i].ToString();
-            }
+            //UI_Scoreboard.Instance.m_uiPlayerKills[i].text = playerKills[i].ToString();
+            //UI_Scoreboard.Instance.m_uiPlayerDeaths[i].text = playerDeaths[i].ToString();
         }
     }
-
-    //[Server]
-    //public void UpdateScoreboard()
-    //{
-    //    string[] names = new string[m_allPlayers.Count];
-    //    int[] scores = new int[m_allPlayers.Count]; ;
-
-    //    for (int i = 0; i < m_allPlayers.Count; i++)
-    //    {
-    //        if(m_allPlayers[i] != null)
-    //        {
-    //            names[i] = m_allPlayers[i].GetComponent<PlayerSetup>().m_playerName;
-    //            scores[i] = m_allPlayers[i].m_score;
-    //        }
-    //    }
-
-    //    RpcUpdateScoreboard(names, scores);
-    //}
-
-    //public Dictionary<string, int> getPlayerNamesAndScores()
-    //{
-    //    Dictionary<string, int> temp = new Dictionary<string, int>();
-    //    var names = new string[m_allPlayers.Count];
-    //    var scores = new int[m_allPlayers.Count];
-
-    //    for (int i = 0; i < m_allPlayers.Count; i++)
-    //    {
-    //        var name = m_allPlayers[i].GetComponent<PlayerSetup>().m_playerName;
-    //        var score = scores[i] = m_allPlayers[i].m_score;
-
-    //        temp.Add(name, score);            
-    //    }
-
-    //    return temp;
-    //}
 
     public string[] getPlayerNames()
     {
@@ -258,17 +271,31 @@ public class GameManager : NetworkBehaviour
         return names;
     }
 
-    public int[] getPlayerScores()
+    public int[] getPlayerKills()
     {
-        var scores = new int[m_allPlayers.Count];
+        var kills = new int[m_allPlayers.Count];
 
         for (int i = 0; i < m_allPlayers.Count; i++)
         {
-            scores[i] = m_allPlayers[i].m_score;
+            kills[i] = m_allPlayers[i].m_kills;
         }
 
-        return scores;
+        return kills;
     }
+
+    public int[] getPlayerDeaths()
+    {
+        var deaths = new int[m_allPlayers.Count];
+
+        for (int i = 0; i < m_allPlayers.Count; i++)
+        {
+            deaths[i] = m_allPlayers[i].m_deaths;
+        }
+
+        return deaths;
+    }
+
+
 
 
 

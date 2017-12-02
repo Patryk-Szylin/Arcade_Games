@@ -22,6 +22,12 @@ public class Projectile_Rocket : Projectile
         }
     }
 
+    private void Start()
+    {
+        m_startLoc = m_spawnPos.position;
+        //CheckRange = CheckProjectileRange;
+    }
+
     public override void OnCollisionHit(Collider other)
     {
         var explosion = Instantiate(m_impactFX, transform.position, transform.rotation);
