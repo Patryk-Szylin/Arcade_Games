@@ -43,10 +43,10 @@ public class GameManager : NetworkBehaviour
     public int m_maxScore = 2;
     [SyncVar] public float m_timeLimitInSeconds = 15f;
 
-    [SyncVar] public int m_playerCount = 0;
     public static List<Player> m_allPlayers = new List<Player>();
     public List<Text> m_labelPlayerNames = new List<Text>();
-    public List<Text> m_labelPlayerScores = new List<Text>();
+    public List<Text> m_labelPlayerKills = new List<Text>();
+    public List<Text> m_labelPlayerDeaths = new List<Text>();
 
     [Header("Others")]
     public Text m_waitingMsgText;
@@ -121,6 +121,7 @@ public class GameManager : NetworkBehaviour
         Reset();
         RpcStartGame();
         UI_Scoreboard.Instance.UpdateScoreboard();
+        //UpdateScoreboard();
         yield return new WaitForSeconds(2f);
     }
 
@@ -156,6 +157,7 @@ public class GameManager : NetworkBehaviour
     public void CheckScores()
     {
         m_winner = GetWinner();
+        m_gameOver = true;
 
         //if (m_winner != null)
         //    m_gameOver = true;
@@ -241,23 +243,68 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    [Server]
+    public void UpdateScoreboard()
+    {
+        string[] playerNames = new string[m_allPlayers.Count];
+        int[] playerKills = new int[m_allPlayers.Count];
+        int[] playerDeaths = new int[m_allPlayers.Count];
 
-    // SCOREBOARD UI functionality
+        for (int i = 0; i < m_allPlayers.Count; i++)
+        {
+            if(m_allPlayers[i] != null)
+            {
+                //playerNames[i] = m_allPlayers[i].m_pSetup.m_playerName;
+                playerNames[i] = m_allPlayers[i].GetComponent<PlayerSetup>().m_playerName;
+                playerKills[i] = m_allPlayers[i].m_kills;
+                playerDeaths[i] = m_allPlayers[i].m_deaths;
+            }
+        }
+
+        RpcUpdateScoreboard(playerNames, playerKills, playerDeaths);
+    }
+
     [ClientRpc]
     public void RpcUpdateScoreboard(string[] playerNames, int[] playerKills, int[] playerDeaths)
     {
-        print(m_allPlayers.Count);
         for (int i = 0; i < m_allPlayers.Count; i++)
         {
-            //if (playerNames[i] != null)
-            //{
-            //    UI_Scoreboard.Instance.m_uiPlayerNames[i].text = playerNames[i];
-            //}
+            if (playerNames[i] != null)
+            {
+                m_labelPlayerNames[i].text = playerNames[i];
+            }
 
-            //UI_Scoreboard.Instance.m_uiPlayerKills[i].text = playerKills[i].ToString();
-            //UI_Scoreboard.Instance.m_uiPlayerDeaths[i].text = playerDeaths[i].ToString();
+            if (playerKills[i] != null)
+            {
+                m_labelPlayerKills[i].text = playerKills[i].ToString();
+            }
+
+            if (playerDeaths[i] != null)
+            {
+                m_labelPlayerDeaths[i].text = playerDeaths[i].ToString();
+            }
         }
+
     }
+
+
+
+    //// SCOREBOARD UI functionality
+    //[ClientRpc]
+    //public void RpcUpdateScoreboard(string[] playerNames, int[] playerKills, int[] playerDeaths)
+    //{
+    //    print(m_allPlayers.Count);
+    //    for (int i = 0; i < m_allPlayers.Count; i++)
+    //    {
+    //        if (playerNames[i] != null)
+    //        {
+    //            UI_Scoreboard.Instance.m_uiPlayerNames[i].text = playerNames[i];
+    //        }
+
+    //        UI_Scoreboard.Instance.m_uiPlayerKills[i].text = playerKills[i].ToString();
+    //        UI_Scoreboard.Instance.m_uiPlayerDeaths[i].text = playerDeaths[i].ToString();
+    //    }
+    //}
 
     public string[] getPlayerNames()
     {

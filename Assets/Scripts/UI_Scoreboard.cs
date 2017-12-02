@@ -50,12 +50,32 @@ public class UI_Scoreboard : MonoBehaviour
 
     public void UpdateScoreboard()
     {
-        string[] playerNames = GameManager.Instance.getPlayerNames();
-        int[] playerKills = GameManager.Instance.getPlayerKills();
-        int[] playerDeaths = GameManager.Instance.getPlayerDeaths();
+        var players = GameManager.m_allPlayers;
+
+        //string[] playerNames = GameManager.Instance.getPlayerNames();
+        //int[] playerKills = GameManager.Instance.getPlayerKills();
+        //int[] playerDeaths = GameManager.Instance.getPlayerDeaths();
+
+        string[] playerNames = new string[players.Count];
+        int[] playerKills = new int[players.Count];
+        int[] playerDeaths = new int[players.Count];
+
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (players[i] != null)
+            {
+                //playerNames[i] = m_allPlayers[i].m_pSetup.m_playerName;
+                playerNames[i] = players[i].GetComponent<PlayerSetup>().m_playerName;
+
+
+                playerKills[i] = players[i].m_kills;
+                playerDeaths[i] = players[i].m_deaths;
+            }
+        }
 
         GameManager.Instance.RpcUpdateScoreboard(playerNames, playerKills, playerDeaths);
     }
+
 
     public void ShowScoreboard()
     {

@@ -67,10 +67,15 @@ public class PlayerCast : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-            UpdateCooldownUI(0);
-            UpdateCooldownUI(1);
-            UpdateCooldownUI(2);
-            UpdateCooldownUI(3);
+            for (int i = 0; i < MAX_ABILITY_COUNT - 1; i++)
+            {
+                UpdateCooldownUI(i);
+            }
+
+            //UpdateCooldownUI(0);
+            //UpdateCooldownUI(1);
+            //UpdateCooldownUI(2);
+            //UpdateCooldownUI(3);
 
 
             // Initilly when players start game, there's no 4th ability. So only update ui if there's one.

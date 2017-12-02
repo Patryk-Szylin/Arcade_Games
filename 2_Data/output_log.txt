@@ -1,0 +1,139 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 680 (ID=0x1180)
+    Vendor:   NVIDIA
+    VRAM:     2017 MB
+    Driver:   23.21.13.8813
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.199 seconds
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\_Year3\Arcade Games\Master\Refactored\Arcade_Games\2_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 144Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.155882 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 25a4 -> priority: 1 
+  Thread -> id: 3314 -> priority: 1 
+  Thread -> id: 2974 -> priority: 1 
+  Thread -> id: 36e4 -> priority: 1 
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.420983 ms
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 30503.
+Total: 5.073747 ms (FindLiveObjects: 1.267925 ms CreateObjectMapping: 0.277961 ms MarkObjects: 3.477003 ms  DeleteObjects: 0.050857 ms)
+
+[Server] function 'System.Void GameManager::Start()' called on client
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Die Executed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Die Executed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Die Executed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Die Executed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Die Executed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Projectile_Rocket.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
