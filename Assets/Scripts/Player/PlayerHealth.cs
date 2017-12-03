@@ -59,7 +59,6 @@ public class PlayerHealth : NetworkBehaviour
             m_lastAttacker.m_score += (int)dmg;
 
             UI_Scoreboard.Instance.UpdateScoreboard();
-            //GameManager.Instance.UpdateScoreboard();
         }
 
         if (m_currentHealth <= 0 && !m_isDead)
@@ -71,13 +70,13 @@ public class PlayerHealth : NetworkBehaviour
 
             this.GetComponent<Player>().m_deaths += 1;
             UI_Scoreboard.Instance.UpdateScoreboard();
-            //GameManager.Instance.UpdateScoreboard();
 
             m_isDead = true;
             RpcDie();            
         }
 
-        GameManager.Instance.UpdateScoreboard();
+        //GameManager.Instance.UpdateScoreboard();
+        UI_Scoreboard.Instance.UpdateScoreboard();
         m_lastAttacker = null;
     }
 

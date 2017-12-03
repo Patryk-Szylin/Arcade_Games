@@ -16,45 +16,31 @@ public class PlayerCast : NetworkBehaviour
     public float m_reloadTime = 1f;                     // needs to be moved to an ability
     public bool m_isReloading = false;
 
+
+    // THESE ARE CREATED IN THE INSPECTOR, each have 5 elements.
     public List<bool> m_abilitiesReady = new List<bool>();
     public List<float> m_nextAbilityReadyTime = new List<float>();
     public List<float> m_cooldownLeft = new List<float>();
     public List<Sprite> m_abilitySprites = new List<Sprite>();
     public Sprite m_noAbilitySprite;
 
-    private float m_nextReadyTime;
-
     private void Start()
     {
         if (isLocalPlayer)
         {
-            for (int i = 0; i < MAX_ABILITY_COUNT; i++)
-            {
-                if (m_abilities[i] != null)
-                {
-                    m_abilitiesReady.Add(true);
-                    m_nextAbilityReadyTime.Add(0);
-                    m_cooldownLeft.Add(m_abilities[i].m_cooldown);
-                    m_abilitySprites.Add(m_abilities[i].m_abilityIcon);
-                }
-                else
-                {
-                    m_abilitiesReady.Add(false);
-                    m_nextAbilityReadyTime.Add(0);
-                    m_cooldownLeft.Add(0);
-                    m_abilitySprites.Add(m_noAbilitySprite);
-                }                    
-            }
-
             // Check for last ability (pickable ability/gun)
             if (m_abilities[MAX_ABILITY_COUNT - 1] == null)
             {
                 UIManager.Instance.m_abilitySprites[MAX_ABILITY_COUNT - 1].sprite = m_noAbilitySprite;
             }
         }
-
-
     }
+
+    public void EquipNewAbility(Ability newAbility)
+    {
+        m_abilities[4] = newAbility;
+    }
+
 
     [Command]
     public void Cmd_Cast(int abilityIndex, Vector3 mousePos)
@@ -72,12 +58,6 @@ public class PlayerCast : NetworkBehaviour
                 UpdateCooldownUI(i);
             }
 
-            //UpdateCooldownUI(0);
-            //UpdateCooldownUI(1);
-            //UpdateCooldownUI(2);
-            //UpdateCooldownUI(3);
-
-
             // Initilly when players start game, there's no 4th ability. So only update ui if there's one.
             if (m_abilities[MAX_ABILITY_COUNT - 1])
             {
@@ -89,7 +69,7 @@ public class PlayerCast : NetworkBehaviour
     public void CastAbility(int index)
     {
         // UI STUFF
-        if (m_abilitiesReady[index] && m_abilities[index]  != null)
+        if (m_abilitiesReady[index] && m_abilities[index] != null)
         {
             m_nextAbilityReadyTime[index] = m_abilities[index].m_cooldown + Time.time;
             m_cooldownLeft[index] = m_abilities[index].m_cooldown;
@@ -111,7 +91,7 @@ public class PlayerCast : NetworkBehaviour
             return;
 
         UIManager.Instance.m_abilitySprites[index].sprite = m_abilities[index].m_abilityIcon;
-        UpdateToolTipUI(index);        
+        UpdateToolTipUI(index);
 
         bool cooldownComplete = (Time.time > m_nextAbilityReadyTime[index]);
 

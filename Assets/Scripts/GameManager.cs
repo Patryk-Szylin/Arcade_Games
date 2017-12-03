@@ -130,6 +130,8 @@ public class GameManager : NetworkBehaviour
     {
         UpdateMessage("Game has begun!");
 
+
+
         EnablePlayers(false);
     }
 
