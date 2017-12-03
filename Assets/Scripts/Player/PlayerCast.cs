@@ -6,8 +6,7 @@ using UnityEngine.Networking;
 public class PlayerCast : NetworkBehaviour
 {
     // CONSTANTS
-    public const int MAX_ABILITY_COUNT = 4;
-
+    public const int MAX_ABILITY_COUNT = 5;
 
     public Rigidbody m_projectilePrefab;
     public Transform m_projectileSpawn;
@@ -18,51 +17,35 @@ public class PlayerCast : NetworkBehaviour
     public bool m_isReloading = false;
 
 
-    //=========
-    private float m_nextReadyTime;
-
+    // THESE ARE CREATED IN THE INSPECTOR, each have 5 elements.
     public List<bool> m_abilitiesReady = new List<bool>();
     public List<float> m_nextAbilityReadyTime = new List<float>();
     public List<float> m_cooldownLeft = new List<float>();
     public List<Sprite> m_abilitySprites = new List<Sprite>();
     public Sprite m_noAbilitySprite;
 
-
     private void Start()
     {
         if (isLocalPlayer)
         {
-            for (int i = 0; i < 4; i++)
+            // Check for last ability (pickable ability/gun)
+            if (m_abilities[MAX_ABILITY_COUNT - 1] == null)
             {
-                if (m_abilities[i] != null)
-                {
-                    m_abilitiesReady.Add(true);
-                    m_nextAbilityReadyTime.Add(0);
-                    m_cooldownLeft.Add(m_abilities[i].m_cooldown);
-                    m_abilitySprites.Add(m_abilities[i].m_abilityIcon);
-                }
-                else
-                {
-                    m_abilitiesReady.Add(false);
-                    m_nextAbilityReadyTime.Add(0);
-                    m_cooldownLeft.Add(0);
-                    m_abilitySprites.Add(m_noAbilitySprite);
-                }                    
-            }
-
-            if (m_abilities[3] == null)
-            {
-                UIManager.Instance.m_abilitySprites[3].sprite = m_noAbilitySprite;
+                UIManager.Instance.m_abilitySprites[MAX_ABILITY_COUNT - 1].sprite = m_noAbilitySprite;
             }
         }
-
-
     }
 
-    [Command]
-    public void Cmd_Cast(int abilityIndex, Vector3 direction)
+    public void EquipNewAbility(Ability newAbility)
     {
-        m_abilities[abilityIndex].Initilise(m_abilities[abilityIndex].m_projectilePrefab, m_projectileSpawn, direction);
+        m_abilities[4] = newAbility;
+    }
+
+
+    [Command]
+    public void Cmd_Cast(int abilityIndex, Vector3 mousePos)
+    {
+        m_abilities[abilityIndex].Initilise(m_projectileSpawn, mousePos);
         m_abilities[abilityIndex].TriggerAbility();
     }
 
@@ -70,33 +53,35 @@ public class PlayerCast : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-            UpdateCooldownUI(0);
-            UpdateCooldownUI(1);
-            UpdateCooldownUI(2);
+            for (int i = 0; i < MAX_ABILITY_COUNT - 1; i++)
+            {
+                UpdateCooldownUI(i);
+            }
 
             // Initilly when players start game, there's no 4th ability. So only update ui if there's one.
-            if (m_abilities[3])
+            if (m_abilities[MAX_ABILITY_COUNT - 1])
             {
-                UpdateCooldownUI(3);
+                UpdateCooldownUI(MAX_ABILITY_COUNT - 1);
             }
-            
         }
     }
 
     public void CastAbility(int index)
     {
         // UI STUFF
-        if (m_abilitiesReady[index] && m_abilities[index]  != null)
+        if (m_abilitiesReady[index] && m_abilities[index] != null)
         {
             m_nextAbilityReadyTime[index] = m_abilities[index].m_cooldown + Time.time;
             m_cooldownLeft[index] = m_abilities[index].m_cooldown;
 
-            Vector3 castDirection = GetAbilityPointInWorldSpace();
-
-
             // Re-enable ui
             AbilityReady(index, true);
-            Cmd_Cast(index, castDirection);
+
+            Vector3 mousePos = GetMousePointInScreenSpace();
+            var targetDir = (mousePos - m_projectileSpawn.position).normalized;
+            m_projectileSpawn.transform.LookAt(mousePos);
+
+            Cmd_Cast(index, mousePos);
         }
     }
 
@@ -105,12 +90,8 @@ public class PlayerCast : NetworkBehaviour
         if (!isLocalPlayer)
             return;
 
-        //print(UIManager.Instance.m_abilityIcons.Count);
-
         UIManager.Instance.m_abilitySprites[index].sprite = m_abilities[index].m_abilityIcon;
         UpdateToolTipUI(index);
-
-        
 
         bool cooldownComplete = (Time.time > m_nextAbilityReadyTime[index]);
 
@@ -154,12 +135,11 @@ public class PlayerCast : NetworkBehaviour
     }
 
     // This should be in utility class
-    public Vector3 GetAbilityPointInWorldSpace()
+    public Vector3 GetMousePointInScreenSpace()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //var rayWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit hit;
-
 
         if (Physics.Raycast(ray, out hit, 99999f))
         {
@@ -167,6 +147,17 @@ public class PlayerCast : NetworkBehaviour
         }
 
         return Vector3.zero;
+    }
+
+    public int GetMaxAbilityCount()
+    {
+        return MAX_ABILITY_COUNT;
+    }
+
+    public void Reset()
+    {
+        m_abilities[MAX_ABILITY_COUNT - 1] = null;
+        UIManager.Instance.m_abilitySprites[MAX_ABILITY_COUNT - 1].sprite = m_noAbilitySprite;
     }
 
 }

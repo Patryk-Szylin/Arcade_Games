@@ -15,6 +15,12 @@ public class Player : NetworkBehaviour
     [Header("Player's Specific")]
     [SyncVar]
     public int m_score;
+    [SyncVar]
+    public int m_kills;
+    [SyncVar]
+    public int m_deaths;
+
+
     public bool m_isHiding = false;
     public Dictionary<int, bool> m_hidingInBush = new Dictionary<int, bool>();
     public float m_respawnTime;
@@ -36,9 +42,6 @@ public class Player : NetworkBehaviour
         m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
 
-        // Subscribe 
-        //if (isLocalPlayer)
-            //Publisher.Instance.AddObserver(this);
     }
 
 
@@ -57,11 +60,6 @@ public class Player : NetworkBehaviour
             UI_Scoreboard.Instance.HideScoreboard();
 
 
-        //if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
-        //{
-        //    m_pCast.Cast();
-        //}
-
         // Check for ability input
         CheckForAbilityInput();
 
@@ -70,25 +68,32 @@ public class Player : NetworkBehaviour
 
     public void CheckForAbilityInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             m_pCast.CastAbility(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             m_pCast.CastAbility(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             m_pCast.CastAbility(2);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             m_pCast.CastAbility(3);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            m_pCast.CastAbility(4);
+        }
+
+
     }
 
     private void FixedUpdate()
@@ -116,11 +121,12 @@ public class Player : NetworkBehaviour
 
     IEnumerator Respawn()
     {
-        
         //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         yield return new WaitForSeconds(m_respawnTime);
-        transform.position = Vector3.zero;
-        m_pHealth.Reset();        
+        Transform startPoint = NetworkManager.singleton.GetStartPosition();
+        transform.position = startPoint.position;
+        m_pHealth.Reset();
+        m_pCast.Reset();
     }
 
     void Disable()

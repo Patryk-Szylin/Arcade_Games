@@ -35,19 +35,17 @@ public class UIManager : MonoBehaviour
             Destroy(this.gameObject);
     }
     #endregion
-
-
+    
     public List<Text> m_cooldownDisplayTexts;
     public List<Image> m_darkMasks;
     public List<Image> m_abilitySprites;
-    public List<Text> m_abilityTooltipObjects;
-    public List<Text> m_abilityToolcontent;
-    
+    public List<Text> m_abilityTooltipObjects;      
 
 
     public void DisplayToolTip(int abilityIndex)
     {
         //m_abilityTooltipObjects[abilityIndex].text = m_abilityToolcontent[abilityIndex].text;
+        print("DKSAODASDOS");
         m_abilityTooltipObjects[abilityIndex].gameObject.SetActive(true);
         
     }

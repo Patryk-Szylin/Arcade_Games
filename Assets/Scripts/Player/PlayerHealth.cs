@@ -25,9 +25,11 @@ public class PlayerHealth : NetworkBehaviour
     [SyncVar]
     public bool m_isDead = false;
 
-
     [SyncVar(hook = "UpdateHealthBar")] public float m_currentHealth;
     public Player m_lastAttacker;
+
+    public bool m_isDotTagged = false;
+
 
 
     private void Start()
@@ -40,7 +42,6 @@ public class PlayerHealth : NetworkBehaviour
         if (m_healthBar != null)
             m_healthBar.sizeDelta = new Vector2(val / m_maxHealth * 150f, m_healthBar.sizeDelta.y);
     }
-
 
     public void Damage(float dmg, Player attacker = null)
     {
@@ -56,27 +57,35 @@ public class PlayerHealth : NetworkBehaviour
         if (m_lastAttacker != null && m_lastAttacker != this.GetComponent<Player>())
         {
             m_lastAttacker.m_score += (int)dmg;
-            m_lastAttacker = null;
-            //GameManager.Instance.UpdateScoreboard();
+
             UI_Scoreboard.Instance.UpdateScoreboard();
         }
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
-            m_isDead = true;
+            if(m_lastAttacker != this.GetComponent<Player>())
+            {
+                m_lastAttacker.m_kills += 1;
+            }
 
-            RpcDie();
+            this.GetComponent<Player>().m_deaths += 1;
+            UI_Scoreboard.Instance.UpdateScoreboard();
+
+            m_isDead = true;
+            RpcDie();            
         }
 
+        //GameManager.Instance.UpdateScoreboard();
+        UI_Scoreboard.Instance.UpdateScoreboard();
+        m_lastAttacker = null;
     }
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.
     [ClientRpc]
     void RpcDie()
-    {        
+    {
         print("Die Executed");
         SetActiveState(false);
-        //Destroy(this.gameObject);
         gameObject.SendMessage("Disable");
     }
 
@@ -104,19 +113,39 @@ public class PlayerHealth : NetworkBehaviour
             r.enabled = state;
         }
 
-        //this.GetComponent<Rigidbody>().useGravity = state;
-        //if (state == false)
-        //{
-        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-        //} else
-        //{
-        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-
-        //}
-
-
+        this.GetComponent<Rigidbody>().useGravity = state;
+        if (state == false)
+        {
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        }
+        else
+        {
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        }
     }
+
+
+
+
+
+    public IEnumerator ApplyDoT(float ticks, float dmg, Player owner)
+    {
+
+        for (int i = 0; i < ticks; i++)
+        {
+            print("APPLYING DOT");
+
+            if (m_isDead)
+                break;
+
+            Damage(dmg, owner);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+
+
 
 
 }

@@ -15,9 +15,16 @@ public class Projectile_Heal : Projectile
         if (rbody != null)
         {
             rbody.velocity = m_velocity;
-
             NetworkServer.Spawn(rbody.gameObject);
         }
+    }
+
+    private void Start()
+    {
+        m_startLoc = m_spawnPos.position;
+        CheckRange = CheckProjectileRange;
+
+        this.GetComponent<Rigidbody>().AddForce(m_spawnPos.forward * m_force);
     }
 
     public override void OnCollisionHit(Collider other)
@@ -60,6 +67,13 @@ public class Projectile_Heal : Projectile
     //        OnCollisionHit(other);
     //    }
     //}
+
+    private void Update()
+    {
+        CheckRange();
+    }
+
+
 
 
     [Command]

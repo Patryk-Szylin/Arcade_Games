@@ -21,23 +21,41 @@ public class Projectile_DamageOverTime : Projectile
         _collider = GetComponent<Collider>();
     }
 
+    private void Start()
+    {
+        m_startLoc = m_spawnPos.position;
+        CheckRange = CheckProjectileRange;
+    }
+
     public override void Launch()
     {
         Rigidbody rbody = Instantiate(m_prefab, m_spawnPos.position, m_spawnPos.rotation) as Rigidbody;
 
-
         if (rbody != null)
         {
-            rbody.velocity = m_velocity;
+            rbody.velocity = m_velocity;            
             NetworkServer.Spawn(rbody.gameObject);
         }
     }
 
+    private void Update()
+    {
+        CheckRange();
+    }
+
+
     public override void OnCollisionHit(Collider other)
     {
         var ph = other.GetComponent<PlayerHealth>();
-        if (ph)
-            StartCoroutine(ApplyDoT(ph));        
+
+        if(ph != null)
+        {
+            // If the projectile collided, don't check for range anymore
+            CheckRange = () => { };
+
+            InstantiateFX(m_impactFX);
+            StartCoroutine(ApplyDoT(ph));            
+        }        
     }
 
     public IEnumerator ApplyDoT(PlayerHealth playerhealth)
@@ -47,22 +65,17 @@ public class Projectile_DamageOverTime : Projectile
 
         for (int i = 0; i < m_maxTicks; i++)
         {
+            print("APPLYING DOT");
+
             if (playerhealth.m_isDead)
                 break;
 
             playerhealth.Damage(m_damagePerTick, m_owner);
             yield return new WaitForSeconds(1f);
         }
+
         Destroy(this.gameObject);
     }
-
-    //public void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.GetComponent<Player>() != m_owner)
-    //    {
-    //        OnCollisionHit(other);
-    //    }
-    //}
 
     [Command]
     void CmdCheckForCollision()

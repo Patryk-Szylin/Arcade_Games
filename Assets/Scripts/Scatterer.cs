@@ -50,8 +50,6 @@ public class Scatterer : NetworkBehaviour
     }
 
 
-
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
