@@ -18,7 +18,7 @@ public class MiniMapController : NetworkBehaviour
     public float minimapDrawDistance = 35;
     public Image image;
     private static Player player;
-    public Text debug;
+    //public Text debug;
 
 
     public static List<MapObject> mapObjects = new List<MapObject>();
@@ -92,7 +92,7 @@ public class MiniMapController : NetworkBehaviour
             mo.icon.transform.position = screenPos;
 
 
-            print(mapCamera.name);
+            
         }
     }
 
@@ -107,17 +107,9 @@ public class MiniMapController : NetworkBehaviour
         {
             if (GameManager.m_allPlayers[i].isLocalPlayer)
             {
-                print(GameManager.m_allPlayers[i].isLocalPlayer + " " + GameManager.m_allPlayers[i].name);
-                //print(GameManager.m_allPlayers[i].name)
-
                 var playerPos = GameManager.m_allPlayers[i].transform.position;
-
-                //mapCamera = GameObject.Find("MiniMapCamera").GetComponent<Camera>();
-                //mapCamera = GameManager.m_allPlayers[i].GetComponentInChildren<Camera>();
-                GameManager.m_allPlayers[i].minicam.gameObject.SetActive(true);
-                //mapCamera.gameObject.SetActive(true);
-                //mapCamera.forceIntoRenderTexture = true;
-                //debug.text = mapCamera.GetComponentInParent<Player>().name;
+                
+                GameManager.m_allPlayers[i].minicam.gameObject.SetActive(true);                
 
                 player = GameManager.m_allPlayers[i];
 
