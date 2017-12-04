@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
+using System;
 
 
 [RequireComponent(typeof(PlayerSetup))]
@@ -12,16 +14,17 @@ using UnityEngine.Networking;
 public class Player : NetworkBehaviour
 {
     [Header("Player's Specific")]
-    [SyncVar] public int m_score;
+    [SyncVar]
+    public int m_score;
     public bool m_isHiding = false;
     public Dictionary<int, bool> m_hidingInBush = new Dictionary<int, bool>();
-
+    public float m_respawnTime;
 
     public PlayerSetup m_pSetup;
     PlayerMovement m_pMovement;
     PlayerCast m_pCast;
     PlayerHealth m_pHealth;
-
+    public Camera minicam;
 
     private void OnDestroy()
     {
@@ -34,6 +37,10 @@ public class Player : NetworkBehaviour
         m_pMovement = GetComponent<PlayerMovement>();
         m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
+
+        // Subscribe 
+        //if (isLocalPlayer)
+            //Publisher.Instance.AddObserver(this);
     }
 
 
@@ -46,12 +53,46 @@ public class Player : NetworkBehaviour
         if (!isLocalPlayer || m_pHealth.m_isDead)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
-        {
-            m_pCast.Cast();
-        }
+        if (Input.GetKey(KeyCode.Tab))
+            UI_Scoreboard.Instance.ShowScoreboard();
+        else
+            UI_Scoreboard.Instance.HideScoreboard();
+
+
+        //if (Input.GetKeyDown(KeyCode.Space) && m_pCast.m_isReloading == false)
+        //{
+        //    m_pCast.Cast();
+        //}
+
+        // Check for ability input
+        CheckForAbilityInput();
+
     }
 
+
+    public void CheckForAbilityInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            print(this.name);
+            m_pCast.CastAbility(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            m_pCast.CastAbility(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            m_pCast.CastAbility(2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            m_pCast.CastAbility(3);
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -60,6 +101,7 @@ public class Player : NetworkBehaviour
 
         Vector3 inputDir = GetInput();
         m_pMovement.MovePlayer(inputDir);
+
 
         if (m_hidingInBush.Count != 0)
         {
@@ -75,6 +117,19 @@ public class Player : NetworkBehaviour
         return new Vector3(h, 0, v);
     }
 
+    IEnumerator Respawn()
+    {
+        
+        //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        yield return new WaitForSeconds(m_respawnTime);
+        transform.position = Vector3.zero;
+        m_pHealth.Reset();        
+    }
+
+    void Disable()
+    {
+        StartCoroutine("Respawn");
+    }
 
     // This function is getting called inside Bush.cs
     [ClientRpc]
@@ -87,16 +142,13 @@ public class Player : NetworkBehaviour
         // Otherwise, hide All other players that are in the bush
         var uis = GetComponentsInChildren<Canvas>();
 
-        foreach(Canvas ui in uis)
+        foreach (Canvas ui in uis)
         {
             ui.enabled = state;
         }
 
         MeshRenderer r = this.GetComponent<MeshRenderer>();
         r.enabled = state;
-    } 
-
-
-
+    }
 }
 

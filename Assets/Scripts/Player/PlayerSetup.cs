@@ -12,6 +12,7 @@ public class PlayerSetup : NetworkBehaviour
 
     public Text m_playerNameText;
     public Camera cam;
+    //public GameObject mini;
 
     // this function is invoked when client has connected to the server
 
@@ -40,6 +41,9 @@ public class PlayerSetup : NetworkBehaviour
                 GameManager.m_allPlayers.Add(p);
             }
         }
+
+        //mini.GetComponent<MiniMapController>().mapCamera = this.GetComponentInChildren<Camera>();
+        //FindObjectOfType<MiniMapController>().mapCamera = this.GetComponentInChildren<Camera>();
 
         UpdateColour(m_playerColor);
         UpdateName(m_playerName);

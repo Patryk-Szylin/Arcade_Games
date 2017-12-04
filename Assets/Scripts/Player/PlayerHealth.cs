@@ -22,19 +22,17 @@ public class PlayerHealth : NetworkBehaviour
     public RectTransform m_healthBar;
 
     [Header("Player Debug Options")]
+    [SyncVar]
     public bool m_isDead = false;
 
 
-    [SyncVar(hook ="UpdateHealthBar")]
-    public float m_currentHealth;
-
+    [SyncVar(hook = "UpdateHealthBar")] public float m_currentHealth;
+    public Player m_lastAttacker;
 
 
     private void Start()
     {
-        //m_currentHealth = m_maxHealth;
-        m_currentHealth = m_maxHealth;
-
+        Reset();
     }
 
     void UpdateHealthBar(float val)
@@ -44,28 +42,42 @@ public class PlayerHealth : NetworkBehaviour
     }
 
 
-    public void Damage(float dmg)
+    public void Damage(float dmg, Player attacker = null)
     {
         if (!isServer)
             return;
 
-        m_currentHealth -= dmg;        
+        if (attacker != null)
+            m_lastAttacker = attacker;
+
+        m_currentHealth -= dmg;
+
+        // If last attacker exists, and last attacker is not me then add score
+        if (m_lastAttacker != null && m_lastAttacker != this.GetComponent<Player>())
+        {
+            m_lastAttacker.m_score += (int)dmg;
+            m_lastAttacker = null;
+            //GameManager.Instance.UpdateScoreboard();
+            UI_Scoreboard.Instance.UpdateScoreboard();
+        }
 
         if (m_currentHealth <= 0 && !m_isDead)
         {
+            m_isDead = true;
+
             RpcDie();
         }
-            
+
     }
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.
     [ClientRpc]
     void RpcDie()
-    {
-        m_isDead = true;
+    {        
         print("Die Executed");
         SetActiveState(false);
-        //Destroy(gameObject);
+        //Destroy(this.gameObject);
+        gameObject.SendMessage("Disable");
     }
 
     public void Reset()
@@ -74,7 +86,6 @@ public class PlayerHealth : NetworkBehaviour
         SetActiveState(true);
         m_isDead = false;
     }
-
 
     void SetActiveState(bool state)
     {
@@ -92,6 +103,19 @@ public class PlayerHealth : NetworkBehaviour
         {
             r.enabled = state;
         }
+
+        //this.GetComponent<Rigidbody>().useGravity = state;
+        //if (state == false)
+        //{
+        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        //} else
+        //{
+        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        //    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+        //}
+
+
     }
 
 
