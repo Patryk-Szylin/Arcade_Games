@@ -6,7 +6,6 @@ using System.Linq;
 
 public class Projectile_DamageOverTime : Projectile
 {
-    [HideInInspector] public float m_damagePerTick;
     [HideInInspector] public float m_maxTicks;
 
 
@@ -33,7 +32,7 @@ public class Projectile_DamageOverTime : Projectile
 
         if (rbody != null)
         {
-            rbody.velocity = m_velocity;            
+            rbody.velocity = m_velocity;
             NetworkServer.Spawn(rbody.gameObject);
         }
     }
@@ -48,14 +47,14 @@ public class Projectile_DamageOverTime : Projectile
     {
         var ph = other.GetComponent<PlayerHealth>();
 
-        if(ph != null)
+        if (ph != null)
         {
             // If the projectile collided, don't check for range anymore
             CheckRange = () => { };
 
             InstantiateFX(m_impactFX);
-            StartCoroutine(ApplyDoT(ph));            
-        }        
+            StartCoroutine(ApplyDoT(ph));
+        }
     }
 
     public IEnumerator ApplyDoT(PlayerHealth playerhealth)
@@ -70,7 +69,7 @@ public class Projectile_DamageOverTime : Projectile
             if (playerhealth.m_isDead)
                 break;
 
-            playerhealth.Damage(m_damagePerTick, m_owner);
+            playerhealth.Damage(m_damage, m_owner);
             yield return new WaitForSeconds(1f);
         }
 

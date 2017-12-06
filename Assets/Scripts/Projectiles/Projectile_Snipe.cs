@@ -4,12 +4,11 @@ using UnityEngine.Networking;
 
 public class Projectile_Snipe : Projectile
 {
-    [HideInInspector] public float m_damage;
 
     Collider otherPlayer;
 
     public override void Launch()
-    {        
+    {
         //Instantiate a copy of our projectile and store it in a new rigidbody variable called clonedBullet
         Rigidbody projectileClone = Instantiate(m_prefab, m_spawnPos.position, m_spawnPos.rotation) as Rigidbody;
         projectileClone.rotation = m_spawnPos.rotation;

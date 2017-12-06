@@ -29,6 +29,7 @@ public class Player : NetworkBehaviour
     PlayerMovement m_pMovement;
     PlayerCast m_pCast;
     PlayerHealth m_pHealth;
+
     public Camera minicam;
 
     private void OnDestroy()

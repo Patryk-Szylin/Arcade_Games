@@ -52,7 +52,7 @@ public class Ability_DamageOverTime : Ability_Projectile
         m_launcher.m_impactFX = m_impactFX;
         m_launcher.m_missFX = m_missFX;
         m_launcher.m_prefab = m_projectilePrefab;
-        m_launcher.m_damagePerTick = m_damagePerTick;
+        m_launcher.m_damage = m_damagePerTick;
         m_launcher.m_maxTicks = m_maxTicks;
         m_launcher.m_spawnPos = PlayerGunPos;
         m_launcher.m_velocity = dir * m_force;

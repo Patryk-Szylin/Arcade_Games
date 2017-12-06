@@ -19,10 +19,12 @@ using UnityEngine.Networking;
 /// </summary>
 
 
-public abstract class Projectile : NetworkBehaviour {
+public abstract class Projectile : NetworkBehaviour
+{
 
     [Header("Projectile Options")]
-    [HideInInspector] public Vector3 m_velocity;    // This value is hidden and will be set during initilisation process of Ability_ scripts
+    [HideInInspector]
+    public Vector3 m_velocity;    // This value is hidden and will be set during initilisation process of Ability_ scripts
     [HideInInspector] public Rigidbody m_prefab;
     [HideInInspector] public Transform m_spawnPos;  // This value is hidden and will be set during initilisation process of Ability_ scripts
     [HideInInspector] public GameObject m_impactFX;
@@ -30,23 +32,24 @@ public abstract class Projectile : NetworkBehaviour {
     [HideInInspector] public float m_range;
     [HideInInspector] public float m_force;
     [HideInInspector] public Vector3 m_startLoc;    // Cache variable of the position of a projectile when it first spawns. Used in Check Range 
+    [HideInInspector] public float m_damage;
     public Player m_owner;
 
     public delegate void ProjectileRange();
-    public ProjectileRange CheckRange;    
+    public ProjectileRange CheckRange;
 
     private Collider m_collider;
     private Rigidbody m_rigidBody;
-    
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start()
     {
         m_startLoc = m_spawnPos.position;
         CheckRange = CheckProjectileRange;
 
         m_collider = GetComponent<Collider>();
-        m_rigidBody = GetComponent<Rigidbody>();              
+        m_rigidBody = GetComponent<Rigidbody>();
     }
 
     public abstract void Launch();
