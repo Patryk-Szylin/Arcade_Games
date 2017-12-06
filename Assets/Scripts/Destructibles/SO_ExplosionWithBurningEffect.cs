@@ -19,7 +19,6 @@ public class SO_ExplosionWithBurningEffect : SO_Destructible_Base
         yield return new WaitForSeconds(m_timeBeforeBuildingDestroy);
         var burnFX = Instantiate(m_burningFX, building.transform.position + new Vector3(-1, 0, -1), m_burningFX.transform.rotation);
         NetworkServer.Spawn(burnFX);
-        //Destroy(building.gameObject);
 
     }
 
