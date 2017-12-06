@@ -6,7 +6,6 @@ using System.Linq;
 
 public class Projectile_DamageOverTime : Projectile
 {
-    [HideInInspector] public float m_damagePerTick;
     [HideInInspector] public float m_maxTicks;
 
 
@@ -70,7 +69,7 @@ public class Projectile_DamageOverTime : Projectile
             if (playerhealth.m_isDead)
                 break;
 
-            playerhealth.Damage(m_damagePerTick, m_owner);
+            playerhealth.Damage(m_damage, m_owner);
             yield return new WaitForSeconds(1f);
         }
 

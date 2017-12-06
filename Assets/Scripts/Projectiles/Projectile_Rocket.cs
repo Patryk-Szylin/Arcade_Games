@@ -6,7 +6,6 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile_Rocket : Projectile
 {
-    [HideInInspector] public float m_damage;
     [HideInInspector] public float m_radius;
 
     Collider otherPlayer;
@@ -40,6 +39,11 @@ public class Projectile_Rocket : Projectile
         {
             // Check whether any colliders have destructible on them,
             // If so, damage them
+            var destructible = nearbyObj.GetComponent<Destructible_ExplosionAndBurning>();
+            if(destructible != null)
+            {
+                destructible.TakeDamage(m_damage, m_owner);
+            }
 
             // Check if any of the colliders are players
             // If so, deal damage

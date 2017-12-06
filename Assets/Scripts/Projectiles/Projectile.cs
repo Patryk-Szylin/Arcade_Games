@@ -30,6 +30,7 @@ public abstract class Projectile : NetworkBehaviour {
     [HideInInspector] public float m_range;
     [HideInInspector] public float m_force;
     [HideInInspector] public Vector3 m_startLoc;    // Cache variable of the position of a projectile when it first spawns. Used in Check Range 
+    [HideInInspector] public float m_damage;
     public Player m_owner;
 
     public delegate void ProjectileRange();

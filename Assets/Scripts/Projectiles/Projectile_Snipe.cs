@@ -4,7 +4,6 @@ using UnityEngine.Networking;
 
 public class Projectile_Snipe : Projectile
 {
-    [HideInInspector] public float m_damage;
 
     Collider otherPlayer;
 
