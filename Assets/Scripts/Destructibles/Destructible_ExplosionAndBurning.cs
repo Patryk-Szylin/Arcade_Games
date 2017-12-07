@@ -19,16 +19,17 @@ public class Destructible_ExplosionAndBurning : MonoBehaviour
         m_playerAttacker = GetComponent<Player>();
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    var projectile = other.GetComponent<Projectile>();        
+    private void OnTriggerEnter(Collider other)
+    {
+        var projectile = other.GetComponent<Projectile>();
 
-    //    if (projectile != null)
-    //    {
-    //        m_playerAttacker = projectile.m_owner;
-    //        TakeDamage(projectile.m_damage, m_playerAttacker);
-    //    }
-    //}
+        if (projectile != null)
+        {
+            m_playerAttacker = projectile.m_owner;
+            projectile.InstantiateFX(projectile.m_impactFX);
+            TakeDamage(projectile.m_damage, m_playerAttacker);
+        }
+    }
 
     public void TakeDamage(float damage, Player player)
     {

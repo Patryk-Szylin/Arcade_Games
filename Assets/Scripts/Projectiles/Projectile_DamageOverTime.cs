@@ -16,8 +16,8 @@ public class Projectile_DamageOverTime : Projectile
 
     private void OnEnable()
     {
-        _sprites = GetComponent<MeshRenderer>();
-        _collider = GetComponent<Collider>();
+        _sprites = this.GetComponent<MeshRenderer>();
+        _collider = this.GetComponent<Collider>();
     }
 
     private void Start()
@@ -32,7 +32,7 @@ public class Projectile_DamageOverTime : Projectile
 
         if (rbody != null)
         {
-            rbody.velocity = m_velocity;            
+            rbody.velocity = m_velocity;
             NetworkServer.Spawn(rbody.gameObject);
         }
     }
@@ -47,23 +47,25 @@ public class Projectile_DamageOverTime : Projectile
     {
         var ph = other.GetComponent<PlayerHealth>();
 
-        if(ph != null)
+        if (ph != null)
         {
-            // If the projectile collided, don't check for range anymore
-            CheckRange = () => { };
 
+            // If the projectile collided, don't check for range anymore
+
+            CheckRange = () => { };
             InstantiateFX(m_impactFX);
-            StartCoroutine(ApplyDoT(ph));            
-        }        
+            RpcHideProjectile();
+            StartCoroutine(ApplyDoT(ph));
+        }
+
+
     }
 
     public IEnumerator ApplyDoT(PlayerHealth playerhealth)
     {
-        _sprites.enabled = false;
-        _collider.enabled = false;
-
         for (int i = 0; i < m_maxTicks; i++)
         {
+            //CmdHideProjectile();
             print("APPLYING DOT");
 
             if (playerhealth.m_isDead)
@@ -74,6 +76,21 @@ public class Projectile_DamageOverTime : Projectile
         }
 
         Destroy(this.gameObject);
+    }
+
+    //[Command]
+    [ClientRpc]
+    void RpcHideProjectile()
+    {
+        var sprite = this.GetComponent<MeshRenderer>();
+        var collider = this.GetComponent<Collider>();
+
+        sprite.enabled = false;
+        collider.enabled = false;
+
+
+        //_sprites.enabled = false;
+        //_collider.enabled = false;
     }
 
     [Command]

@@ -24,7 +24,7 @@ public class Projectile_Heal : Projectile
         m_startLoc = m_spawnPos.position;
         CheckRange = CheckProjectileRange;
 
-        this.GetComponent<Rigidbody>().AddForce(m_spawnPos.forward * m_force);
+        //this.GetComponent<Rigidbody>().AddForce(m_spawnPos.forward * m_force);
     }
 
     public override void OnCollisionHit(Collider other)

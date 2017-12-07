@@ -27,6 +27,8 @@ public class Ability_Snipe : Ability_Projectile
     {
         m_launcher = m_projectilePrefab.GetComponent<Projectile_Snipe>();
 
+        var dir = (mousePos - playerGunPos.position).normalized;
+
         // Projectile stats
         m_launcher.m_damage = m_damage;
         m_launcher.m_prefab = m_projectilePrefab;
@@ -34,6 +36,7 @@ public class Ability_Snipe : Ability_Projectile
         m_launcher.m_missFX = m_missFX;
         m_launcher.m_range = m_range;
         m_launcher.m_force = m_force;
+        m_launcher.m_velocity = dir * m_force;        
         m_launcher.m_spawnPos = playerGunPos;
         m_launcher.m_owner = getProjectileOwner(playerGunPos);
     }

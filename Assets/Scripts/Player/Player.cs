@@ -30,6 +30,8 @@ public class Player : NetworkBehaviour
     PlayerCast m_pCast;
     PlayerHealth m_pHealth;
 
+    public Camera minicam;
+
     private void OnDestroy()
     {
         GameManager.m_allPlayers.Remove(this);
