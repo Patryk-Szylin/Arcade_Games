@@ -70,27 +70,27 @@ public class Player : NetworkBehaviour
 
     public void CheckForAbilityInput()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetButton("Ability1"))
         {
             m_pCast.CastAbility(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetButton("Ability2"))
         {
             m_pCast.CastAbility(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetButtonDown("Ability3"))
         {
             m_pCast.CastAbility(2);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetButtonDown("Ability4"))
         {
             m_pCast.CastAbility(3);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetButtonDown("Ability5"))
         {
             m_pCast.CastAbility(4);
         }

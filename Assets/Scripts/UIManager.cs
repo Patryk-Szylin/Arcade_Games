@@ -39,8 +39,15 @@ public class UIManager : MonoBehaviour
     public List<Text> m_cooldownDisplayTexts;
     public List<Image> m_darkMasks;
     public List<Image> m_abilitySprites;
-    public List<Text> m_abilityTooltipObjects;      
+    public List<Text> m_abilityTooltipObjects;
 
+    // Kill Feed
+    public GameObject killfeedPanelPrefab;
+    public GameObject killfeed;
+    private float killFeedDuration = 4;
+
+    // Damage Text
+    public FloatingText floatingText;
 
     public void DisplayToolTip(int abilityIndex)
     {
@@ -55,6 +62,20 @@ public class UIManager : MonoBehaviour
         m_abilityTooltipObjects[abilityIndex].gameObject.SetActive(false);
     }
 
+    // Damage Text
+    public void initDamageText(float text, bool heal, Canvas floatingTextCanvas)
+    {
+        FloatingText instance = Instantiate(floatingText);
+        instance.transform.SetParent(floatingTextCanvas.transform, false);
+        instance.setText(text, heal);
+    }
 
+    // Kill Feed
+    public void OnKill(string deadPlayer, string sourcename)
+    {
+        GameObject go = Instantiate(killfeedPanelPrefab, killfeed.transform);
+        go.GetComponent<KillFeedPanel>().Setup(deadPlayer, sourcename);
+        Destroy(go, killFeedDuration);
+    }
 
 }

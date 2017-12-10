@@ -10,6 +10,7 @@ public class PlayerCast : NetworkBehaviour
 
     public Rigidbody m_projectilePrefab;
     public Transform m_projectileSpawn;
+    public Transform m_projectileDebug;
     public List<Ability> m_abilities = new List<Ability>();
 
     [Header("Shooting Specific")]
@@ -62,6 +63,19 @@ public class PlayerCast : NetworkBehaviour
             if (m_abilities[MAX_ABILITY_COUNT - 1])
             {
                 UpdateCooldownUI(MAX_ABILITY_COUNT - 1);
+            }
+
+            // ProjectileSpawnLocation Rotation
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            Vector3 mouseLocation;
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                mouseLocation = hit.point;
+                Vector3 targetDir = mouseLocation - transform.position;
+                float angle = Mathf.Atan2(targetDir.z, targetDir.x) * Mathf.Rad2Deg;
+                m_projectileDebug.transform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
             }
         }
     }

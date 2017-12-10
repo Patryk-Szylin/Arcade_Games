@@ -26,21 +26,44 @@ public class PlayerHealth : NetworkBehaviour
     public bool m_isDead = false;
 
     [SyncVar(hook = "UpdateHealthBar")] public float m_currentHealth;
+    private float m_lasthealthupdate;
     public Player m_lastAttacker;
+
+    public Color teamColor;
+    public Color enemyColor;
 
     public bool m_isDotTagged = false;
 
-
+    public Canvas floatingTextCanvas;
 
     private void Start()
     {
         Reset();
+        if (isLocalPlayer)
+            m_healthBar.GetComponent<Image>().color = teamColor;
+        else
+            m_healthBar.GetComponent<Image>().color = enemyColor;
     }
 
     void UpdateHealthBar(float val)
     {
+        // Damage between last damage - Mathf.Abs = absolute value
+        float damage = Mathf.Abs(m_lasthealthupdate - val);
+
+        // Check if minus damage
+        bool heal;
+        if (val - m_lasthealthupdate < 0)
+            heal = false;
+        else
+            heal = true;
+
+        m_lasthealthupdate = val;
+
         if (m_healthBar != null)
             m_healthBar.sizeDelta = new Vector2(val / m_maxHealth * 150f, m_healthBar.sizeDelta.y);
+
+        // Damage Text
+        UIManager.Instance.initDamageText(damage, heal, floatingTextCanvas);
     }
 
     public void Damage(float dmg, Player attacker = null)
@@ -72,7 +95,7 @@ public class PlayerHealth : NetworkBehaviour
             UI_Scoreboard.Instance.UpdateScoreboard();
 
             m_isDead = true;
-            RpcDie();            
+            RpcDie(m_lastAttacker.GetComponent<PlayerSetup>().m_playerName);            
         }
 
         //GameManager.Instance.UpdateScoreboard();
@@ -82,11 +105,14 @@ public class PlayerHealth : NetworkBehaviour
 
     // TODO: Instead of destroying, disable all of it's relative components such as; mesh renderer, collider etc. etc.
     [ClientRpc]
-    void RpcDie()
+    void RpcDie(string killer)
     {
         print("Die Executed");
         SetActiveState(false);
         gameObject.SendMessage("Disable");
+
+        // Kill Feed - Dead Player - Killer
+        UIManager.Instance.OnKill(this.GetComponent<PlayerSetup>().m_playerName, killer);
     }
 
     public void Reset()
