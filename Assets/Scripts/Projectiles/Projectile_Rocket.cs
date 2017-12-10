@@ -30,6 +30,7 @@ public class Projectile_Rocket : Projectile
     public override void OnCollisionHit(Collider other)
     {
         var explosion = Instantiate(m_impactFX, transform.position, transform.rotation);
+        CameraScript.Instance.CameraShake(); //TODO: Only shake on players near by!!
         NetworkServer.Spawn(explosion);
 
 

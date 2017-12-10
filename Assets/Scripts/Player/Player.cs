@@ -43,13 +43,11 @@ public class Player : NetworkBehaviour
         m_pMovement = GetComponent<PlayerMovement>();
         m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
-
     }
 
 
     private void Update()
     {
-
         if (m_isHiding)
             RpcHidePlayer(true);
 
@@ -61,10 +59,8 @@ public class Player : NetworkBehaviour
         else
             UI_Scoreboard.Instance.HideScoreboard();
 
-
         // Check for ability input
         CheckForAbilityInput();
-
     }
 
 

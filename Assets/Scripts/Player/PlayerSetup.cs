@@ -18,13 +18,15 @@ public class PlayerSetup : NetworkBehaviour
 
     private void Update()
     {
+        // TODO: NOT IN UPDATE
+        if (isLocalPlayer)
+            CameraScript.Instance.Setup(this.transform);
+
         if (!isLocalPlayer)
         {
             cam.enabled = false;
             return;
         }
-            
-            
     }
 
     public override void OnStartClient()
