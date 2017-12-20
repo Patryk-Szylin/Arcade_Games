@@ -11,6 +11,14 @@ namespace Prototype.NetworkLobby
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
     public class LobbyPlayer : NetworkLobbyPlayer
     {
+        // 
+        public Button CharacteSelectrBtn;
+        private GameObject characterSelect;
+        public Button[] CharacterBtn;
+        public int avatarIndex = 15;
+        public GameObject playerModel;
+        //
+
         static Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
         //used on server to avoid assigning the same color to two player
         static List<int> _colorInUse = new List<int>();
@@ -41,9 +49,11 @@ namespace Prototype.NetworkLobby
         //static Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
         //static Color EvenRowColor = new Color(180.0f / 255.0f, 180.0f / 255.0f, 180.0f / 255.0f, 1.0f);
 
-
         public override void OnClientEnterLobby()
         {
+            //characterSelect =  GameObject.Find("CharacterSelection");
+            //CharacterBtn = characterSelect.GetComponents<Button>();
+
             base.OnClientEnterLobby();
 
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(1);
@@ -101,9 +111,29 @@ namespace Prototype.NetworkLobby
 
         void SetupLocalPlayer()
         {
+            //
+            characterSelect = GameObject.Find("CharacterSelection");
+            if(characterSelect != null)
+            {
+                CharacterBtn = characterSelect.GetComponentsInChildren<Button>();
+                //characterSelect.SetActive(false);
+
+                //CharacteSelectrBtn.onClick.AddListener(() => characterSelect.SetActive(!characterSelect.active));
+
+                foreach (Button btn in CharacterBtn)
+                {
+                    btn.onClick.AddListener(delegate
+                   {
+                       AvatarPicker(btn.name);
+                       //characterSelect.SetActive(!characterSelect.active);
+                   });
+                }
+            }
+            //
+
             nameInput.interactable = true;
-            remoteIcone.gameObject.SetActive(false);
-            localIcone.gameObject.SetActive(true);
+            //remoteIcone.gameObject.SetActive(false);
+            //localIcone.gameObject.SetActive(true);
 
             CheckRemoveButton();
 
@@ -135,7 +165,95 @@ namespace Prototype.NetworkLobby
             //when OnClientEnterLobby is called, the loval PlayerController is not yet created, so we need to redo that here to disable
             //the add button if we reach maxLocalPlayer. We pass 0, as it was already counted on OnClientEnterLobby
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(0);
+
+            //Set Default Info
+            LobbyManager.s_Singleton.changeDicrption(0);
+            ChangeLobbyInfo(0);
         }
+
+        //
+        [ClientRpc]
+        void RpcChangeLobbyInfo(int index)
+        {
+            ChangeLobbyInfo(index);
+
+        }
+
+        [Command]
+        public void CmdChangeLobbyInfo(int index)
+        {
+            ChangeLobbyInfo(index);
+        }
+
+        void ChangeLobbyInfo(int index)
+        {
+            LobbyManager.s_Singleton.changeSprite(CharacteSelectrBtn.GetComponent<Image>(), index);
+        }
+
+        void changePlayerModel(int index) {
+            // Player model
+            GameObject spawnplayerModel = LobbyManager.s_Singleton.spawnPrefabs[index];
+
+            if (playerModel != null)
+                Destroy(playerModel);
+
+            Transform placement = Camera.main.transform.GetChild(0);
+            playerModel = Instantiate(spawnplayerModel, placement.position, placement.rotation) as GameObject;
+            playerModel.transform.parent = placement;
+
+            // Set Transfrom and Scale
+            playerModel.transform.localPosition = new Vector3(0, 0, -40);
+            playerModel.transform.localScale = new Vector3(1, 1, 1);
+
+            // Disable Camera and rigidbody
+            playerModel.GetComponent<Rigidbody>().isKinematic = true;
+            playerModel.GetComponentInChildren<Camera>().enabled = false;
+
+            for (int i = 0; i < playerModel.transform.childCount - 1; i++)
+            {
+                playerModel.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+        //
+
+        void AvatarPicker(string buttonName)
+        {
+            avatarIndex = int.Parse(buttonName);
+
+            //Client Stuff
+            LobbyManager.s_Singleton.changeDicrption(avatarIndex);
+            changePlayerModel(avatarIndex);
+
+            // Lobby Character Select Info
+            if (isServer)
+            {
+                RpcChangeLobbyInfo(avatarIndex);
+            }
+            else
+            {
+                CmdChangeLobbyInfo(avatarIndex);
+                ChangeLobbyInfo(avatarIndex);
+            }
+
+            if (isServer)
+                RpcAvatarPicked(avatarIndex);
+            else
+                CmdAvatarPicked(avatarIndex);
+        }
+
+        [ClientRpc]
+        public void RpcAvatarPicked(int avIndex)
+        {
+            CmdAvatarPicked(avIndex);
+        }
+
+        [Command]
+        public void CmdAvatarPicked(int avIndex)
+        {
+            LobbyManager.s_Singleton.SetPlayerTypeLobby(GetComponent<NetworkIdentity>().connectionToClient, avIndex);
+        }
+
+        //
 
         //This enable/disable the remove button depending on if that is the only local player or not
         public void CheckRemoveButton()

@@ -5,12 +5,16 @@ using UnityEngine.Networking;
 using UnityEngine.Networking.Types;
 using UnityEngine.Networking.Match;
 using System.Collections;
-
+using System.Collections.Generic;
 
 namespace Prototype.NetworkLobby
 {
     public class LobbyManager : NetworkLobbyManager 
     {
+        //
+        public Dictionary<int, int> currentPlayers;
+        //
+
         static short MsgKicked = MsgType.Highest + 1;
 
         static public LobbyManager s_Singleton;
@@ -53,8 +57,18 @@ namespace Prototype.NetworkLobby
 
         protected LobbyHook _lobbyHooks;
 
+        [Space]
+        [Header("Ability Info")]
+        public GameObject abilityInfo;
+        [SerializeField] Sprite[] characterSprites;
+
+
         void Start()
         {
+            //
+            currentPlayers = new Dictionary<int, int>();
+            //
+
             s_Singleton = this;
             _lobbyHooks = GetComponent<Prototype.NetworkLobby.LobbyHook>();
             currentPanel = mainMenuPanel;
@@ -266,7 +280,8 @@ namespace Prototype.NetworkLobby
             foreach (PlayerController p in ClientScene.localPlayers)
                 localPlayerCount += (p == null || p.playerControllerId == -1) ? 0 : 1;
 
-            addPlayerButton.SetActive(localPlayerCount < maxPlayersPerConnection && _playerNumber < maxPlayers);
+            //addPlayerButton.SetActive(localPlayerCount < maxPlayersPerConnection && _playerNumber < maxPlayers);
+            addPlayerButton.SetActive(false);
         }
 
         // ----------------- Server callbacks ------------------
@@ -275,6 +290,11 @@ namespace Prototype.NetworkLobby
         //But OnLobbyClientConnect isn't called on hosting player. So we override the lobbyPlayer creation
         public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId)
         {
+            //
+            if (!currentPlayers.ContainsKey(conn.connectionId))
+                currentPlayers.Add(conn.connectionId, 0);
+            //
+
             GameObject obj = Instantiate(lobbyPlayerPrefab.gameObject) as GameObject;
 
             LobbyPlayer newPlayer = obj.GetComponent<LobbyPlayer>();
@@ -294,6 +314,53 @@ namespace Prototype.NetworkLobby
 
             return obj;
         }
+        
+        //
+        public void SetPlayerTypeLobby (NetworkConnection conn, int type)
+        {
+            if (currentPlayers.ContainsKey(conn.connectionId))
+                currentPlayers[conn.connectionId] = type;
+        }
+
+        public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
+        {
+            int index = currentPlayers[conn.connectionId];
+
+            GameObject playerPrefab = (GameObject)GameObject.Instantiate(spawnPrefabs[index],
+                startPositions[conn.connectionId].position,
+                Quaternion.identity);
+
+            return playerPrefab;
+        }
+
+        public void changeDicrption(int index)
+        {
+            // Class Name
+            string[] names = new string[] { "Rocket", "Inventor", "Sniper", "Rogue" };
+            PlayerCast disc = spawnPrefabs[index].GetComponent<PlayerCast>();
+            if (disc != null)
+            {
+                // Change Ability Info Text
+                Text[] infoText = abilityInfo.GetComponentsInChildren<Text>();
+                infoText[0].text = names[index];
+
+                int temp = 0;
+                foreach (Text t in infoText)
+                {
+                    if (t != infoText[0])
+                    {
+                        t.text = disc.m_abilities[temp].getToolTipStatInfo();
+                        temp++;
+                    }
+                }
+            }
+        }
+
+        public void changeSprite(Image img, int index)
+        {
+            img.overrideSprite = characterSprites[index];
+        }
+        //
 
         public override void OnLobbyServerPlayerRemoved(NetworkConnection conn, short playerControllerId)
         {
