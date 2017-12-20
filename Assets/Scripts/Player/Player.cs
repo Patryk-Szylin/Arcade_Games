@@ -43,11 +43,13 @@ public class Player : NetworkBehaviour
         m_pMovement = GetComponent<PlayerMovement>();
         m_pCast = GetComponent<PlayerCast>();
         m_pHealth = GetComponent<PlayerHealth>();
+
     }
 
 
     private void Update()
     {
+
         if (m_isHiding)
             RpcHidePlayer(true);
 
@@ -59,34 +61,36 @@ public class Player : NetworkBehaviour
         else
             UI_Scoreboard.Instance.HideScoreboard();
 
+
         // Check for ability input
         CheckForAbilityInput();
+
     }
 
 
     public void CheckForAbilityInput()
     {
-        if (Input.GetButton("Ability1"))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             m_pCast.CastAbility(0);
         }
 
-        if (Input.GetButton("Ability2"))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             m_pCast.CastAbility(1);
         }
 
-        if (Input.GetButtonDown("Ability3"))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             m_pCast.CastAbility(2);
         }
 
-        if (Input.GetButtonDown("Ability4"))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             m_pCast.CastAbility(3);
         }
 
-        if (Input.GetButtonDown("Ability5"))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             m_pCast.CastAbility(4);
         }
