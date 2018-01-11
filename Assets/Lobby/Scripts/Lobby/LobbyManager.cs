@@ -60,8 +60,8 @@ namespace Prototype.NetworkLobby
         [Space]
         [Header("Ability Info")]
         public GameObject abilityInfo;
+        public GameObject abilityBtns;
         [SerializeField] Sprite[] characterSprites;
-
 
         void Start()
         {
@@ -352,6 +352,13 @@ namespace Prototype.NetworkLobby
                         t.text = disc.m_abilities[temp].getToolTipStatInfo();
                         temp++;
                     }
+                }
+
+                //Change Btns
+                Image[] abilityimage = abilityBtns.GetComponentsInChildren<Image>();
+                foreach (Image i in abilityimage)
+                {
+                    i.overrideSprite = disc.m_abilities[index].m_abilityIcon;
                 }
             }
         }
