@@ -19,6 +19,10 @@ namespace Prototype.NetworkLobby
 
         static public LobbyManager s_Singleton;
 
+        //Patryk's Loading Screen
+        public GameObject m_loadingScreen;
+        public bool m_isSceneLoading = false;
+
 
         [Header("Unity UI Lobby")]
         [Tooltip("Time in second between all players ready & match start")]
@@ -417,6 +421,30 @@ namespace Prototype.NetworkLobby
 				StartCoroutine(ServerCountdownCoroutine());
         }
 
+
+
+        public override void OnLobbyServerSceneChanged(string sceneName)
+        {
+            base.OnLobbyServerSceneChanged(sceneName);
+
+            StartCoroutine(SceneLoadingOverlay(m_isSceneLoading));
+        }
+
+
+        IEnumerator SceneLoadingOverlay(bool loadingState)
+        {
+            while (!m_isSceneLoading)
+            {
+                // Play loading animation
+
+                yield return null;
+            }
+
+            m_loadingScreen.SetActive(false);
+            print("Turn off overlay");
+        }
+
+
         public IEnumerator ServerCountdownCoroutine()
         {
             float remainingTime = prematchCountdown;
@@ -451,7 +479,10 @@ namespace Prototype.NetworkLobby
                 }
             }
 
+            // Give feedback to the player that something is happening by enabling loading screen
+            //m_loadingScreen.SetActive(true);
             ServerChangeScene(playScene);
+            //m_isSceneLoading = true;
         }
 
         // ----------------- Client callbacks ------------------
