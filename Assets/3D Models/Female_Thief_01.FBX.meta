@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 621d3ee62822869438e622bea2c22a3a
-timeCreated: 1512828347
+guid: 85b298dac7d1d424996235f4b00f1896
+timeCreated: 1515679047
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
@@ -72,14 +72,12 @@ ModelImporter:
     100128: Bip001 Spine
     100130: Bip001 Spine1
     100132: Bip001 Spine2
-    100134: Chainmail Thing
-    100136: Eyes
-    100138: Face
-    100140: Hands
-    100142: Helmet
-    100144: Legs
-    100146: //RootNode
-    100148: UpperBody
+    100134: Eyes
+    100136: Face
+    100138: //RootNode
+    100140: Legs
+    100142: Scarf
+    100144: UpperBody
     400000: Bip001
     400002: Bip001 Footsteps
     400004: Bip001 Head
@@ -147,33 +145,27 @@ ModelImporter:
     400128: Bip001 Spine
     400130: Bip001 Spine1
     400132: Bip001 Spine2
-    400134: Chainmail Thing
-    400136: Eyes
-    400138: Face
-    400140: Hands
-    400142: Helmet
-    400144: Legs
-    400146: //RootNode
-    400148: UpperBody
+    400134: Eyes
+    400136: Face
+    400138: //RootNode
+    400140: Legs
+    400142: Scarf
+    400144: UpperBody
     2300000: Eyes
     2300002: Face
-    2300004: Helmet
+    2300004: Scarf
     3300000: Eyes
     3300002: Face
-    3300004: Helmet
-    4300000: Legs
-    4300002: UpperBody
-    4300004: Hands
-    4300006: Helmet
-    4300008: Face
-    4300010: Eyes
-    4300012: Chainmail Thing
+    3300004: Scarf
+    4300000: UpperBody
+    4300002: Legs
+    4300004: Face
+    4300006: Eyes
+    4300008: Scarf
     7400000: Take 001
     9500000: //RootNode
-    13700000: Chainmail Thing
-    13700002: Hands
-    13700004: Legs
-    13700006: UpperBody
+    13700000: Legs
+    13700002: UpperBody
   materials:
     importMaterials: 1
     materialName: 0
