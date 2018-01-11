@@ -480,9 +480,9 @@ namespace Prototype.NetworkLobby
             }
 
             // Give feedback to the player that something is happening by enabling loading screen
-            //m_loadingScreen.SetActive(true);
+            m_loadingScreen.SetActive(true);
             ServerChangeScene(playScene);
-            //m_isSceneLoading = true;
+            m_isSceneLoading = true;
         }
 
         // ----------------- Client callbacks ------------------
