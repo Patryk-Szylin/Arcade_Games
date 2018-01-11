@@ -1,0 +1,95 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Networking;
+using System.Threading;
+
+
+
+public class Projectile_MachineGun : Projectile
+{
+
+    [HideInInspector] public int m_bulletsPerRound;
+
+
+    private float _sinceShoot;
+    int shotsFired = 0;
+
+    private MeshRenderer _sprites;
+    private Collider _collider;
+
+    Collider otherPlayer;
+
+    private void OnEnable()
+    {
+        _sprites = this.GetComponent<MeshRenderer>();
+        _collider = this.GetComponent<Collider>();
+    }
+
+    private void Start()
+    {
+        m_startLoc = m_spawnPos.position;
+        CheckRange = CheckProjectileRange;
+    }
+
+
+    public override void Launch()
+    {
+        Rigidbody rbody = Instantiate(m_prefab, m_spawnPos.position, m_spawnPos.rotation) as Rigidbody;
+
+        if (rbody != null)
+        {
+            rbody.velocity = m_velocity;
+            NetworkServer.Spawn(rbody.gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        CheckRange();
+    }
+
+    public override void OnCollisionHit(Collider other)
+    {
+        var ph = other.GetComponent<PlayerHealth>();
+
+        if (ph != null)
+        {
+            // If the projectile collided, don't check for range anymore
+            CheckRange = () => { };
+            InstantiateFX(m_impactFX);
+            RpcHideProjectile();
+        }
+    }
+
+
+
+
+    [ClientRpc]
+    void RpcHideProjectile()
+    {
+        var sprite = this.GetComponent<MeshRenderer>();
+        var collider = this.GetComponent<Collider>();
+
+        sprite.enabled = false;
+        collider.enabled = false;
+    }
+
+    [Command]
+    void CmdCheckForCollision()
+    {
+        if (otherPlayer.GetComponent<Player>() != m_owner)
+        {
+            OnCollisionHit(otherPlayer);
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        otherPlayer = other;
+        CmdCheckForCollision();
+    }
+
+
+}
