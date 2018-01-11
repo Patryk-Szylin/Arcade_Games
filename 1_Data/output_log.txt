@@ -1,0 +1,134 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   22.21.13.8541
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.023 seconds
+Platform assembly: C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\m2125007\Desktop\Arcade Games Submission\Arcade_Games\1_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1200 59Hz; virtual: 3840x1200 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.358476 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1804 -> priority: 1 
+  Thread -> id: 2f90 -> priority: 1 
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trying to send command for object without authority.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+The referenced script on this Behaviour (Game Object 'KillFeed') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 35.595661 ms
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 66054.
+Total: 23.906757 ms (FindLiveObjects: 5.571364 ms CreateObjectMapping: 2.484552 ms MarkObjects: 12.490941 ms  DeleteObjects: 3.359533 ms)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=68a6b16e7c4904a41b7ba81e54b117c2 netId=6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=68a6b16e7c4904a41b7ba81e54b117c2 netId=7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=3ba5277627cb65e4ea34b66803accad6 netId=8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=68a6b16e7c4904a41b7ba81e54b117c2 netId=9
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=3ba5277627cb65e4ea34b66803accad6 netId=10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=68a6b16e7c4904a41b7ba81e54b117c2 netId=11
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=68a6b16e7c4904a41b7ba81e54b117c2 netId=12
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=3ba5277627cb65e4ea34b66803accad6 netId=13
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=84363929cec7fb649b13ecf5c7c7b1e3 netId=14
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=84363929cec7fb649b13ecf5c7c7b1e3 netId=15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=84363929cec7fb649b13ecf5c7c7b1e3 netId=16
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to spawn server object, did you forget to add it to the NetworkManager? assetId=68a6b16e7c4904a41b7ba81e54b117c2 netId=17
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Server] function 'System.Void GameManager::Start()' called on client
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Material MiniMapMaterial doesn't have _Stencil property
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Releasing render texture that is set as Camera.targetTexture!
+ 
+(Filename:  Line: 3422)
+
+Releasing render texture that is set as Camera.targetTexture!
+ 
+(Filename:  Line: 3422)
+
+Releasing render texture that is set as Camera.targetTexture!
+ 
+(Filename:  Line: 3422)
+
+Releasing render texture that is set as Camera.targetTexture!
+ 
+(Filename:  Line: 3422)
+
