@@ -75,7 +75,11 @@ public class PlayerCast : NetworkBehaviour
                 mouseLocation = hit.point;
                 Vector3 targetDir = mouseLocation - transform.position;
                 float angle = Mathf.Atan2(targetDir.z, targetDir.x) * Mathf.Rad2Deg;
-                m_projectileDebug.transform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
+                if(m_projectileDebug != null)
+                {
+                    m_projectileDebug.transform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
+                }
+                
             }
         }
     }
