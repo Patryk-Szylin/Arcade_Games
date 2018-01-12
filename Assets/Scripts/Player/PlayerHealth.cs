@@ -47,6 +47,7 @@ public class PlayerHealth : NetworkBehaviour
 
     void UpdateHealthBar(float val)
     {
+        Debug.Log("no damage");
         // Damage between last damage - Mathf.Abs = absolute value
         float damage = Mathf.Abs(m_lasthealthupdate - val);
 

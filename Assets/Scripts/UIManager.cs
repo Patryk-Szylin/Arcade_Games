@@ -65,12 +65,12 @@ public class UIManager : MonoBehaviour
     // Damage Text
     public void initDamageText(float text, bool heal, Canvas floatingTextCanvas)
     {
-        if(floatingText != null)
-        {
+       // if(floatingText != null)
+        //{
             FloatingText instance = Instantiate(floatingText);
             instance.transform.SetParent(floatingTextCanvas.transform, false);
             instance.setText(text, heal);
-        }
+       // }
     }
 
     // Kill Feed
